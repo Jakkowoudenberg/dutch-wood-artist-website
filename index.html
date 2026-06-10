@@ -673,5 +673,45 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') closeLightbox();
 });
 </script>
+
+<script>
+// Rate limiting + input sanitization for contact form
+(function(){
+  var form = document.querySelector('.contact-form');
+  if(!form) return;
+
+  var lastSubmit = 0;
+  var RATE_LIMIT_MS = 60000; // 1 minuut tussen submissions
+
+  function sanitize(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;')
+      .trim()
+      .substring(0, 2000); // max 2000 tekens per veld
+  }
+
+  form.addEventListener('submit', function(e) {
+    // Rate limiting
+    var now = Date.now();
+    if(now - lastSubmit < RATE_LIMIT_MS) {
+      e.preventDefault();
+      alert('Please wait a moment before sending another message.');
+      return false;
+    }
+    lastSubmit = now;
+
+    // Sanitize alle input velden
+    var inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+    inputs.forEach(function(input) {
+      input.value = sanitize(input.value);
+    });
+  });
+})();
+</script>
 </body>
 </html>
