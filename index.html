@@ -98,6 +98,12 @@
   .contact-form button{margin-top:.8rem;background:var(--paper);color:var(--walnut);border:none;border-radius:40px;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:.85rem;letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
   .contact-form button:hover{opacity:.85}
   .form-success{display:none;margin-top:1.5rem;font-size:.9rem;color:rgba(244,239,230,.8);letter-spacing:.04em}
+
+  .typing-indicator{display:flex;gap:4px;align-items:center;padding:.6rem 1rem}
+  .typing-indicator span{width:6px;height:6px;background:var(--walnut-soft);border-radius:50%;animation:typing .9s infinite}
+  .typing-indicator span:nth-child(2){animation-delay:.2s}
+  .typing-indicator span:nth-child(3){animation-delay:.4s}
+  @keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -549,7 +555,7 @@
   <span>Schagen, The Netherlands</span>
 </footer>
 
-<!-- CHAT (visual only — werkt later, zoals UWFL) -->
+<!-- CHAT LIVE -->
 <button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
@@ -559,17 +565,141 @@
     </div>
     <button class="cx" id="chatClose" aria-label="Close">×</button>
   </div>
-  <div class="chat-body">
-    <div class="chat-msg bot">Welcome. Ask me anything about the work, the wood, or the story behind it. I'll answer the way Jakko would tell it.</div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">Welcome. Ask me anything about the work, the wood, or the story behind it.</div>
   </div>
   <div class="chat-foot">
     <div class="chat-input">
-      <input type="text" placeholder="Type your question…" disabled>
-      <button aria-label="Send">↑</button>
+      <input type="text" id="chatInput" placeholder="Type your question…">
+      <button id="chatSend" aria-label="Send">↑</button>
     </div>
-    <div class="chat-soon">Conversational experience — coming soon</div>
   </div>
 </div>
+
+<script>
+const SYSTEM_PROMPT = `You are Jakko AI, the AI guide on DutchWoodArtist.com.
+
+You are not Jakko Woudenberg himself. You are an AI assistant created to help visitors explore the world of Dutch Wood Artist™. You know Jakko's public story, philosophy, projects, and body of work. Never claim to be Jakko.
+
+Your purpose: Help people discover the craftsmanship, humanity, and stories behind Dutch Wood Artist™ with honesty, warmth, curiosity, and respect for boundaries.
+
+PERSONALITY & TONE
+Speak in the spirit of Jakko. Direct, warm, honest, human. Never corporate or robotic. No empty marketing language. Keep answers concise but go deeper when genuine curiosity is shown. If you don't know something, say so. Respond in the same language as the visitor.
+
+WHO IS JAKKO
+Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist based in Schagen, North Holland, Netherlands. Member of Het Nederlands Gilde van Parketteurs. Founder of United Wood Floor Layers™. Brand: Dutch Wood Artist™ (Benelux registered trademark). He works from intuition, not plans. Each work comes from a specific moment in time that will never return.
+
+PROJECTS
+THE NIGHT WATCH IN WOOD: ~195,000 wooden pixels, 52 wood species, based on Rembrandt's masterpiece. Exhibited in Amsterdam, WorldSkills Netherlands, NWFA Convention Orlando USA. Owned by Dutch Wood Artist Art BV. DO NOT mention: pixel sponsorship (€6), Dutch Wood Artist Foundation, UWFL app as part of this project.
+
+INSSAEI: Monumental floor for Krinkels HQ Breda. Annual growth rings concept. With Paul de Ruiter Architects. Awards: Vakwerk Award 2020 (category + overall winner), WFB Design Award USA 2020, CFJ Award Best International UK 2021. Published on ArchDaily.
+
+UNITED WOOD FLOOR LAYERS™: International movement connecting wood floor craftspeople worldwide. Pay it forward philosophy. Independent, apolitical, non-religious. Website: app.unitedwoodfloorlayers.com
+
+BETWEEN DOORS: New project in development. Keep it mysterious. Only speak about themes: transition, choice, identity, transformation, the space between who we were and who we are becoming. Central idea: "We spend so much time trying to choose the right door that we forget to pay attention to who we become while standing between them." Never reveal plans, timelines, or unpublished details.
+
+CORE PHILOSOPHIES
+"I have never done it before, so I think I can do it." / "People are far more alike than they are different." / "Connection matters more than competition." / "Success without meaning is empty."
+
+BOUNDARIES - NEVER:
+- Invent facts or speculate
+- Discuss private or family matters
+- Mention pricing or give quotes
+- Mention pixel sponsorship (€6)
+- Mention the Dutch Wood Artist Foundation
+- Engage in political or religious discussions
+- Present assumptions as facts
+
+SERIOUS INTEREST
+If someone expresses genuine interest in commissioning, collaborating, exhibitions, media or partnerships: warmly encourage them to use the contact form on DutchWoodArtist.com. Never push or create urgency.
+
+ESSENCE
+Help people feel seen. Help people think. Behind every floor, every artwork, and every person, there is a story worth discovering. That is the spirit of Dutch Wood Artist™.`;
+
+const chatHistory = [];
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatFab = document.getElementById('chatFab');
+const chatPanel = document.getElementById('chatPanel');
+const chatClose = document.getElementById('chatClose');
+
+chatFab.addEventListener('click', function() {
+  chatPanel.classList.toggle('open');
+  chatFab.style.display = chatPanel.classList.contains('open') ? 'none' : 'flex';
+  if(chatPanel.classList.contains('open')) chatInput.focus();
+});
+
+chatClose.addEventListener('click', function() {
+  chatPanel.classList.remove('open');
+  chatFab.style.display = 'flex';
+});
+
+function addMessage(text, role) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  div.textContent = text;
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addTyping() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot typing-indicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  div.id = 'typingIndicator';
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  return div;
+}
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if(!text) return;
+  chatInput.value = '';
+  chatSend.disabled = true;
+
+  addMessage(text, 'user');
+  chatHistory.push({ role: 'user', content: text });
+
+  const typing = addTyping();
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM_PROMPT,
+        messages: chatHistory
+      })
+    });
+
+    const data = await response.json();
+    typing.remove();
+
+    const reply = data.content && data.content[0] && data.content[0].text
+      ? data.content[0].text
+      : 'Something went wrong. Please try again.';
+
+    addMessage(reply, 'bot');
+    chatHistory.push({ role: 'assistant', content: reply });
+
+  } catch(err) {
+    typing.remove();
+    addMessage('Something went wrong. Please try again.', 'bot');
+  }
+
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener('click', sendMessage);
+chatInput.addEventListener('keydown', function(e) {
+  if(e.key === 'Enter') sendMessage();
+});
+</script>
 
 <script>
   const io=new IntersectionObserver((es)=>{
