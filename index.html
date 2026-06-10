@@ -476,18 +476,7 @@
         <div class="form-row">
           <label for="phone">Phone</label>
           <div style="display:flex;gap:.5rem">
-            <select name="phone_country" required style="background:rgba(255,255,255,.08);border:1px solid rgba(244,239,230,.2);border-radius:4px;padding:.8rem .6rem;color:#F4EFE6;font-family:Inter,sans-serif;font-size:.9rem;outline:none;min-width:110px">
-              <option value="+31">🇳🇱 +31</option>
-              <option value="+32">🇧🇪 +32</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+65">🇸🇬 +65</option>
-              <option value="+other">🌍 Other</option>
-            </select>
+            <input type="text" name="phone_country" placeholder="+31" required style="width:80px;background:rgba(255,255,255,.08);border:1px solid rgba(244,239,230,.2);border-radius:4px;padding:.8rem .6rem;color:#F4EFE6;font-family:Inter,sans-serif;font-size:.9rem;outline:none">
             <input type="tel" id="phone" name="phone" placeholder="6 12345678" required style="flex:1">
           </div>
         </div>
