@@ -47,6 +47,8 @@
   .menu-toggle{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:8px;z-index:60}
   .menu-toggle span{display:block;width:30px;height:2px;background:var(--walnut);mix-blend-mode:normal;border-radius:2px;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .3s,background .3s}
   nav.scrolled .menu-toggle span{background:var(--walnut);mix-blend-mode:normal}
+  nav.light .logo-img{filter:invert(1)}
+  nav.light .menu-toggle span{background:var(--paper)!important}
   .menu-toggle.open span{background:#F4EFE6;mix-blend-mode:normal}
   .menu-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
   .menu-toggle.open span:nth-child(2){opacity:0}
@@ -219,7 +221,7 @@
 <body>
 
 <nav>
-  <div class="brand"><img src="images/DWA-logo-zwart.png" alt="Dutch Wood Artist" style="height:160px;width:auto"></div>
+  <div class="brand"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"></div>
   <div class="links">
     <a href="#work">Work</a>
     <a href="#maker">Maker</a>
@@ -471,6 +473,23 @@
   const navEl=document.querySelector('nav');
   const onScroll=()=>navEl.classList.toggle('scrolled',window.scrollY>window.innerHeight-90);
   window.addEventListener('scroll',onScroll);onScroll();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  var darkSections = document.querySelectorAll('.movement');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        nav.classList.add('light');
+      } else {
+        nav.classList.remove('light');
+      }
+    });
+  }, {threshold: 0, rootMargin: '-80px 0px 0px 0px'});
+  darkSections.forEach(function(s){ observer.observe(s); });
+})();
 </script>
 </body>
 </html>
