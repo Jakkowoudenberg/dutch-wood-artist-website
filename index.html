@@ -18,16 +18,11 @@
     --line:rgba(46,36,27,.14);
   }
 
-  .contact-sticky{
-    position:fixed;bottom:1.6rem;left:1.6rem;z-index:45;
-    font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--walnut);background:var(--paper);
-    border:1px solid var(--line);border-radius:40px;
-    padding:.65rem 1.2rem;text-decoration:none;
-    box-shadow:0 2px 16px rgba(46,36,27,.10);
-    transition:background .2s,color .2s;
-  }
-  .contact-sticky:hover{background:var(--walnut);color:var(--paper)}
+  .contact-sticky{position:fixed;bottom:5rem;right:1.6rem;z-index:45;display:flex;align-items:center;gap:.7rem;
+    background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.85rem 1.3rem;cursor:pointer;
+    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:.78rem;letter-spacing:.04em;
+    text-decoration:none;transition:opacity .2s}
+  .contact-sticky:hover{opacity:.85}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
