@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dutch-wood-artist.netlify.app/sitemap.xml
