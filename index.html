@@ -460,7 +460,7 @@
     <div class="eyebrow reveal">Between Doors</div>
     <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
     <span style="font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:#F4EFE6;margin-top:2rem;display:block;opacity:.9">Project in development</span>
-    <div style="margin-top:5rem;border-top:1px solid rgba(244,239,230,.15);padding-top:3rem">
+    <div id="contact-form" style="margin-top:5rem;border-top:1px solid rgba(244,239,230,.15);padding-top:3rem">
       <div class="eyebrow" style="color:rgba(244,239,230,.7);margin-bottom:1rem">Contact</div>
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
@@ -579,7 +579,7 @@
   darkSections.forEach(function(s){ observer.observe(s); });
 })();
 </script>
-<a href="#contact" class="contact-sticky" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
+<a href="#contact-form" class="contact-sticky" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
