@@ -235,7 +235,11 @@
   @media(max-width:720px){.commission-grid{grid-template-columns:1fr;gap:0}.c-item{margin-bottom:2.5rem}}
 
   /* CONTACT */
-  .contact{padding:8vh 0 10vh;text-align:center}
+  .contact{padding:18vh 0 20vh;text-align:center;position:relative;background:url(images/between-doors.jpg) center/cover no-repeat}
+  .contact::before{content:"";position:absolute;inset:0;background:rgba(20,14,9,.65);z-index:0}
+  .contact .wrap{position:relative;z-index:1}
+  .contact .display{color:#F4EFE6;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+  .contact .eyebrow{color:rgba(244,239,230,.7)}
   .contact .eyebrow{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
   .contact h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2rem,5vw,3.6rem);line-height:1.15;max-width:16ch;margin:0 auto 2.4rem}
   .contact h2 em{font-style:italic;color:var(--grain)}
@@ -444,7 +448,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Between Doors</div>
     <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
-    <span class="bd-label" style="font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin-top:2rem;display:block">Project in development</span>
+    <span style="font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:#F4EFE6;margin-top:2rem;display:block;opacity:.9">Project in development</span>
   </div>
 </section>
 
