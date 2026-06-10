@@ -23,6 +23,14 @@
     box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:.78rem;letter-spacing:.04em;
     text-decoration:none;transition:opacity .2s}
   .contact-sticky:hover{opacity:.85}
+
+  /* NEWS */
+  .news{padding:15vh 0}
+  .news-list{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
+  .news-item{border-top:1px solid var(--line);padding-top:1.5rem}
+  .news-item .news-date{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--walnut-soft);margin-bottom:.4rem}
+  .news-item .news-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:400;margin-bottom:.5rem}
+  .news-item .news-body{font-size:.95rem;color:var(--walnut-soft);max-width:60ch}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -233,6 +241,7 @@
     <a href="#maker">Maker</a>
     <a href="#commission">Commissions</a>
     <a href="#movement">Movement</a>
+      <a href="#news">News</a>
     <a href="#contact">Contact</a>
   </div>
   <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
@@ -249,6 +258,7 @@
       <a href="#maker">The Maker</a>
       <a href="#commission">Commissions</a>
       <a href="#movement">United Wood Floor Layers</a>
+      <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="fullmenu-col">
@@ -419,6 +429,18 @@
     <div class="eyebrow reveal">Between Doors</div>
     <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
     <a href="#contact" class="mail reveal">Get in touch</a>
+  </div>
+</section>
+
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="eyebrow reveal">News</div>
+    <h2 class="display reveal">Latest</h2>
+    <div class="news-list" id="newsList">
+      <!-- nieuws items komen hier -->
+    </div>
   </div>
 </section>
 
