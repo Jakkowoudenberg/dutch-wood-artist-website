@@ -48,6 +48,17 @@
   .between-doors{background:var(--walnut);color:var(--paper);padding:20vh 0;text-align:center}
   .between-doors .bd-quote{font-family:'Fraunces',serif;font-size:clamp(1.4rem,3.5vw,2.6rem);font-weight:300;font-style:italic;max-width:32ch;margin:0 auto 2rem;line-height:1.5}
   .between-doors .bd-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
+
+  /* CONTACT FORM */
+  .contact-form{margin-top:3rem;max-width:540px;margin-left:auto;margin-right:auto;text-align:left}
+  .contact-form .form-row{margin-bottom:1.2rem}
+  .contact-form label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.7);margin-bottom:.4rem}
+  .contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(244,239,230,.2);border-radius:4px;padding:.8rem 1rem;color:#F4EFE6;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border .2s}
+  .contact-form input:focus,.contact-form textarea:focus{border-color:rgba(244,239,230,.6)}
+  .contact-form textarea{min-height:140px;resize:vertical}
+  .contact-form button{margin-top:.8rem;background:var(--paper);color:var(--walnut);border:none;border-radius:40px;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:.85rem;letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
+  .contact-form button:hover{opacity:.85}
+  .form-success{display:none;margin-top:1.5rem;font-size:.9rem;color:rgba(244,239,230,.8);letter-spacing:.04em}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -449,6 +460,27 @@
     <div class="eyebrow reveal">Between Doors</div>
     <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
     <span style="font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:#F4EFE6;margin-top:2rem;display:block;opacity:.9">Project in development</span>
+    <div style="margin-top:5rem;border-top:1px solid rgba(244,239,230,.15);padding-top:3rem">
+      <div class="eyebrow" style="color:rgba(244,239,230,.7);margin-bottom:1rem">Contact</div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
+        </div>
+        <button type="submit">Send message</button>
+        <p class="form-success" id="formSuccess">Thank you. I will be in touch soon.</p>
+      </form>
+    </div>
   </div>
 </section>
 
