@@ -764,6 +764,7 @@ chatInput.addEventListener('keydown', function(e) {
     mt.classList.toggle('open',open);
     mt.setAttribute('aria-expanded',open);
     fm.setAttribute('aria-hidden',!open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
   fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     fm.classList.remove('open');mt.classList.remove('open');
