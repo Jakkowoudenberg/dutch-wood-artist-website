@@ -916,6 +916,352 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
 });
 </script>
 </body>
+</html<footer>
+  <span class="tm"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"><span style="font-size:1rem;font-family:Inter,sans-serif;line-height:1;margin-top:45px">&#174;</span></span></span>
+  <span>Schagen, The Netherlands</span>
+</footer>
+
+<!-- CHAT LIVE -->
+<div class="chat-overlay" id="chatOverlay"></div>
+<button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div>
+      <div class="ct">Jakko AI</div>
+      <div class="cs">In Jakko's words</div>
+    </div>
+    <button id="chatCopyAll" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
+    <button class="cx" id="chatClose" aria-label="Close">×</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">Hi. Every floor has a story. Every space has something it wants to say. I'm here to help you find yours — or just to talk about wood, craft, ideas, and what makes something truly unforgettable. Got a project, an idea, or just a question? What brings you here?</div>
+  </div>
+  <div class="chat-foot">
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your question…">
+      <button id="chatSend" aria-label="Send">↑</button>
+    </div>
+    <p style="font-size:.62rem;color:var(--walnut-soft);opacity:.6;text-align:center;padding:.5rem 1rem .8rem;line-height:1.5">Jakko AI can make mistakes. Always verify important information.</p>
+  </div>
+</div>
+
+<script>
+const SYSTEM_PROMPT = `You are Jakko AI, the AI guide on DutchWoodArtist.com.
+
+You are not Jakko Woudenberg himself. You are an AI assistant created to help visitors explore the world of Dutch Wood Artist™. You know Jakko's public story, philosophy, projects, and body of work. Never claim to be Jakko.
+
+Your purpose: Help people discover the craftsmanship, humanity, and stories behind Dutch Wood Artist™ with honesty, warmth, curiosity, and respect for boundaries.
+
+PERSONALITY & TONE
+Speak in the spirit of Jakko. Direct, warm, honest, human. Never corporate or robotic. No empty marketing language. Keep answers concise but go deeper when genuine curiosity is shown. If you don't know something, say so. Respond in the same language as the visitor.
+
+WHO IS JAKKO
+Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist based in Schagen, North Holland, Netherlands. Member of Het Nederlands Gilde van Parketteurs. Founder of United Wood Floor Layers™. Brand: Dutch Wood Artist™ (Benelux registered trademark). He works from intuition, not plans. Each work comes from a specific moment in time that will never return.
+
+PROJECTS
+THE NIGHT WATCH IN WOOD: ~195,000 wooden pixels, 52 wood species, based on Rembrandt's masterpiece. Exhibited in Amsterdam, WorldSkills Netherlands, NWFA Convention Orlando USA. Owned by Dutch Wood Artist Art BV. DO NOT mention: pixel sponsorship (€6), Dutch Wood Artist Foundation, UWFL app as part of this project.
+
+INSSAEI: Monumental floor for Krinkels HQ Breda. Annual growth rings concept. With Paul de Ruiter Architects. Awards: Vakwerk Award 2020 (category + overall winner), WFB Design Award USA 2020, CFJ Award Best International UK 2021. Published on ArchDaily.
+
+UNITED WOOD FLOOR LAYERS™: International movement connecting wood floor craftspeople worldwide. Pay it forward philosophy. Independent, apolitical, non-religious. Website: app.unitedwoodfloorlayers.com
+
+BETWEEN DOORS: New project in development. Keep it mysterious. Only speak about themes: transition, choice, identity, transformation, the space between who we were and who we are becoming. Central idea: "We spend so much time trying to choose the right door that we forget to pay attention to who we become while standing between them." Never reveal plans, timelines, or unpublished details.
+
+CORE PHILOSOPHIES
+"I have never done it before, so I think I can do it." / "People are far more alike than they are different." / "Connection matters more than competition." / "Success without meaning is empty."
+
+BOUNDARIES - NEVER:
+- Invent facts or speculate
+- Discuss private or family matters
+- Mention pricing or give quotes
+- Mention pixel sponsorship (€6)
+- Mention the Dutch Wood Artist Foundation
+- Engage in political or religious discussions
+- Present assumptions as facts
+
+SERIOUS INTEREST
+If someone expresses genuine interest in commissioning, collaborating, exhibitions, media or partnerships: warmly encourage them to use the contact form on DutchWoodArtist.com. Never push or create urgency.
+
+ESSENCE
+Help people feel seen. Help people think. Behind every floor, every artwork, and every person, there is a story worth discovering. That is the spirit of Dutch Wood Artist™.`;
+
+const chatHistory = [];
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatFab = document.getElementById('chatFab');
+const chatPanel = document.getElementById('chatPanel');
+const chatClose = document.getElementById('chatClose');
+
+const chatOverlay = document.getElementById('chatOverlay');
+
+function openChat() {
+  chatPanel.classList.add('open');
+  chatOverlay.classList.add('open');
+  chatFab.style.display = 'none';
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => chatInput.focus(), 400);
+}
+
+function closeChat() {
+  chatPanel.classList.remove('open');
+  chatOverlay.classList.remove('open');
+  chatFab.style.display = 'flex';
+  document.body.style.overflow = '';
+}
+
+chatFab.addEventListener('click', openChat);
+chatClose.addEventListener('click', closeChat);
+chatOverlay.addEventListener('click', closeChat);
+
+function addMessage(text, role) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  if(role === 'bot') {
+    // Sanitize but allow our own images
+    let html = text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\n/g, '<br>');
+    // Render markdown links as clickable
+    html = html.replace(
+      /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--grain);text-decoration:underline">$1</a>'
+    );
+    // Allow only images from our /images/ folder
+    html = html.replace(
+      /&lt;img src=&quot;\.\/(images\/[\w\-\.]+\.jpg)&quot; alt=&quot;([^&]*)&quot;&gt;/g,
+      '<img src="./$1" alt="$2" style="width:100%;border-radius:8px;margin-top:.5rem;display:block">'
+    );
+    div.innerHTML = html;
+  } else {
+    div.textContent = text;
+  }
+  if(role === 'bot') {
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'chat-copy';
+    copyBtn.textContent = 'Copy';
+    copyBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(div.innerText).then(function() {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 2000);
+      });
+    });
+    div.appendChild(copyBtn);
+  }
+  chatBody.appendChild(div);
+  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function addTyping() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot typing-indicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  div.id = 'typingIndicator';
+  chatBody.appendChild(div);
+  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  return div;
+}
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if(!text) return;
+  chatInput.value = '';
+  chatSend.disabled = true;
+
+  addMessage(text, 'user');
+  chatHistory.push({ role: 'user', content: text });
+
+  const typing = addTyping();
+
+  try {
+    const response = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
+    });
+
+    const data = await response.json();
+    typing.remove();
+
+    const reply = data.reply || 'Something went wrong. Please try again.';
+
+    addMessage(reply, 'bot');
+    chatHistory.push({ role: 'assistant', content: reply });
+
+  } catch(err) {
+    typing.remove();
+    addMessage('Something went wrong. Please try again.', 'bot');
+  }
+
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener('click', sendMessage);
+chatInput.addEventListener('keydown', function(e) {
+  if(e.key === 'Enter') sendMessage();
+});
+</script>
+
+<script>
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay=(i%3)*90+'ms';
+    io.observe(el);
+  });
+
+  // Menu
+  const mt=document.getElementById('menuToggle'),fm=document.getElementById('fullmenu');
+  mt.addEventListener('click',()=>{
+    const open=fm.classList.toggle('open');
+    mt.classList.toggle('open',open);
+    mt.setAttribute('aria-expanded',open);
+    fm.setAttribute('aria-hidden',!open);
+  });
+  fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    fm.classList.remove('open');mt.classList.remove('open');
+    mt.setAttribute('aria-expanded',false);fm.setAttribute('aria-hidden',true);
+  }));
+
+  // Chat (visual placeholder)
+  const cf=document.getElementById('chatFab'),cp=document.getElementById('chatPanel'),cx=document.getElementById('chatClose');
+  cf.addEventListener('click',()=>{cp.classList.add('open');cf.style.display='none'});
+  cx.addEventListener('click',()=>{cp.classList.remove('open');cf.style.display=''});
+
+  // Nav kleurt mee na de hero
+  const navEl=document.querySelector('nav');
+  const onScroll=()=>navEl.classList.toggle('scrolled',window.scrollY>window.innerHeight-90);
+  window.addEventListener('scroll',onScroll);onScroll();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  var darkSections = document.querySelectorAll('.movement');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        nav.classList.add('light');
+      } else {
+        nav.classList.remove('light');
+      }
+    });
+  }, {threshold: 0, rootMargin: '-80px 0px -90% 0px'});
+  darkSections.forEach(function(s){ observer.observe(s); });
+})();
+</script>
+<a href="#contact-form" class="contact-sticky" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+  <div class="lightbox-nav">
+    <button onclick="lightboxPrev()">&#8592; Prev</button>
+    <button onclick="lightboxNext()">Next &#8594;</button>
+  </div>
+  <div class="lightbox-credit">© Robbert Vogtlander</div>
+</div>
+
+<script>
+var lightboxPhotos = [
+  'images/Krinkels_01_Robbert_Vogtlander.jpg',
+  'images/Krinkels_03_Robbert_Vogtlander.jpg',
+  'images/Krinkels_04_Robbert_Vogtlander.jpg',
+  'images/Krinkels_05_Robbert_Vogtlander.jpg',
+  'images/Krinkels_06_Robbert_Vogtlander.jpg',
+  'images/Krinkels_07_Robbert_Vogtlander.jpg'
+];
+var lightboxIndex = 0;
+
+function openLightbox(){
+  lightboxIndex = 0;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function updateLightbox(){
+  document.getElementById('lightboxImg').src = lightboxPhotos[lightboxIndex];
+  document.getElementById('lightboxCounter').textContent = (lightboxIndex+1) + ' / ' + lightboxPhotos.length;
+}
+function lightboxNext(){
+  lightboxIndex = (lightboxIndex + 1) % lightboxPhotos.length;
+  updateLightbox();
+}
+function lightboxPrev(){
+  lightboxIndex = (lightboxIndex - 1 + lightboxPhotos.length) % lightboxPhotos.length;
+  updateLightbox();
+}
+document.addEventListener('keydown', function(e){
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key === 'ArrowRight') lightboxNext();
+  if(e.key === 'ArrowLeft') lightboxPrev();
+  if(e.key === 'Escape') closeLightbox();
+});
+</script>
+
+<script>
+// Rate limiting + input sanitization for contact form
+(function(){
+  var form = document.querySelector('.contact-form');
+  if(!form) return;
+
+  var lastSubmit = 0;
+  var RATE_LIMIT_MS = 60000; // 1 minuut tussen submissions
+
+  function sanitize(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;')
+      .trim()
+      .substring(0, 2000); // max 2000 tekens per veld
+  }
+
+  form.addEventListener('submit', function(e) {
+    // Rate limiting
+    var now = Date.now();
+    if(now - lastSubmit < RATE_LIMIT_MS) {
+      e.preventDefault();
+      alert('Please wait a moment before sending another message.');
+      return false;
+    }
+    lastSubmit = now;
+
+    // Sanitize alle input velden
+    var inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+    inputs.forEach(function(input) {
+      input.value = sanitize(input.value);
+    });
+  });
+})();
+
+// Copy entire chat
+document.getElementById('chatCopyAll').addEventListener('click', function() {
+  const messages = chatBody.querySelectorAll('.chat-msg');
+  let text = '';
+  messages.forEach(function(msg) {
+    const role = msg.classList.contains('user') ? 'You' : 'Jakko AI';
+    const msgText = msg.innerText.replace('Copy', '').replace('Copied!', '').trim();
+    text += role + ':\n' + msgText + '\n\n';
+  });
+  navigator.clipboard.writeText(text.trim()).then(function() {
+    const btn = document.getElementById('chatCopyAll');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Copy chat'; }, 2000);
+  });
+});
+</script>
+</body>
 </html<!-- NEWS -->
 <section class="news" id="news">
   <div class="wrap">
