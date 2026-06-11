@@ -636,6 +636,8 @@ function openChat() {
   chatFab.style.display = 'none';
   document.body.style.overflow = 'hidden';
   document.querySelector('nav').style.pointerEvents = 'none';
+  var cb = document.querySelector('.contact-sticky');
+  if(cb) cb.style.display = 'none';
 }
 
 function closeChat() {
@@ -645,7 +647,8 @@ function closeChat() {
   document.body.style.overflow = '';
   chatPanel.style.height = '';
   chatPanel.style.top = '';
-  // Re-enable nav after short delay so close click doesn't trigger hamburger
+  var cb = document.querySelector('.contact-sticky');
+  if(cb) cb.style.display = 'flex';
   setTimeout(function() {
     document.querySelector('nav').style.pointerEvents = '';
     var fm = document.getElementById('fullmenu');
