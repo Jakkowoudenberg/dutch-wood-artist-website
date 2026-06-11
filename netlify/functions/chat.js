@@ -170,13 +170,25 @@ exports.handler = async function(event, context) {
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 1000,
       system: SYSTEM_PROMPT,
-      messages: messages
+      messages: messages,
+      tools: [
+        {
+          type: 'web_search_20250305',
+          name: 'web_search'
+        }
+      ]
     });
+
+    // Collect all text blocks from response (may include tool use)
+    const reply = response.content
+      .filter(block => block.type === 'text')
+      .map(block => block.text)
+      .join('\n') || 'Something went wrong. Please try again.';
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ reply: response.content[0].text })
+      body: JSON.stringify({ reply })
     };
 
   } catch(err) {
