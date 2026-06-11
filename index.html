@@ -108,6 +108,9 @@
   /* CHAT OVERLAY */
   .chat-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,9,.6);z-index:45;backdrop-filter:blur(4px)}
   .chat-overlay.open{display:block}
+  .chat-copy{position:absolute;top:.5rem;right:.5rem;background:none;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;font-size:.65rem;cursor:pointer;color:var(--walnut-soft);opacity:0;transition:opacity .2s;font-family:Inter,sans-serif;letter-spacing:.04em}
+  .chat-msg.bot:hover .chat-copy{opacity:1}
+  .chat-msg{position:relative}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -670,6 +673,18 @@ function addMessage(text, role) {
     div.innerHTML = html;
   } else {
     div.textContent = text;
+  }
+  if(role === 'bot') {
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'chat-copy';
+    copyBtn.textContent = 'Copy';
+    copyBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(div.innerText).then(function() {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 2000);
+      });
+    });
+    div.appendChild(copyBtn);
   }
   chatBody.appendChild(div);
   chatBody.scrollTop = chatBody.scrollHeight;
