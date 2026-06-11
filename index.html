@@ -569,6 +569,7 @@
       <div class="ct">Jakko AI</div>
       <div class="cs">In Jakko's words</div>
     </div>
+    <button id="chatCopyAll" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
     <button class="cx" id="chatClose" aria-label="Close">×</button>
   </div>
   <div class="chat-body" id="chatBody">
@@ -882,6 +883,22 @@ document.addEventListener('keydown', function(e){
     });
   });
 })();
+
+// Copy entire chat
+document.getElementById('chatCopyAll').addEventListener('click', function() {
+  const messages = chatBody.querySelectorAll('.chat-msg');
+  let text = '';
+  messages.forEach(function(msg) {
+    const role = msg.classList.contains('user') ? 'You' : 'Jakko AI';
+    const msgText = msg.innerText.replace('Copy', '').replace('Copied!', '').trim();
+    text += role + ':\n' + msgText + '\n\n';
+  });
+  navigator.clipboard.writeText(text.trim()).then(function() {
+    const btn = document.getElementById('chatCopyAll');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Copy chat'; }, 2000);
+  });
+});
 </script>
 </body>
 </html>
