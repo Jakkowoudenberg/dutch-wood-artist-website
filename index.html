@@ -745,6 +745,7 @@ async function sendMessage() {
   }
 
   chatSend.disabled = false;
+  chatInput.blur();
   if(window.innerWidth > 600) chatInput.focus();
 }
 
