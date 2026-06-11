@@ -957,16 +957,23 @@ document.getElementById('contactOverlayClose').addEventListener('click', functio
   contactOverlayPanel.classList.remove('open');
   document.body.style.overflow = '';
 });
-contactOverlayBg.addEventListener('click', function() {
-  contactOverlayBg.classList.remove('open');
-  contactOverlayPanel.classList.remove('open');
-  document.body.style.overflow = '';
-});
+const contactOverlayBg = document.getElementById('contactOverlayBg');
+const contactOverlayPanel = document.getElementById('contactOverlayPanel');
+const contactOverlayClose = document.getElementById('contactOverlayClose');
+
 function openContactOverlay() {
   contactOverlayBg.classList.add('open');
   contactOverlayPanel.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+function closeContactOverlay() {
+  contactOverlayBg.classList.remove('open');
+  contactOverlayPanel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if(contactOverlayClose) contactOverlayClose.addEventListener('click', closeContactOverlay);
+if(contactOverlayBg) contactOverlayBg.addEventListener('click', closeContactOverlay);
+
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.open-contact').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
