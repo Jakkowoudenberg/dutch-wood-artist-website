@@ -948,10 +948,12 @@ function openContactOverlay() {
   contactOverlayPanel.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-document.querySelectorAll('.open-contact').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    openContactOverlay();
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.open-contact').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openContactOverlay();
+    });
   });
 });
 </script>
