@@ -179,7 +179,7 @@
   @media(max-width:720px){.fullmenu-inner{grid-template-columns:1fr;gap:3rem}.fullmenu-foot{position:static;margin-top:3rem}}
 
   /* CHAT (visual placeholder) */
-  .chat-fab{position:fixed;bottom:6rem;right:1.6rem;z-index:45;display:flex;align-items:center;gap:.7rem;
+  .chat-fab{position:fixed;bottom:6rem;right:1.6rem;z-index:43;display:flex;align-items:center;gap:.7rem;
     background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.85rem 1.3rem;cursor:pointer;
     box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:.9rem;font-weight:400;
     transition:transform .3s,box-shadow .3s}
@@ -650,8 +650,14 @@ function closeChat() {
 }
 
 chatFab.addEventListener('click', openChat);
-chatClose.addEventListener('click', closeChat);
-chatOverlay.addEventListener('click', closeChat);
+chatClose.addEventListener('click', function(e) {
+  e.stopPropagation();
+  closeChat();
+});
+chatOverlay.addEventListener('click', function(e) {
+  e.stopPropagation();
+  closeChat();
+});
 
 function addMessage(text, role) {
   const div = document.createElement('div');
