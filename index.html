@@ -643,6 +643,11 @@ function addMessage(text, role) {
     let html = text
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\n/g, '<br>');
+    // Render markdown links as clickable
+    html = html.replace(
+      /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--grain);text-decoration:underline">$1</a>'
+    );
     // Allow only images from our /images/ folder
     html = html.replace(
       /&lt;img src=&quot;\.\/(images\/[\w\-\.]+\.jpg)&quot; alt=&quot;([^&]*)&quot;&gt;/g,
