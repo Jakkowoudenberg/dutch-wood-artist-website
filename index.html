@@ -633,6 +633,7 @@ function openChat() {
   chatOverlay.classList.add('open');
   chatFab.style.display = 'none';
   document.body.style.overflow = 'hidden';
+  document.querySelector('nav').style.pointerEvents = 'none';
 }
 
 function closeChat() {
@@ -642,11 +643,14 @@ function closeChat() {
   document.body.style.overflow = '';
   chatPanel.style.height = '';
   chatPanel.style.top = '';
-  // Always close fullmenu when chat closes
-  var fm = document.getElementById('fullmenu');
-  var mt = document.getElementById('menuToggle');
-  if(fm) { fm.classList.remove('open'); fm.setAttribute('aria-hidden','true'); }
-  if(mt) { mt.classList.remove('open'); mt.setAttribute('aria-expanded','false'); }
+  // Re-enable nav after short delay so close click doesn't trigger hamburger
+  setTimeout(function() {
+    document.querySelector('nav').style.pointerEvents = '';
+    var fm = document.getElementById('fullmenu');
+    var mt = document.getElementById('menuToggle');
+    if(fm) { fm.classList.remove('open'); fm.setAttribute('aria-hidden','true'); }
+    if(mt) { mt.classList.remove('open'); mt.setAttribute('aria-expanded','false'); }
+  }, 300);
 }
 
 chatFab.addEventListener('click', openChat);
