@@ -633,7 +633,7 @@ function openChat() {
   chatOverlay.classList.add('open');
   chatFab.style.display = 'none';
   document.body.style.overflow = 'hidden';
-  setTimeout(() => chatInput.focus(), 400);
+  // No autofocus on mobile to prevent keyboard popup
 }
 
 function closeChat() {
@@ -733,7 +733,7 @@ async function sendMessage() {
   }
 
   chatSend.disabled = false;
-  chatInput.focus();
+  if(window.innerWidth > 600) chatInput.focus();
 }
 
 chatSend.addEventListener('click', sendMessage);
