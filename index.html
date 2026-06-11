@@ -170,7 +170,7 @@
   .fullmenu.open{clip-path:circle(150% at calc(100% - 3.5rem) 2.6rem);pointer-events:auto}
   .fullmenu-inner{width:100%;max-width:1180px;margin:0 auto;padding:0 7vw;display:grid;grid-template-columns:1fr 1fr;gap:4vw;position:relative}
   .fullmenu-col .fm-eyebrow{display:block;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:1.8rem;font-weight:500}
-  .fullmenu-col a{display:block;font-family:'Fraunces';font-weight:300;font-size:clamp(2rem,5vw,3.6rem);color:var(--paper);text-decoration:none;padding:.35rem 0;opacity:.85;transition:opacity .3s,transform .3s}
+  .fullmenu-col a{display:block;font-family:'Fraunces';font-weight:300;font-size:clamp(1.3rem,4vw,3.6rem);color:var(--paper);text-decoration:none;padding:.25rem 0;opacity:.85;transition:opacity .3s,transform .3s}
   .fullmenu-col a:hover{opacity:1;transform:translateX(10px);color:var(--grain-light)}
   .fullmenu-col a.fm-soon{opacity:.45;font-size:clamp(1.3rem,3vw,1.9rem)}
   .fullmenu-col a.fm-soon em{font-style:italic;font-size:.8rem;letter-spacing:.05em}
@@ -350,6 +350,7 @@
 
 <!-- FULLSCREEN MENU -->
 <div class="fullmenu" id="fullmenu" aria-hidden="true">
+  <button id="fullmenuClose" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--paper);font-size:1.8rem;cursor:pointer;line-height:1;opacity:.7;z-index:60" aria-label="Close menu">×</button>
   <div class="fullmenu-inner">
     <div class="fullmenu-col">
       <span class="fm-eyebrow">Explore</span>
@@ -765,6 +766,13 @@ chatInput.addEventListener('keydown', function(e) {
     mt.setAttribute('aria-expanded',open);
     fm.setAttribute('aria-hidden',!open);
     document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.getElementById('fullmenuClose').addEventListener('click', ()=>{
+    fm.classList.remove('open');
+    mt.classList.remove('open');
+    mt.setAttribute('aria-expanded', false);
+    fm.setAttribute('aria-hidden', true);
+    document.body.style.overflow = '';
   });
   fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     fm.classList.remove('open');mt.classList.remove('open');
