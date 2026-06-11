@@ -104,6 +104,10 @@
   .typing-indicator span:nth-child(2){animation-delay:.2s}
   .typing-indicator span:nth-child(3){animation-delay:.4s}
   @keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+
+  /* CHAT OVERLAY */
+  .chat-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,9,.6);z-index:45;backdrop-filter:blur(4px)}
+  .chat-overlay.open{display:block}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -164,15 +168,13 @@
   .chat-fab:hover{transform:translateY(-3px);box-shadow:0 22px 50px -12px rgba(46,36,27,.6)}
   .chat-fab .dot{width:8px;height:8px;border-radius:50%;background:var(--grain-light);animation:pulse 2.4s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,168,120,.5)}70%{box-shadow:0 0 0 10px rgba(201,168,120,0)}100%{box-shadow:0 0 0 0 rgba(201,168,120,0)}}
-  .chat-panel{position:fixed;bottom:1.6rem;right:1.6rem;z-index:46;width:min(370px,calc(100vw - 2rem));
-    background:var(--paper);border-radius:18px;box-shadow:0 30px 70px -20px rgba(46,36,27,.55);overflow:hidden;
-    transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;transition:all .45s cubic-bezier(.2,.7,.2,1);border:1px solid var(--line);display:flex;flex-direction:column;max-height:calc(100vh - 4rem)}
-  .chat-panel.open{transform:none;opacity:1;pointer-events:auto}
+  .chat-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:46;width:min(720px,calc(100vw - 2rem));height:min(620px,calc(100vh - 4rem));background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);overflow:hidden;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1);border:1px solid var(--line);display:flex;flex-direction:column}
+  .chat-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
   .chat-head{background:var(--walnut);color:var(--paper);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between}
   .chat-head .ct{font-family:'Fraunces';font-size:1.05rem}
   .chat-head .cs{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
   .chat-head .cx{background:none;border:none;color:var(--paper);font-size:1.3rem;cursor:pointer;opacity:.7;line-height:1}
-  .chat-body{padding:1.4rem 1.3rem;height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
+  .chat-body{padding:1.4rem 1.8rem;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
   .chat-msg{font-size:.92rem;line-height:1.6;padding:.8rem 1rem;border-radius:14px;max-width:88%}
   .chat-msg.bot{background:var(--paper-deep);color:var(--walnut);border-bottom-left-radius:4px}
   .chat-foot{padding:.4rem 1rem 1.1rem}
@@ -556,6 +558,7 @@
 </footer>
 
 <!-- CHAT LIVE -->
+<div class="chat-overlay" id="chatOverlay"></div>
 <button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
@@ -624,16 +627,26 @@ const chatFab = document.getElementById('chatFab');
 const chatPanel = document.getElementById('chatPanel');
 const chatClose = document.getElementById('chatClose');
 
-chatFab.addEventListener('click', function() {
-  chatPanel.classList.toggle('open');
-  chatFab.style.display = chatPanel.classList.contains('open') ? 'none' : 'flex';
-  if(chatPanel.classList.contains('open')) chatInput.focus();
-});
+const chatOverlay = document.getElementById('chatOverlay');
 
-chatClose.addEventListener('click', function() {
+function openChat() {
+  chatPanel.classList.add('open');
+  chatOverlay.classList.add('open');
+  chatFab.style.display = 'none';
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => chatInput.focus(), 400);
+}
+
+function closeChat() {
   chatPanel.classList.remove('open');
+  chatOverlay.classList.remove('open');
   chatFab.style.display = 'flex';
-});
+  document.body.style.overflow = '';
+}
+
+chatFab.addEventListener('click', openChat);
+chatClose.addEventListener('click', closeChat);
+chatOverlay.addEventListener('click', closeChat);
 
 function addMessage(text, role) {
   const div = document.createElement('div');
