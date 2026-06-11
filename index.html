@@ -688,7 +688,7 @@ function addMessage(text, role) {
     div.appendChild(copyBtn);
   }
   chatBody.appendChild(div);
-  chatBody.scrollTop = chatBody.scrollHeight;
+  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function addTyping() {
@@ -697,7 +697,7 @@ function addTyping() {
   div.innerHTML = '<span></span><span></span><span></span>';
   div.id = 'typingIndicator';
   chatBody.appendChild(div);
-  chatBody.scrollTop = chatBody.scrollHeight;
+  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
   return div;
 }
 
