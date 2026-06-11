@@ -633,7 +633,6 @@ function openChat() {
   chatOverlay.classList.add('open');
   chatFab.style.display = 'none';
   document.body.style.overflow = 'hidden';
-  // No autofocus on mobile to prevent keyboard popup
 }
 
 function closeChat() {
@@ -643,15 +642,6 @@ function closeChat() {
   document.body.style.overflow = '';
   chatPanel.style.height = '';
   chatPanel.style.top = '';
-  // Close fullmenu
-  const fullmenu = document.getElementById('fullmenu');
-  const menuToggleBtn = document.getElementById('menuToggle');
-  if(fullmenu && fullmenu.classList.contains('open')) {
-    fullmenu.classList.remove('open');
-    menuToggleBtn && menuToggleBtn.classList.remove('open');
-    menuToggleBtn && menuToggleBtn.setAttribute('aria-expanded', false);
-  }
-  if(fullmenu) fullmenu.setAttribute('aria-hidden', 'true');
 }
 
 chatFab.addEventListener('click', openChat);
