@@ -118,7 +118,6 @@
   .gemikigai p{font-size:1rem;color:var(--walnut-soft);max-width:48ch;margin:0 auto 1rem;line-height:1.8;font-style:italic}
   .gemikigai .in-dev{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block}
 
-  /* CONTACT OVERLAY */
   .contact-overlay-bg{display:none;position:fixed;inset:0;background:rgba(20,14,9,.7);z-index:55;backdrop-filter:blur(4px)}
   .contact-overlay-bg.open{display:block}
   .contact-overlay-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:56;width:min(560px,calc(100vw - 2rem));max-height:calc(100vh - 4rem);overflow-y:auto;background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);padding:2.5rem;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1)}
@@ -516,8 +515,9 @@
       </div>
     </div>
 
-    <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. <a href="#" class="more open-contact" style="margin-top:1.5rem;display:inline-block">Get in touch</a> Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
+    <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
 
+    <a href="#" class="more open-contact reveal" style="margin-top:2rem;display:inline-block">Get in touch</a>
   </div>
 </section>
 
@@ -555,68 +555,9 @@
   </div>
 </section>
 
-<!-- GEMIKIGAI -->
-<section class="gemikigai" id="gemikigai">
-  <div class="wrap">
-    <h2 class="reveal">Gemikigai&#8482; by Dutch Wood Artist</h2>
-    <p class="reveal"><strong>Ikigai</strong> is the Japanese philosophy of finding your reason for being. <strong>Feng shui</strong> is the ancient Chinese art of creating harmony between people and their space. Gemikigai brings both into the floor beneath your feet.</p>
-    <span class="in-dev reveal">In development</span>
-  </div>
-</section>
-
-<footer>
-  <span class="tm"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"><span style="font-size:1rem;font-family:Inter,sans-serif;line-height:1;margin-top:45px">&#174;</span></span></span>
-  <span>Schagen, The Netherlands</span>
-</footer>
-
-<!-- BETWEEN DOORS -->
-<section class="contact" id="between-doors">
-  <div class="wrap">
-    <div class="eyebrow reveal">Between Doors</div>
-    <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
-    <span style="font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:#F4EFE6;margin-top:2rem;display:block;opacity:.9">Project in development</span>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" style="padding:10vh 0;background:var(--paper)">
-  <div class="wrap">
-    <div id="contact-form" style="margin-top:5rem;border-top:1px solid rgba(244,239,230,.15);padding-top:3rem">
-      <div class="eyebrow" style="color:rgba(244,239,230,.7);margin-bottom:1rem">Contact</div>
-      <p style="color:rgba(244,239,230,.6);font-size:.9rem;max-width:44ch;margin:0 auto 2rem;line-height:1.7">Currently accepting a limited number of new commissions. I read and respond to every message personally.</p>
-      <form class="contact-form" name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><input name="bot-field"></p>
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-row">
-          <label for="phone">Phone</label>
-          <div style="display:flex;gap:.5rem">
-            <input type="text" name="phone_country" placeholder="+31" required style="width:80px;background:rgba(255,255,255,.08);border:1px solid rgba(244,239,230,.2);border-radius:4px;padding:.8rem .6rem;color:#F4EFE6;font-family:Inter,sans-serif;font-size:.9rem;outline:none">
-            <input type="tel" id="phone" name="phone" placeholder="6 12345678" required style="flex:1">
-          </div>
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
-        </div>
-        <button type="submit">Send message</button>
-        <p class="form-success" id="formSuccess">Thank you. I will be in touch soon.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-
 <!-- CHAT LIVE -->
 <div class="chat-overlay" id="chatOverlay"></div>
+<a href="#" class="contact-sticky open-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
 <button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
@@ -846,7 +787,7 @@ chatInput.addEventListener('keydown', function(e) {
   darkSections.forEach(function(s){ observer.observe(s); });
 })();
 </script>
-
+<a href="#contact-form" class="contact-sticky" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
@@ -969,23 +910,23 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
     <input type="hidden" name="form-name" value="contact">
     <p style="display:none"><input name="bot-field"></p>
     <div class="form-row">
-      <label for="name2">Name</label>
-      <input type="text" id="name2" name="name" placeholder="Your name" required>
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required>
     </div>
     <div class="form-row">
-      <label for="email2">Email</label>
-      <input type="email" id="email2" name="email" placeholder="your@email.com" required>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@email.com" required>
     </div>
     <div class="form-row">
-      <label for="phone2">Phone</label>
+      <label>Phone</label>
       <div style="display:flex;gap:.5rem">
-        <input type="text" name="phone_country" placeholder="+31" required style="width:80px;background:rgba(255,255,255,.08);border:1px solid rgba(46,36,27,.15);border-radius:4px;padding:.8rem .6rem;color:var(--walnut);font-family:Inter,sans-serif;font-size:.9rem;outline:none">
-        <input type="tel" id="phone2" name="phone" placeholder="6 12345678" required style="flex:1">
+        <input type="text" name="phone_country" placeholder="+31" required style="width:80px">
+        <input type="tel" name="phone" placeholder="6 12345678" required style="flex:1">
       </div>
     </div>
     <div class="form-row">
-      <label for="message2">Message</label>
-      <textarea id="message2" name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
+      <label>Message</label>
+      <textarea name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
     </div>
     <button type="submit">Send message</button>
   </form>
@@ -993,25 +934,23 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
 </div>
 
 <script>
-// Contact overlay
 const contactOverlayBg = document.getElementById('contactOverlayBg');
 const contactOverlayPanel = document.getElementById('contactOverlayPanel');
-const contactOverlayClose = document.getElementById('contactOverlayClose');
-
+document.getElementById('contactOverlayClose').addEventListener('click', function() {
+  contactOverlayBg.classList.remove('open');
+  contactOverlayPanel.classList.remove('open');
+  document.body.style.overflow = '';
+});
+contactOverlayBg.addEventListener('click', function() {
+  contactOverlayBg.classList.remove('open');
+  contactOverlayPanel.classList.remove('open');
+  document.body.style.overflow = '';
+});
 function openContactOverlay() {
   contactOverlayBg.classList.add('open');
   contactOverlayPanel.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeContactOverlay() {
-  contactOverlayBg.classList.remove('open');
-  contactOverlayPanel.classList.remove('open');
-  document.body.style.overflow = '';
-}
-contactOverlayClose.addEventListener('click', closeContactOverlay);
-contactOverlayBg.addEventListener('click', closeContactOverlay);
-
-// Connect all "get in touch" buttons
 document.querySelectorAll('.open-contact').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
     e.preventDefault();
