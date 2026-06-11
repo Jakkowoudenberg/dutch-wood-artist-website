@@ -641,6 +641,12 @@ function closeChat() {
   chatOverlay.classList.remove('open');
   chatFab.style.display = 'flex';
   document.body.style.overflow = '';
+  // Reset mobile chat height
+  chatPanel.style.height = '';
+  chatPanel.style.top = '';
+  // Make sure fullmenu is closed
+  const fullmenu = document.getElementById('fullmenu');
+  if(fullmenu) fullmenu.setAttribute('aria-hidden', 'true');
 }
 
 chatFab.addEventListener('click', openChat);
