@@ -117,6 +117,16 @@
   .gemikigai h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;letter-spacing:.02em}
   .gemikigai p{font-size:1rem;color:var(--walnut-soft);max-width:48ch;margin:0 auto 1rem;line-height:1.8;font-style:italic}
   .gemikigai .in-dev{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block}
+
+  /* CONTACT OVERLAY */
+  .contact-overlay-bg{display:none;position:fixed;inset:0;background:rgba(20,14,9,.7);z-index:55;backdrop-filter:blur(4px)}
+  .contact-overlay-bg.open{display:block}
+  .contact-overlay-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:56;width:min(560px,calc(100vw - 2rem));max-height:calc(100vh - 4rem);overflow-y:auto;background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);padding:2.5rem;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1)}
+  .contact-overlay-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
+  .contact-overlay-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+  .contact-overlay-head h3{font-family:'Fraunces',serif;font-weight:300;font-size:1.6rem}
+  .contact-overlay-close{background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--walnut);line-height:1;opacity:.6}
+  .contact-overlay-close:hover{opacity:1}
   *{margin:0;padding:0;box-sizing:border-box}
   .photo-credit{display:block;font-size:.7rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
@@ -506,7 +516,7 @@
       </div>
     </div>
 
-    <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
+    <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. <a href="#" class="more open-contact" style="margin-top:1.5rem;display:inline-block">Get in touch</a> Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
 
   </div>
 </section>
@@ -519,6 +529,29 @@
     <div class="news-list" id="newsList">
       <!-- nieuws items komen hier -->
     </div>
+  </div>
+</section>
+
+<!-- GEMIKIGAI -->
+<section class="gemikigai" id="gemikigai">
+  <div class="wrap">
+    <h2 class="reveal">Gemikigai&#8482; by Dutch Wood Artist</h2>
+    <p class="reveal"><strong>Ikigai</strong> is the Japanese philosophy of finding your reason for being. <strong>Feng shui</strong> is the ancient Chinese art of creating harmony between people and their space. Gemikigai brings both into the floor beneath your feet.</p>
+    <span class="in-dev reveal">In development</span>
+  </div>
+</section>
+
+<footer>
+  <span class="tm"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"><span style="font-size:1rem;font-family:Inter,sans-serif;line-height:1;margin-top:45px">&#174;</span></span></span>
+  <span>Schagen, The Netherlands</span>
+</footer>
+
+<!-- BETWEEN DOORS -->
+<section class="contact" id="between-doors">
+  <div class="wrap">
+    <div class="eyebrow reveal">Between Doors</div>
+    <h2 class="display reveal">We spend so much time trying to choose the right door, that we forget to pay attention to <em>who we become while standing between them.</em></h2>
+    <span style="font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:#F4EFE6;margin-top:2rem;display:block;opacity:.9">Project in development</span>
   </div>
 </section>
 
@@ -813,7 +846,7 @@ chatInput.addEventListener('keydown', function(e) {
   darkSections.forEach(function(s){ observer.observe(s); });
 })();
 </script>
-<a href="#contact-form" class="contact-sticky" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
+
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
@@ -919,6 +952,70 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
     const btn = document.getElementById('chatCopyAll');
     btn.textContent = 'Copied!';
     setTimeout(function(){ btn.textContent = 'Copy chat'; }, 2000);
+  });
+});
+</script>
+
+
+<!-- CONTACT OVERLAY -->
+<div class="contact-overlay-bg" id="contactOverlayBg"></div>
+<div class="contact-overlay-panel" id="contactOverlayPanel">
+  <div class="contact-overlay-head">
+    <h3>Get in touch</h3>
+    <button class="contact-overlay-close" id="contactOverlayClose">×</button>
+  </div>
+  <p style="font-size:.9rem;color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
+  <form class="contact-form" name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p style="display:none"><input name="bot-field"></p>
+    <div class="form-row">
+      <label for="name2">Name</label>
+      <input type="text" id="name2" name="name" placeholder="Your name" required>
+    </div>
+    <div class="form-row">
+      <label for="email2">Email</label>
+      <input type="email" id="email2" name="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-row">
+      <label for="phone2">Phone</label>
+      <div style="display:flex;gap:.5rem">
+        <input type="text" name="phone_country" placeholder="+31" required style="width:80px;background:rgba(255,255,255,.08);border:1px solid rgba(46,36,27,.15);border-radius:4px;padding:.8rem .6rem;color:var(--walnut);font-family:Inter,sans-serif;font-size:.9rem;outline:none">
+        <input type="tel" id="phone2" name="phone" placeholder="6 12345678" required style="flex:1">
+      </div>
+    </div>
+    <div class="form-row">
+      <label for="message2">Message</label>
+      <textarea id="message2" name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
+    </div>
+    <button type="submit">Send message</button>
+  </form>
+  <p style="font-size:.62rem;color:var(--walnut-soft);opacity:.6;text-align:center;margin-top:1rem">Jakko AI can make mistakes. Always verify important information.</p>
+</div>
+
+<script>
+// Contact overlay
+const contactOverlayBg = document.getElementById('contactOverlayBg');
+const contactOverlayPanel = document.getElementById('contactOverlayPanel');
+const contactOverlayClose = document.getElementById('contactOverlayClose');
+
+function openContactOverlay() {
+  contactOverlayBg.classList.add('open');
+  contactOverlayPanel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeContactOverlay() {
+  contactOverlayBg.classList.remove('open');
+  contactOverlayPanel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+contactOverlayClose.addEventListener('click', closeContactOverlay);
+contactOverlayBg.addEventListener('click', closeContactOverlay);
+
+// Connect all "get in touch" buttons
+document.querySelectorAll('.open-contact').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    openContactOverlay();
   });
 });
 </script>
