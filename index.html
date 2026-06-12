@@ -331,6 +331,40 @@
   /* reveal on scroll */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
+  
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+
+    /* Work grid: single column */
+    .work{grid-template-columns:1fr;gap:2.5rem}
+    .work.flip .work-visual{order:0}
+    .work-visual{min-height:260px}
+    .work-text{max-width:100%}
+    .work-text p{max-width:100%}
+
+    /* Commissions grid */
+    .commission-grid{grid-template-columns:1fr}
+
+    /* Movement section */
+    .movement .work{grid-template-columns:1fr}
+
+    /* Between Doors */
+    #between-doors .work{grid-template-columns:1fr}
+    #between-doors .work.flip .work-visual{order:0}
+
+    /* Maker section */
+    .maker-inner{grid-template-columns:1fr}
+
+    /* Wrap padding */
+    .wrap{padding:0 5vw}
+
+    /* Hero */
+    .hero-inner{padding:3rem 5vw 4rem}
+
+    /* Section padding */
+    .why,.oeuvre,.maker,.commissions,.movement,.gemikigai{padding:10vh 0}
+  }
+
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
