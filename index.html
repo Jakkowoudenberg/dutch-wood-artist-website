@@ -855,6 +855,7 @@ chatInput.addEventListener('keydown', function(e) {
   fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     fm.classList.remove('open');mt.classList.remove('open');
     mt.setAttribute('aria-expanded',false);fm.setAttribute('aria-hidden',true);
+    document.body.style.overflow='';
   }));
 
   // Chat (visual placeholder)
