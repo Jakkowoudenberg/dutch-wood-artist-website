@@ -193,7 +193,7 @@
   .chat-head .ct{font-family:'Fraunces';font-size:1.05rem}
   .chat-head .cs{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
   .chat-head .cx{background:none;border:none;color:var(--paper);font-size:1.3rem;cursor:pointer;opacity:.7;line-height:1}
-  @media(max-width:600px){.chat-head{flex-direction:row-reverse}.cx{margin-right:auto;margin-left:0}#chatCopyAll{position:static;margin-left:1rem;transform:none}}
+  @media(max-width:600px){.chat-head{flex-direction:row-reverse}.cx{margin-right:auto;margin-left:0}#chatCopyAll{}}
   .chat-body{padding:1.4rem 1.8rem;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
   .chat-msg{font-size:.92rem;line-height:1.6;padding:.8rem 1rem;border-radius:14px;max-width:88%}
   .chat-msg.bot{background:var(--paper-deep);color:var(--walnut);border-bottom-left-radius:4px}
@@ -563,13 +563,12 @@
 <button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
+    <button class="cx" id="chatClose" aria-label="Close">×</button>
     <div>
       <div class="ct">Jakko AI</div>
       <div class="cs">In Jakko's words</div>
     </div>
-    <button id="chatCopyAll" style="position:absolute;left:50%;transform:translateX(-50%)" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
-    <button class="cx" id="chatClose" aria-label="Close">×</button>
-  </div>
+    <button id="chatCopyAll" style="position:absolute;left:50%;transform:translateX(-50%)" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button></div>
   <div class="chat-body" id="chatBody">
     <div class="chat-msg bot">Hi. Every floor has a story. Every space has something it wants to say. I'm here to help you find yours — or just to talk about wood, craft, ideas, and what makes something truly unforgettable. Got a project, an idea, or just a question? What brings you here?</div>
   </div>
