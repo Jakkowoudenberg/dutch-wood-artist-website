@@ -243,6 +243,7 @@
   .oeuvre .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:1rem;color:var(--walnut-soft)}
 
   .work{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;margin-bottom:13vh}
+  @media(max-width:700px){.work{grid-template-columns:1fr;gap:2rem}.work.flip .work-visual{order:0}.work-visual{min-height:280px}}
   .work:last-child{margin-bottom:0}
   .work.flip .work-visual{order:2}
   .work-visual{aspect-ratio:4/3;border-radius:3px;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,36,27,.5)}
