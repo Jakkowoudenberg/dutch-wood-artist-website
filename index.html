@@ -189,7 +189,7 @@
   .chat-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:46;width:min(720px,calc(100vw - 2rem));height:min(620px,calc(100svh - 4rem));background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);overflow:hidden;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1);border:1px solid var(--line);display:flex;flex-direction:column}
   .chat-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
   @media(max-width:600px){.chat-panel{top:0;left:0;transform:none!important;width:100vw!important;height:100dvh!important;border-radius:0}.chat-panel.open{transform:none!important}.chat-body{flex:1;overflow-y:auto}.chat-foot{flex-shrink:0;position:sticky;bottom:0;background:var(--paper)}}
-  .chat-head{background:var(--walnut);color:var(--paper);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between}
+  .chat-head{background:var(--walnut);color:var(--paper);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;position:relative}
   .chat-head .ct{font-family:'Fraunces';font-size:1.05rem}
   .chat-head .cs{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
   .chat-head .cx{background:none;border:none;color:var(--paper);font-size:1.3rem;cursor:pointer;opacity:.7;line-height:1}
@@ -567,7 +567,7 @@
       <div class="ct">Jakko AI</div>
       <div class="cs">In Jakko's words</div>
     </div>
-    <button id="chatCopyAll" style="margin-right:auto" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
+    <button id="chatCopyAll" style="position:absolute;left:50%;transform:translateX(-50%)" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
     <button class="cx" id="chatClose" aria-label="Close">×</button>
   </div>
   <div class="chat-body" id="chatBody">
