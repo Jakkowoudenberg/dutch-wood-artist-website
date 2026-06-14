@@ -1,0 +1,21 @@
+{
+  "name": "Dutch Wood Artist",
+  "short_name": "DWA",
+  "description": "Monumental art floors for buildings that refuse to be ordinary.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2E241B",
+  "theme_color": "#2E241B",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
