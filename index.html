@@ -232,7 +232,7 @@
     background:#1c140c;
     overflow:hidden;
   }
-  .hero-img{position:absolute;inset:0;background-image:url('images/Krinkels_03_Robbert_Vogtlander.jpg');background-size:cover;background-position:center;z-index:0}
+  .hero-img{position:absolute;inset:0;background-image:url('images/Krinkels_03_Robbert_Vogtlander.jpg');background-image:image-set(url('images/Krinkels_03_Robbert_Vogtlander.webp') type("image/webp"),url('images/Krinkels_03_Robbert_Vogtlander.jpg') type("image/jpeg"));background-size:cover;background-position:center;z-index:0}
   /* leesbaarheids-gradient onderaan, beeld blijft licht */
   .hero::after{
     content:"";position:absolute;inset:0;z-index:1;
@@ -509,7 +509,7 @@
 
     <!-- Nightwatch -->
     <div class="work reveal">
-      <div class="work-visual work-photo"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:left;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</p><img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at the NWFA Convention, Orlando"></div>
+      <div class="work-visual work-photo"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:left;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</p><picture><source srcset="images/Foto_NWFA_met_sponsors_Orlando.webp" type="image/webp"><img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at the NWFA Convention, Orlando" width="1920" height="1436" loading="lazy" decoding="async"></picture></div>
       <div class="work-text">
         <h3 class="display" style="font-size:clamp(1.4rem,3.5vw,2.8rem);white-space:nowrap">The Night Watch in Wood</h3>
         <div class="meta">195,000 pixels · 52 wood species · 4 years</div>
@@ -522,7 +522,7 @@
 
     <!-- INSSAEI -->
     <div class="work flip reveal">
-      <div style="order:2;width:100%;overflow:hidden"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:right;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">© Robbert Vogtlander</p><div class="work-visual v-inssaei"><img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI voor Krinkels, Breda" style="width:100%;height:100%;object-fit:cover;object-position:center"></div><button onclick="openLightbox()" class="more" style="margin-top:1rem;background:none;border:1px solid var(--line);cursor:pointer;font-family:Inter,sans-serif;width:100%">See more photos</button></div>
+      <div style="order:2;width:100%;overflow:hidden"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:right;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">© Robbert Vogtlander</p><div class="work-visual v-inssaei"><picture><source srcset="images/Krinkels_04_Robbert_Vogtlander.webp" type="image/webp"><img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI voor Krinkels, Breda" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center"></picture></div><button onclick="openLightbox()" class="more" style="margin-top:1rem;background:none;border:1px solid var(--line);cursor:pointer;font-family:Inter,sans-serif;width:100%">See more photos</button></div>
       <div class="work-text">
         <h3 class="display">INSSAEI</h3>
         <div class="meta">Old Icelandic for intuition · Krinkels HQ, Breda · with Paul de Ruiter Architecten</div>
@@ -537,7 +537,7 @@
 <!-- MAKER -->
 <section class="maker" id="maker">
   <div class="wrap maker-grid">
-    <div class="maker-portrait reveal"><img src="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg" alt="Jakko Woudenberg at work, laying The Night Watch in Wood"></div>
+    <div class="maker-portrait reveal"><picture><source srcset="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.webp" type="image/webp"><img src="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg" alt="Jakko Woudenberg at work, laying The Night Watch in Wood" width="960" height="832" loading="lazy" decoding="async"></picture></div>
     <div class="reveal">
       <div class="eyebrow" style="font-size:2rem">The Artist</div>
       <h2 class="display" style="font-size:clamp(1.4rem,2.8vw,2.4rem)">I don't move from A to B. I begin with an image or a question that catches my interest. I find the meaning while making.</h2>
@@ -628,7 +628,7 @@
   <div class="wrap">
     <div class="work reveal">
       <div class="work-visual" style="display:flex;align-items:center;justify-content:center;background:transparent;aspect-ratio:4/3">
-        <img src="images/Logo_UWFL.jpg" alt="United Wood Floor Layers" style="width:70%;height:auto;object-fit:contain;padding:2rem">
+        <picture><source srcset="images/Logo_UWFL.webp" type="image/webp"><img src="images/Logo_UWFL.jpg" alt="United Wood Floor Layers" loading="lazy" decoding="async" style="width:70%;height:auto;object-fit:contain;padding:2rem"></picture>
       </div>
       <div class="work-text">
         <div class="eyebrow reveal" style="color:var(--grain-light);font-size:2rem">The Movement</div>
@@ -1048,7 +1048,7 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
 <div class="contact-overlay-panel" id="contactOverlayPanel">
   <div class="contact-overlay-head">
     <h3>Get in touch</h3>
-    <button class="contact-overlay-close" id="contactOverlayClose">×</button>
+    <button class="contact-overlay-close" id="contactOverlayClose" aria-label="Close">×</button>
   </div>
   <p style="font-size:.9rem;color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
   <style>
