@@ -1051,6 +1051,28 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
     <button class="contact-overlay-close" id="contactOverlayClose">×</button>
   </div>
   <p style="font-size:.9rem;color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
+  <style>
+.contact-direct{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem}
+.cd-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;font-family:Inter,sans-serif;font-size:.9rem;letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:40px;transition:opacity .2s,background .2s,color .2s}
+.cd-btn svg{width:1.15em;height:1.15em;flex:none}
+.cd-wa{background:var(--walnut);color:var(--paper)}
+.cd-wa:hover{opacity:.9}
+.cd-call{background:transparent;color:var(--walnut);border:1px solid var(--line)}
+.cd-call:hover{background:var(--paper-deep)}
+.contact-or{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem;color:var(--walnut-soft);font-family:Inter,sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.contact-or::before,.contact-or::after{content:"";flex:1;height:1px;background:var(--line)}
+</style>
+  <div class="contact-direct">
+    <a class="cd-btn cd-wa" href="https://wa.me/31643060097?text=Hi%20Jakko%2C%20I%20have%20a%20question%20about%20your%20work." target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2z"/></svg>
+      Message on WhatsApp
+    </a>
+    <a class="cd-btn cd-call" href="tel:+31643060097">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.8 9.8a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+      Call directly
+    </a>
+  </div>
+  <div class="contact-or"><span>or send a message</span></div>
   <form class="contact-form" name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="contact">
     <p style="display:none"><input name="bot-field"></p>
