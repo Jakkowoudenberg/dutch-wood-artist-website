@@ -58,11 +58,13 @@
     --grain:#A47A4B;        /* houtaccent, honing/eik */
     --grain-light:#C9A878;  /* licht houtaccent */
     --line:rgba(46,36,27,.14);
+    /* typografische schaal (13 stappen) */
+    --fs-1:.65rem; --fs-2:.72rem; --fs-3:.8rem; --fs-4:.85rem; --fs-5:.9rem; --fs-6:.95rem; --fs-7:1rem; --fs-8:1.05rem; --fs-9:1.25rem; --fs-10:1.4rem; --fs-11:1.6rem; --fs-12:1.8rem; --fs-13:2rem;
   }
 
   .contact-sticky{position:fixed;bottom:1.6rem;right:1.6rem;z-index:48;display:flex;align-items:center;gap:.7rem;
     background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:.8rem;letter-spacing:.04em;
+    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:var(--fs-3);letter-spacing:.04em;
     text-decoration:none;transition:opacity .2s}
   .contact-sticky:hover{opacity:.85}
 
@@ -70,37 +72,37 @@
   .news{padding:15vh 0}
   .news-list{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
   .news-item{border-top:1px solid var(--line);padding-top:1.5rem}
-  .news-item .news-date{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--walnut-soft);margin-bottom:.4rem}
-  .news-item .news-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:400;margin-bottom:.5rem}
-  .news-item .news-body{font-size:.95rem;color:var(--walnut-soft);max-width:60ch}
+  .news-item .news-date{font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;color:var(--walnut-soft);margin-bottom:.4rem}
+  .news-item .news-title{font-family:'Fraunces',serif;font-size:var(--fs-9);font-weight:400;margin-bottom:.5rem}
+  .news-item .news-body{font-size:var(--fs-6);color:var(--walnut-soft);max-width:60ch}
 
   /* LIGHTBOX */
   .lightbox{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,14,9,.95);align-items:center;justify-content:center;flex-direction:column}
   .lightbox.open{display:flex}
   .lightbox-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:2px}
-  .lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#F4EFE6;font-size:1.8rem;cursor:pointer;line-height:1;opacity:.8}
+  .lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#F4EFE6;font-size:var(--fs-12);cursor:pointer;line-height:1;opacity:.8}
   .lightbox-close:hover{opacity:1}
   .lightbox-nav{display:flex;gap:2rem;margin-top:1.5rem}
-  .lightbox-nav button{background:none;border:1px solid rgba(244,239,230,.3);color:#F4EFE6;padding:.6rem 1.4rem;border-radius:40px;cursor:pointer;font-family:Inter,sans-serif;font-size:.8rem;letter-spacing:.06em}
+  .lightbox-nav button{background:none;border:1px solid rgba(244,239,230,.3);color:#F4EFE6;padding:.6rem 1.4rem;border-radius:40px;cursor:pointer;font-family:Inter,sans-serif;font-size:var(--fs-3);letter-spacing:.06em}
   .lightbox-nav button:hover{background:rgba(244,239,230,.1)}
-  .lightbox-credit{font-size:.72rem;color:rgba(244,239,230,.5);margin-top:.8rem;letter-spacing:.06em}
-  .lightbox-counter{font-size:.8rem;color:rgba(244,239,230,.5);margin-top:.4rem;letter-spacing:.06em}
+  .lightbox-credit{font-size:var(--fs-2);color:rgba(244,239,230,.5);margin-top:.8rem;letter-spacing:.06em}
+  .lightbox-counter{font-size:var(--fs-3);color:rgba(244,239,230,.5);margin-top:.4rem;letter-spacing:.06em}
 
   /* BETWEEN DOORS */
   .between-doors{background:var(--walnut);color:var(--paper);padding:20vh 0;text-align:center}
   .between-doors .bd-quote{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,3.4rem);font-weight:300;font-style:italic;max-width:32ch;margin:0 auto 2rem;line-height:1.5}
-  .between-doors .bd-label{font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5}
+  .between-doors .bd-label{font-size:var(--fs-4);letter-spacing:.22em;text-transform:uppercase;opacity:.5}
 
   /* CONTACT FORM */
   .contact-form{margin-top:3rem;max-width:540px;margin-left:auto;margin-right:auto;text-align:left}
   .contact-form .form-row{margin-bottom:1.2rem}
-  .contact-form label{display:block;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.7);margin-bottom:.4rem}
-  .contact-form input,.contact-form textarea{width:100%;background:#fff;border:1.5px solid var(--walnut-soft);border-radius:4px;padding:.8rem 1rem;color:var(--walnut);font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border .2s}
+  .contact-form label{display:block;font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.7);margin-bottom:.4rem}
+  .contact-form input,.contact-form textarea{width:100%;background:#fff;border:1.5px solid var(--walnut-soft);border-radius:4px;padding:.8rem 1rem;color:var(--walnut);font-family:'Inter',sans-serif;font-size:var(--fs-6);outline:none;transition:border .2s}
   .contact-form input:focus,.contact-form textarea:focus{border-color:var(--walnut)}
   .contact-form textarea{min-height:140px;resize:vertical}
-  .contact-form button{margin-top:.8rem;background:var(--paper);color:var(--walnut);border:none;border-radius:40px;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:.85rem;letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
+  .contact-form button{margin-top:.8rem;background:var(--paper);color:var(--walnut);border:none;border-radius:40px;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:var(--fs-4);letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
   .contact-form button:hover{opacity:.85}
-  .form-success{display:none;margin-top:1.5rem;font-size:.9rem;color:rgba(244,239,230,.8);letter-spacing:.04em}
+  .form-success{display:none;margin-top:1.5rem;font-size:var(--fs-5);color:rgba(244,239,230,.8);letter-spacing:.04em}
 
   .typing-indicator{display:flex;gap:4px;align-items:center;padding:.6rem 1rem}
   .typing-indicator span{width:6px;height:6px;background:var(--walnut-soft);border-radius:50%;animation:typing .9s infinite}
@@ -111,42 +113,42 @@
   /* CHAT OVERLAY */
   .chat-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,9,.6);z-index:45;backdrop-filter:blur(4px)}
   .chat-overlay.open{display:block}
-  .chat-copy{position:absolute;top:.5rem;right:.5rem;background:none;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;font-size:.65rem;cursor:pointer;color:var(--walnut-soft);opacity:0;transition:opacity .2s;font-family:Inter,sans-serif;letter-spacing:.04em}
+  .chat-copy{position:absolute;top:.5rem;right:.5rem;background:none;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;font-size:var(--fs-1);cursor:pointer;color:var(--walnut-soft);opacity:0;transition:opacity .2s;font-family:Inter,sans-serif;letter-spacing:.04em}
   .chat-msg.bot:hover .chat-copy{opacity:1}
   .chat-msg{position:relative}
 
   /* GEMIKIGAI */
   .gemikigai{padding:12vh 0;background:var(--paper-deep);text-align:center}
   .gemikigai h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;letter-spacing:.02em}
-  .gemikigai p{font-size:1rem;color:var(--walnut-soft);max-width:48ch;margin:0 auto 1rem;line-height:1.8;font-style:italic}
-  .gemikigai .in-dev{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block}
+  .gemikigai p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:48ch;margin:0 auto 1rem;line-height:1.8;font-style:italic}
+  .gemikigai .in-dev{font-size:var(--fs-4);letter-spacing:.2em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block}
 
   .contact-overlay-bg{display:none;position:fixed;inset:0;background:rgba(20,14,9,.7);z-index:55;backdrop-filter:blur(4px)}
   .contact-overlay-bg.open{display:block}
   .contact-overlay-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:56;width:min(560px,calc(100vw - 2rem));max-height:calc(100vh - 4rem);overflow-y:auto;background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);padding:2.5rem;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1)}
   .contact-overlay-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
   .contact-overlay-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
-  .contact-overlay-head h3{font-family:'Fraunces',serif;font-weight:300;font-size:1.6rem}
-  .contact-overlay-close{background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--walnut);line-height:1;opacity:.6}
+  .contact-overlay-head h3{font-family:'Fraunces',serif;font-weight:300;font-size:var(--fs-11)}
+  .contact-overlay-close{background:none;border:none;font-size:var(--fs-12);cursor:pointer;color:var(--walnut);line-height:1;opacity:.6}
   .contact-overlay-close:hover{opacity:1}
-  .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
-  a[style*="text-transform:uppercase"]{font-size:.85rem!important}
+  .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+  a[style*="text-transform:uppercase"]{font-size:var(--fs-4)!important}
 
   /* COOKIE BANNER */
-  .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--walnut);color:var(--paper);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:99;font-size:.8rem;line-height:1.5;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+  .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--walnut);color:var(--paper);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:99;font-size:var(--fs-3);line-height:1.5;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
   .cookie-banner.show{transform:translateY(0)}
   .cookie-banner p{margin:0;opacity:.85;flex:1;min-width:200px}
   .cookie-banner a{color:var(--grain-light)}
   .cookie-btns{display:flex;gap:.8rem;flex-shrink:0}
-  .cookie-accept{background:var(--paper);color:var(--walnut);border:none;padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:.8rem;font-family:Inter,sans-serif;font-weight:500}
-  .cookie-decline{background:none;color:var(--paper);border:1px solid rgba(244,239,230,.4);padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:.8rem;font-family:Inter,sans-serif;opacity:.8}
+  .cookie-accept{background:var(--paper);color:var(--walnut);border:none;padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:var(--fs-3);font-family:Inter,sans-serif;font-weight:500}
+  .cookie-decline{background:none;color:var(--paper);border:1px solid rgba(244,239,230,.4);padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:var(--fs-3);font-family:Inter,sans-serif;opacity:.8}
 
   .share-fab{position:fixed;bottom:8.6rem;right:1.6rem;z-index:43;display:flex;align-items:center;gap:.7rem;
     background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -10px rgba(46,36,27,.4);font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:400;transition:opacity .3s}
+    box-shadow:0 16px 40px -10px rgba(46,36,27,.4);font-family:'Inter',sans-serif;font-size:var(--fs-2);letter-spacing:.06em;text-transform:uppercase;font-weight:400;transition:opacity .3s}
   .share-fab svg{flex-shrink:0}
   *{margin:0;padding:0;box-sizing:border-box}
-  .photo-credit{display:block;font-size:.72rem;color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
+  .photo-credit{display:block;font-size:var(--fs-2);color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
   .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
   html{scroll-behavior:smooth}
   body{
@@ -168,7 +170,7 @@
     display:flex;justify-content:space-between;align-items:center;
     padding:1.6rem 7vw;
   }
-  nav .brand{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:.02em;color:var(--walnut);mix-blend-mode:normal}
+  nav .brand{font-family:'Fraunces',serif;font-size:var(--fs-8);letter-spacing:.02em;color:var(--walnut);mix-blend-mode:normal}
   nav.scrolled .brand{color:var(--walnut);mix-blend-mode:normal}
   nav .links{display:none}
 
@@ -189,19 +191,19 @@
     pointer-events:none;display:flex;align-items:center}
   .fullmenu.open{clip-path:circle(150% at calc(100% - 3.5rem) 2.6rem);pointer-events:auto}
   .fullmenu-inner{width:100%;max-width:1180px;margin:0 auto;padding:0 7vw;display:grid;grid-template-columns:1fr 1fr;gap:4vw;position:relative}
-  .fullmenu-col .fm-eyebrow{display:block;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:1.8rem;font-weight:500}
+  .fullmenu-col .fm-eyebrow{display:block;font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:1.8rem;font-weight:500}
   .fullmenu-col a{display:block;font-family:'Fraunces';font-weight:300;font-size:clamp(1.3rem,4vw,3.6rem);color:var(--paper);text-decoration:none;padding:.25rem 0;opacity:.85;transition:opacity .3s,transform .3s}
   .fullmenu-col a:hover{opacity:1;transform:translateX(10px);color:var(--grain-light)}
   .fullmenu-col a.fm-soon{opacity:.45;font-size:clamp(1.3rem,3vw,1.9rem)}
-  .fullmenu-col a.fm-soon em{font-style:italic;font-size:.8rem;letter-spacing:.05em}
-  .fullmenu-foot{position:absolute;bottom:-30vh;left:7vw;right:7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:rgba(242,237,228,.6)}
+  .fullmenu-col a.fm-soon em{font-style:italic;font-size:var(--fs-3);letter-spacing:.05em}
+  .fullmenu-foot{position:absolute;bottom:-30vh;left:7vw;right:7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:var(--fs-3);color:rgba(242,237,228,.6)}
   .fullmenu-foot .tm{font-family:'Fraunces';font-style:italic}
   @media(max-width:720px){.fullmenu-inner{grid-template-columns:1fr;gap:3rem}.fullmenu-foot{position:static;margin-top:3rem}}
 
   /* CHAT (visual placeholder) */
   .chat-fab{position:fixed;bottom:5rem;right:1.6rem;z-index:43;display:flex;align-items:center;gap:.7rem;
     background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:.9rem;font-weight:400;
+    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:var(--fs-5);font-weight:400;
     transition:transform .3s,box-shadow .3s}
   .chat-fab:hover{transform:translateY(-3px);box-shadow:0 22px 50px -12px rgba(46,36,27,.6)}
   .chat-fab .dot{width:8px;height:8px;border-radius:50%;background:var(--grain-light);animation:pulse 2.4s infinite}
@@ -211,19 +213,19 @@
   @media(max-width:600px){.chat-panel{top:0;left:0;transform:none!important;width:100vw!important;height:100dvh!important;border-radius:0}.chat-panel.open{transform:none!important}.chat-body{flex:1;overflow-y:auto}.chat-foot{flex-shrink:0;position:sticky;bottom:0;background:var(--paper)}}
   .chat-head{background:var(--walnut);color:var(--paper);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
   
-  .chat-head .ct{font-family:'Fraunces';font-size:1.05rem}
-  .chat-head .cs{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
-  .chat-head .cx{background:none;border:none;color:var(--paper);font-size:1.25rem;cursor:pointer;opacity:.7;line-height:1}
+  .chat-head .ct{font-family:'Fraunces';font-size:var(--fs-8)}
+  .chat-head .cs{font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+  .chat-head .cx{background:none;border:none;color:var(--paper);font-size:var(--fs-9);cursor:pointer;opacity:.7;line-height:1}
   
   .chat-body{padding:1.4rem 1.8rem;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
-  .chat-msg{font-size:.9rem;line-height:1.6;padding:.8rem 1rem;border-radius:14px;max-width:88%}
+  .chat-msg{font-size:var(--fs-5);line-height:1.6;padding:.8rem 1rem;border-radius:14px;max-width:88%}
   .chat-msg.bot{background:var(--paper-deep);color:var(--walnut);border-bottom-left-radius:4px}
   .chat-foot{padding:.4rem 1rem 1.1rem}
   .chat-input{display:flex;align-items:center;gap:.6rem;background:var(--paper-deep);border-radius:30px;padding:.5rem .5rem .5rem 1.1rem}
-  .chat-input input{flex:1;border:none;background:none;outline:none;font-family:'Inter';font-size:.9rem;color:var(--walnut)}
+  .chat-input input{flex:1;border:none;background:none;outline:none;font-family:'Inter';font-size:var(--fs-5);color:var(--walnut)}
   .chat-input input::placeholder{color:var(--walnut-soft);opacity:.7}
-  .chat-input button{width:34px;height:34px;border-radius:50%;border:none;background:var(--walnut);color:var(--paper);cursor:pointer;font-size:1rem}
-  .chat-soon{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grain);text-align:center;margin-top:.8rem;opacity:.8}
+  .chat-input button{width:34px;height:34px;border-radius:50%;border:none;background:var(--walnut);color:var(--paper);cursor:pointer;font-size:var(--fs-7)}
+  .chat-soon{font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;color:var(--grain);text-align:center;margin-top:.8rem;opacity:.8}
 
   /* HERO */
   .hero{
@@ -239,41 +241,41 @@
     background:linear-gradient(180deg,rgba(20,14,9,.15) 0%,rgba(20,14,9,0) 35%,rgba(20,14,9,.10) 60%,rgba(20,14,9,.72) 100%);
   }
   .hero-inner{position:relative;z-index:2;padding-bottom:8vh;color:#FBF8F2;text-shadow:0 2px 30px rgba(20,14,9,.5)}
-  .hero .eyebrow{font-size:.85rem;letter-spacing:.34em;text-transform:uppercase;opacity:1;margin-bottom:1.6rem;font-weight:700}
+  .hero .eyebrow{font-size:var(--fs-4);letter-spacing:.34em;text-transform:uppercase;opacity:1;margin-bottom:1.6rem;font-weight:700}
   .hero h1{font-size:clamp(2.6rem,7vw,6rem);max-width:14ch}
   .hero h1 em{font-style:italic;color:var(--grain-light)}
   .hero .sub{margin-top:1.8rem;font-size:clamp(1rem,1.6vw,1.25rem);max-width:42ch;opacity:.92;font-weight:300}
   
-  .hero .photo-credit{position:absolute;bottom:1.1rem;right:1.4rem;z-index:3;font-size:.65rem;letter-spacing:.1em;color:rgba(251,248,242,.6)}
+  .hero .photo-credit{position:absolute;bottom:1.1rem;right:1.4rem;z-index:3;font-size:var(--fs-1);letter-spacing:.1em;color:rgba(251,248,242,.6)}
 
   /* WHY */
   .why{padding:16vh 0;position:relative}
-  .why .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2.5rem;font-weight:500}
+  .why .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2.5rem;font-weight:500}
   .why p{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.4rem,5.5vw,4.8rem);line-height:1.35;max-width:20ch;}
   .why p.lead{max-width:24ch}
-  .why .body{font-family:'Inter';font-size:1.05rem;max-width:46ch;margin-top:2.5rem;color:var(--walnut-soft);line-height:1.8}
+  .why .body{font-family:'Inter';font-size:var(--fs-8);max-width:46ch;margin-top:2.5rem;color:var(--walnut-soft);line-height:1.8}
   .why .body.turn{font-family:'Fraunces';font-weight:300;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--grain);max-width:24ch;margin-top:2rem;line-height:1.3}
 
   /* RINGEN / OEUVRE */
   .oeuvre{background:var(--paper-deep);padding:14vh 0 16vh;position:relative}
   .oeuvre .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(2.75rem,6vh,4.5rem);border-bottom:1px solid var(--line);padding-bottom:1.4rem}
-  .oeuvre .section-head .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
-  .oeuvre .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:1rem;color:var(--walnut-soft)}
+  .oeuvre .section-head .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
+  .oeuvre .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:var(--fs-7);color:var(--walnut-soft)}
 
   .work{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;margin-bottom:13vh}
   .work:last-child{margin-bottom:0}
   .work.flip .work-visual{order:2}
   .work-visual{aspect-ratio:4/3;border-radius:3px;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,36,27,.5)}
-  .work-visual .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.7)}
+  .work-visual .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-4);letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.7)}
   .work-photo{aspect-ratio:4/3}
   .work-photo img{display:block;width:100%;height:100%;object-fit:cover}
   .v-nightwatch{background:radial-gradient(120% 120% at 30% 25%,#6b5536 0%,#3a2c1c 55%,#1c140c 100%)}
   .v-inssaei{background:conic-gradient(from 210deg at 60% 50%,#caa979,#8a6b44,#b89564,#6f5436,#caa979)}
   .work-text h3{font-family:'Fraunces';font-weight:400;font-size:clamp(2.6rem,5.5vw,4.6rem);line-height:1.1;margin-bottom:.4rem}
-  .work-text .meta{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grain);margin-bottom:1.6rem;font-weight:500}
-  .work-text p{font-size:1rem;color:var(--walnut-soft);max-width:42ch;line-height:1.8;margin-bottom:1rem}
-  .work-text .creds{margin-top:1.6rem;font-size:.8rem;line-height:1.7;color:var(--walnut);max-width:40ch;padding-left:1rem;border-left:2px solid var(--grain-light)}
-  .work-text .more{display:inline-block;margin-top:1.8rem;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--walnut);text-decoration:none;border-bottom:1px solid var(--grain);padding-bottom:.3rem}
+  .work-text .meta{font-size:var(--fs-3);letter-spacing:.16em;text-transform:uppercase;color:var(--grain);margin-bottom:1.6rem;font-weight:500}
+  .work-text p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:42ch;line-height:1.8;margin-bottom:1rem}
+  .work-text .creds{margin-top:1.6rem;font-size:var(--fs-3);line-height:1.7;color:var(--walnut);max-width:40ch;padding-left:1rem;border-left:2px solid var(--grain-light)}
+  .work-text .more{display:inline-block;margin-top:1.8rem;font-size:var(--fs-4);letter-spacing:.08em;text-transform:uppercase;color:var(--walnut);text-decoration:none;border-bottom:1px solid var(--grain);padding-bottom:.3rem}
   @media(max-width:720px){
     .work{grid-template-columns:1fr;gap:2rem;margin-bottom:9vh}
     .work.flip .work-visual{order:0}
@@ -284,53 +286,53 @@
   .maker-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;align-items:center}
   .maker-portrait{border-radius:3px;background:linear-gradient(160deg,#d8cab4,#b59c7e);position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,36,27,.4)}
   .maker-portrait img{display:block;width:100%;height:auto}
-  .maker-portrait .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(46,36,27,.5)}
-  .maker .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
+  .maker-portrait .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-4);letter-spacing:.14em;text-transform:uppercase;color:rgba(46,36,27,.5)}
+  .maker .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
   .maker h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.3;margin-bottom:1.8rem;max-width:20ch}
-  .maker p{font-size:1rem;color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:1.2rem}
+  .maker p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:1.2rem}
   @media(max-width:720px){.maker-grid{grid-template-columns:1fr;gap:2.5rem}}
 
   /* MOVEMENT */
   .movement{background:var(--walnut);color:var(--paper);padding:15vh 0;text-align:center}
-  .movement .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:2.2rem;font-weight:500}
+  .movement .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:2.2rem;font-weight:500}
   .movement h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.6rem,6vw,5rem);line-height:1.2;max-width:18ch;margin:0 auto 2rem}
-  .movement p{max-width:48ch;margin:0 auto;opacity:.7;font-size:1.05rem;line-height:1.8}
-  .movement .more{display:inline-block;margin-top:2.6rem;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);text-decoration:none;border:1px solid rgba(242,237,228,.4);padding:.9rem 2rem;border-radius:2px}
+  .movement p{max-width:48ch;margin:0 auto;opacity:.7;font-size:var(--fs-8);line-height:1.8}
+  .movement .more{display:inline-block;margin-top:2.6rem;font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);text-decoration:none;border:1px solid rgba(242,237,228,.4);padding:.9rem 2rem;border-radius:2px}
   .movement .more:hover{background:rgba(242,237,228,.08)}
 
   /* COMMISSIONS */
   .commission{padding:6vh 0;background:var(--paper)}
   .commission .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(2.75rem,6vh,4.5rem);border-bottom:1px solid var(--line);padding-bottom:1.4rem}
-  .commission .section-head .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
-  .commission .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:1rem;color:var(--walnut-soft)}
+  .commission .section-head .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
+  .commission .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:var(--fs-7);color:var(--walnut-soft)}
   .commission-lead{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.3;max-width:24ch;margin-bottom:2.5rem}
-  .commission-intro{font-size:1rem;color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:7vh}
+  .commission-intro{font-size:var(--fs-7);color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:7vh}
   .vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:3rem}
   .vs-col{padding:2.6rem 2.2rem}
   .vs-design{background:transparent;border-right:1px solid var(--line)}
   .vs-art{background:var(--walnut);color:var(--paper)}
-  .vs-tag{display:block;font-family:'Fraunces';font-style:italic;font-size:1.25rem;margin-bottom:1.2rem}
+  .vs-tag{display:block;font-family:'Fraunces';font-style:italic;font-size:var(--fs-9);margin-bottom:1.2rem}
   .vs-design .vs-tag{color:var(--walnut-soft)}
   .vs-art .vs-tag{color:var(--grain-light)}
-  .vs-col p{font-size:1rem;line-height:1.75;margin-bottom:1.6rem}
+  .vs-col p{font-size:var(--fs-7);line-height:1.75;margin-bottom:1.6rem}
   .vs-design p{color:var(--walnut-soft)}
   .vs-art p{color:rgba(242,237,228,.92)}
-  .vs-foot{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+  .vs-foot{font-size:var(--fs-4);letter-spacing:.18em;text-transform:uppercase;opacity:.7}
   .vs-line{font-family:'Fraunces';font-weight:300;font-size:clamp(1.2rem,2.4vw,1.7rem);line-height:1.35;max-width:30ch;margin-bottom:7vh;color:var(--walnut)}
   @media(max-width:720px){.vs{grid-template-columns:1fr}.vs-design{border-right:none;border-bottom:1px solid var(--line)}}
   .commission-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5vw 5vw}
   .c-item{border-top:1px solid var(--line);padding-top:1.6rem}
-  .c-item h4{font-family:'Fraunces';font-weight:400;font-size:1.4rem;margin-bottom:.8rem;color:var(--walnut)}
-  .c-item p{font-size:1rem;color:var(--walnut-soft);line-height:1.75;max-width:42ch}
+  .c-item h4{font-family:'Fraunces';font-weight:400;font-size:var(--fs-10);margin-bottom:.8rem;color:var(--walnut)}
+  .c-item p{font-size:var(--fs-7);color:var(--walnut-soft);line-height:1.75;max-width:42ch}
   .new-cat{margin-top:9vh;padding:6vh 0 1vh;border-top:1px solid var(--line)}
-  .new-cat .nc-eyebrow{font-size:2rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500;display:block;margin-bottom:2.2rem}
+  .new-cat .nc-eyebrow{font-size:var(--fs-13);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500;display:block;margin-bottom:2.2rem}
   .new-cat-lead{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:1.35;max-width:26ch;margin-bottom:2.2rem;color:var(--walnut)}
-  .new-cat-body{font-size:1rem;color:var(--walnut-soft);max-width:46ch;line-height:1.8;margin-bottom:2rem}
+  .new-cat-body{font-size:var(--fs-7);color:var(--walnut-soft);max-width:46ch;line-height:1.8;margin-bottom:2rem}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:5vw;margin-top:6vh}
-  .step h5{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:1.25rem;color:var(--walnut);margin-bottom:.7rem}
-  .step p{font-size:.95rem;color:var(--walnut-soft);line-height:1.7}
+  .step h5{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:var(--fs-9);color:var(--walnut);margin-bottom:.7rem}
+  .step p{font-size:var(--fs-6);color:var(--walnut-soft);line-height:1.7}
   @media(max-width:720px){.steps{grid-template-columns:1fr;gap:0}.step{margin-bottom:2.4rem}}
-  .commission-for{margin-top:7vh;font-size:.95rem;letter-spacing:.04em;color:var(--walnut-soft);text-align:center;font-style:italic;font-family:'Fraunces'}
+  .commission-for{margin-top:7vh;font-size:var(--fs-6);letter-spacing:.04em;color:var(--walnut-soft);text-align:center;font-style:italic;font-family:'Fraunces'}
   @media(max-width:720px){.commission-grid{grid-template-columns:1fr;gap:0}.c-item{margin-bottom:2.5rem}}
 
   /* CONTACT */
@@ -339,11 +341,11 @@
   .contact .wrap{position:relative;z-index:1}
   .contact .display{color:#F4EFE6;text-shadow:0 2px 30px rgba(0,0,0,.5)}
   .contact .eyebrow{color:rgba(244,239,230,.7)}
-  .contact .eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
+  .contact .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
   .contact h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.8rem,7vw,5.4rem);line-height:1.15;max-width:16ch;margin:0 auto 2.4rem}
   .contact h2 em{font-style:italic;color:var(--grain)}
   .contact a.mail{font-family:'Fraunces';font-size:clamp(1.1rem,2.2vw,1.6rem);color:var(--walnut);text-decoration:none;border-bottom:1px solid var(--grain)}
-  footer{border-top:1px solid var(--line);padding:3rem 7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;letter-spacing:.06em;color:var(--walnut)}
+  footer{border-top:1px solid var(--line);padding:3rem 7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:var(--fs-3);letter-spacing:.06em;color:var(--walnut)}
   footer .tm{font-family:'Fraunces';font-style:italic}
 
   /* reveal on scroll */
@@ -377,8 +379,8 @@
     .wrap{padding:0 5vw}
 
     /* Eyebrows smaller on mobile */
-    .eyebrow,[style*="font-size:2rem"]{font-size:1rem!important}
-    .nc-eyebrow{font-size:1rem!important}
+    .eyebrow,[style*="font-size:var(--fs-13)"]{font-size:var(--fs-7)!important}
+    .nc-eyebrow{font-size:var(--fs-7)!important}
 
     /* Photo centering on mobile */
     .work-visual{width:100%;aspect-ratio:4/3;overflow:hidden}
@@ -417,7 +419,7 @@
 
 <!-- FULLSCREEN MENU -->
 <div class="fullmenu" id="fullmenu" aria-hidden="true">
-  <button id="fullmenuClose" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--paper);font-size:1.8rem;cursor:pointer;line-height:1;opacity:.7;z-index:60" aria-label="Close menu">×</button>
+  <button id="fullmenuClose" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--paper);font-size:var(--fs-12);cursor:pointer;line-height:1;opacity:.7;z-index:60" aria-label="Close menu">×</button>
   <div class="fullmenu-inner">
     <div class="fullmenu-col">
       <span class="fm-eyebrow">Explore</span>
@@ -446,7 +448,7 @@
 <header class="hero">
   <div class="hero-img"></div><span class="photo-credit photo-credit-hero">© Robbert Vogtlander</span>
   <div class="wrap hero-inner">
-    <div style="margin-bottom:-4rem;margin-left:-3%"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-wit.png" class="logo-img" alt="Dutch Wood Artist" style="height:280px;width:auto"><span style="font-size:1.05rem;font-family:Inter,sans-serif;line-height:1;margin-top:78px;color:#fff">&#174;</span></span></div><div class="eyebrow" style="color:#ffffff">Jakko Woudenberg · Dutch Wood Artist</div>
+    <div style="margin-bottom:-4rem;margin-left:-3%"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-wit.png" class="logo-img" alt="Dutch Wood Artist" style="height:280px;width:auto"><span style="font-size:var(--fs-8);font-family:Inter,sans-serif;line-height:1;margin-top:78px;color:#fff">&#174;</span></span></div><div class="eyebrow" style="color:#ffffff">Jakko Woudenberg · Dutch Wood Artist</div>
     <h1 class="display">Not a floor. A <em>monument</em> in wood — made once, for one place on earth.</h1>
     <p class="sub">Monumental art floors for buildings that refuse to be ordinary. Award-winning. International. One commission at a time.</p>
   </div>
@@ -458,7 +460,7 @@
   .manifesto{background:var(--walnut);color:var(--paper);padding:15vh 0}
   .manifesto .wrap{max-width:780px}
   .manifesto .m-line{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.5rem,3.6vw,2.7rem);line-height:1.3;letter-spacing:-.01em;margin:1.1rem 0}
-  .manifesto .m-body{font-family:'Inter',sans-serif;font-weight:300;font-size:1.05rem;line-height:1.85;color:rgba(242,237,228,.8);max-width:62ch;margin:1.6rem 0}
+  .manifesto .m-body{font-family:'Inter',sans-serif;font-weight:300;font-size:var(--fs-8);line-height:1.85;color:rgba(242,237,228,.8);max-width:62ch;margin:1.6rem 0}
   .manifesto .m-questions{margin:1.8rem 0}
   .manifesto .m-q{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.65;color:var(--grain-light);margin:.1rem 0}
   .manifesto .m-rule{width:56px;height:1px;background:var(--grain);opacity:.6;margin:3.2rem 0 2.6rem}
@@ -466,7 +468,7 @@
 </style>
 <section class="manifesto" id="manifesto">
   <div class="wrap">
-    <div class="eyebrow reveal" style="font-size:2rem;color:var(--grain-light)">Manifesto</div>
+    <div class="eyebrow reveal" style="font-size:var(--fs-13);color:var(--grain-light)">Manifesto</div>
     <p class="m-line reveal">Every person carries a story.</p>
     <p class="m-body reveal">Like the rings of a tree, our experiences shape who we become. Every choice changes our path. Every encounter leaves a mark. Some people step into the light, while others remain unseen. Along the way we discover that true growth is not measured by what we achieve, but by what we pass on to others.</p>
     <p class="m-line reveal">My work is not a collection of separate artworks.</p>
@@ -493,7 +495,7 @@
 <!-- WHY -->
 <section class="why">
   <div class="wrap">
-    <div class="eyebrow reveal" style="font-size:2rem">Why</div>
+    <div class="eyebrow reveal" style="font-size:var(--fs-13)">Why</div>
     <p class="lead display reveal">Every art floor has a reason why it exists.</p>
     <p class="body reveal">I don't make floors to fill a space. Each work starts from an idea. Something about the place, the people who'll stand on it, the story a building wants to tell. It means something, and it keeps meaning long after it's laid. It's why no two are alike, and why a space that holds one is never quite the same again. It gives a space a soul.</p>
   </div>
@@ -503,32 +505,32 @@
 <section class="oeuvre" id="work">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="font-size:2rem">The Work</span>
+      <span class="eyebrow" style="font-size:var(--fs-13)">The Work</span>
       <span class="ring-label">each one, one of one</span>
     </div>
 
     <!-- Nightwatch -->
     <div class="work reveal">
-      <div class="work-visual work-photo"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:left;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</p><picture><source srcset="images/Foto_NWFA_met_sponsors_Orlando.webp" type="image/webp"><img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at the NWFA Convention, Orlando" width="1920" height="1436" loading="lazy" decoding="async"></picture></div>
+      <div class="work-visual work-photo"><p style="font-size:var(--fs-2);color:var(--walnut-soft);text-align:left;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</p><picture><source srcset="images/Foto_NWFA_met_sponsors_Orlando.webp" type="image/webp"><img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at the NWFA Convention, Orlando" width="1920" height="1436" loading="lazy" decoding="async"></picture></div>
       <div class="work-text">
         <h3 class="display" style="font-size:clamp(1.4rem,3.5vw,2.8rem);white-space:nowrap">The Night Watch in Wood</h3>
         <div class="meta">195,000 pixels · 52 wood species · 4 years</div>
-        <p style="margin-bottom:1.2rem">Created by Jakko Woudenberg, The Night Watch in Wood is a monumental contemporary interpretation of Rembrandt's iconic masterpiece. Every pixel individually selected and placed by hand, cut diagonally from face grain wood to reveal the grain at its most expressive.</p><p style="margin-bottom:1.2rem">Measuring 535 × 425 × 18 cm, the artwork occupies more than 20 square metres. Its modular construction allows both horizontal and vertical exhibition. Presented horizontally, it becomes a stage. An artwork that can be performed on, spoken from, and stood upon.</p><p style="margin-bottom:1.2rem">Unlike the original in the Rijksmuseum, which was cut down on all four sides in 1715 to fit its new location in Amsterdam's Town Hall, The Night Watch in Wood shows the complete composition as Rembrandt intended it.</p><p style="margin-bottom:1.2rem">More than a tribute, it tells two stories at once. Rembrandt's masterpiece and Jakko's perspective on it. About connection, craftsmanship, creativity, adventure, and the universal human desire to be seen.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:1.05rem;margin-top:1rem">From a distance, you recognise the masterpiece. Up close, you discover the craftsmanship behind it.</p>
+        <p style="margin-bottom:1.2rem">Created by Jakko Woudenberg, The Night Watch in Wood is a monumental contemporary interpretation of Rembrandt's iconic masterpiece. Every pixel individually selected and placed by hand, cut diagonally from face grain wood to reveal the grain at its most expressive.</p><p style="margin-bottom:1.2rem">Measuring 535 × 425 × 18 cm, the artwork occupies more than 20 square metres. Its modular construction allows both horizontal and vertical exhibition. Presented horizontally, it becomes a stage. An artwork that can be performed on, spoken from, and stood upon.</p><p style="margin-bottom:1.2rem">Unlike the original in the Rijksmuseum, which was cut down on all four sides in 1715 to fit its new location in Amsterdam's Town Hall, The Night Watch in Wood shows the complete composition as Rembrandt intended it.</p><p style="margin-bottom:1.2rem">More than a tribute, it tells two stories at once. Rembrandt's masterpiece and Jakko's perspective on it. About connection, craftsmanship, creativity, adventure, and the universal human desire to be seen.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-top:1rem">From a distance, you recognise the masterpiece. Up close, you discover the craftsmanship behind it.</p>
         
         <div class="creds" style="margin-top:1rem">Exhibited at Station Amstel, Amsterdam · WorldSkills the Finals, NL · NWFA Convention, Orlando, USA</div>
-        <a href="https://www.thenightwatchinwood.com" target="_blank" style="display:inline-block;margin-top:1.8rem;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:.85rem!important;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.8rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Visit the official artwork website</a>
+        <a href="https://www.thenightwatchinwood.com" target="_blank" style="display:inline-block;margin-top:1.8rem;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:var(--fs-4)!important;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.8rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Visit the official artwork website</a>
       </div>
     </div>
 
     <!-- INSSAEI -->
     <div class="work flip reveal">
-      <div style="order:2;width:100%;overflow:hidden"><p style="font-size:.72rem;color:var(--walnut-soft);text-align:right;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">© Robbert Vogtlander</p><div class="work-visual v-inssaei"><picture><source srcset="images/Krinkels_04_Robbert_Vogtlander.webp" type="image/webp"><img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI voor Krinkels, Breda" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center"></picture></div><button onclick="openLightbox()" class="more" style="margin-top:1rem;background:none;border:1px solid var(--line);cursor:pointer;font-family:Inter,sans-serif;width:100%">See more photos</button></div>
+      <div style="order:2;width:100%;overflow:hidden"><p style="font-size:var(--fs-2);color:var(--walnut-soft);text-align:right;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">© Robbert Vogtlander</p><div class="work-visual v-inssaei"><picture><source srcset="images/Krinkels_04_Robbert_Vogtlander.webp" type="image/webp"><img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI voor Krinkels, Breda" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center"></picture></div><button onclick="openLightbox()" class="more" style="margin-top:1rem;background:none;border:1px solid var(--line);cursor:pointer;font-family:Inter,sans-serif;width:100%">See more photos</button></div>
       <div class="work-text">
         <h3 class="display">INSSAEI</h3>
         <div class="meta">Old Icelandic for intuition · Krinkels HQ, Breda · with Paul de Ruiter Architecten</div>
-        <p style="margin-bottom:1.2rem"><em>Old Icelandic for intuition.</em></p><p style="margin-bottom:1.2rem">Created for the headquarters of Krinkels in collaboration with Paul de Ruiter Architects, INSSAEI transforms the story of a company into something you can walk across.</p><p style="margin-bottom:1.2rem">Each growth ring represents a year in Krinkels' existence. Together, they form a living timeline of ambition, setbacks, achievements and renewal.</p><p style="margin-bottom:1.2rem">Because growth is never a straight line. It expands, season after season, shaped by challenges, decisions and the people who leave their mark along the way.</p><p style="margin-bottom:1.2rem">Named after the Old Icelandic word for intuition, INSSAEI is a reminder that the most meaningful creations do not emerge from calculations alone. They begin with the courage to trust what cannot yet be explained.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:.5rem">Growth made visible.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:.5rem">Ring by ring.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:1.05rem">Year by year.</p>
+        <p style="margin-bottom:1.2rem"><em>Old Icelandic for intuition.</em></p><p style="margin-bottom:1.2rem">Created for the headquarters of Krinkels in collaboration with Paul de Ruiter Architects, INSSAEI transforms the story of a company into something you can walk across.</p><p style="margin-bottom:1.2rem">Each growth ring represents a year in Krinkels' existence. Together, they form a living timeline of ambition, setbacks, achievements and renewal.</p><p style="margin-bottom:1.2rem">Because growth is never a straight line. It expands, season after season, shaped by challenges, decisions and the people who leave their mark along the way.</p><p style="margin-bottom:1.2rem">Named after the Old Icelandic word for intuition, INSSAEI is a reminder that the most meaningful creations do not emerge from calculations alone. They begin with the courage to trust what cannot yet be explained.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-bottom:.5rem">Growth made visible.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-bottom:.5rem">Ring by ring.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8)">Year by year.</p>
         <div class="creds">Vakwerk Awards, category &amp; overall winner, NL 2020 · WFB Design Awards, Best Stair &amp; Best Commercial Floor, USA 2020 · CFJ Awards, Best International, UK 2021</div>
-        <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap"><a href="https://www.archdaily.com/954489/krinkels-bv-headquarters-paul-de-ruiter-architects" target="_blank" style="font-size:.72rem;letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">ArchDaily</a><a href="https://architectenweb.nl/projecten/project.aspx?ID=39930" target="_blank" style="font-size:.72rem;letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">Architectenweb</a><a href="https://www.eestairs.com/project/krinkels-breda-nl/" target="_blank" style="font-size:.72rem;letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">EeStairs</a></div>
+        <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap"><a href="https://www.archdaily.com/954489/krinkels-bv-headquarters-paul-de-ruiter-architects" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">ArchDaily</a><a href="https://architectenweb.nl/projecten/project.aspx?ID=39930" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">Architectenweb</a><a href="https://www.eestairs.com/project/krinkels-breda-nl/" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">EeStairs</a></div>
       </div>
     </div>
   </div>
@@ -539,7 +541,7 @@
   <div class="wrap maker-grid">
     <div class="maker-portrait reveal"><picture><source srcset="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.webp" type="image/webp"><img src="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg" alt="Jakko Woudenberg at work, laying The Night Watch in Wood" width="960" height="832" loading="lazy" decoding="async"></picture></div>
     <div class="reveal">
-      <div class="eyebrow" style="font-size:2rem">The Artist</div>
+      <div class="eyebrow" style="font-size:var(--fs-13)">The Artist</div>
       <h2 class="display" style="font-size:clamp(1.4rem,2.8vw,2.4rem)">I don't move from A to B. I begin with an image or a question that catches my interest. I find the meaning while making.</h2>
       <div class="eyebrow" style="margin-top:2.4rem">Artist Statement</div>
       <p>I don&rsquo;t make floors. I make monuments in wood &mdash; each built for a single place, and never made again.</p>
@@ -557,7 +559,7 @@
 <section class="commission" id="commission">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="font-size:2rem">For Architects, Interior Designers &amp; Commissioners</span>
+      <span class="eyebrow" style="font-size:var(--fs-13)">For Architects, Interior Designers &amp; Commissioners</span>
       <span class="ring-label">made, not sold</span>
     </div>
     <h2 class="display reveal commission-lead">You can buy any expensive floor in the world. You cannot buy one that is only yours.</h2>
@@ -619,7 +621,7 @@
 
     <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
 
-    <div style="text-align:center;margin-top:3rem"><a href="#" class="reveal" onclick="openContactOverlay();return false;" style="display:inline-block;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 3rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Get in touch</a></div>
+    <div style="text-align:center;margin-top:3rem"><a href="#" class="reveal" onclick="openContactOverlay();return false;" style="display:inline-block;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 3rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Get in touch</a></div>
   </div>
 </section>
 
@@ -631,7 +633,7 @@
         <picture><source srcset="images/Logo_UWFL.webp" type="image/webp"><img src="images/Logo_UWFL.jpg" alt="United Wood Floor Layers" loading="lazy" decoding="async" style="width:70%;height:auto;object-fit:contain;padding:2rem"></picture>
       </div>
       <div class="work-text">
-        <div class="eyebrow reveal" style="color:var(--grain-light);font-size:2rem">The Movement</div>
+        <div class="eyebrow reveal" style="color:var(--grain-light);font-size:var(--fs-13)">The Movement</div>
         <h3 class="display reveal" style="color:var(--paper)">United Wood Floor Layers</h3>
         <p class="reveal" style="color:var(--paper)">A worldwide movement Jakko founded to connect craftspeople across borders. Every participant creates a panel and commits to helping three others. No ego, no money. Just skill, passed forward. Because the best things in craft were never built alone.</p>
         <a href="https://app.unitedwoodfloorlayers.com/" target="_blank" class="more reveal">About the project</a>
@@ -657,9 +659,9 @@
     <div class="work flip reveal">
       <div class="work-visual" style="background-image:url(images/between-doors.jpg);background-size:cover;background-position:center"></div>
       <div class="work-text">
-        <div class="eyebrow reveal" style="color:var(--grain);font-size:2rem">Between Doors</div>
+        <div class="eyebrow reveal" style="color:var(--grain);font-size:var(--fs-13)">Between Doors</div>
         <h3 class="display reveal" style="margin-top:.5rem;font-size:clamp(1.1rem,2vw,1.6rem);font-style:italic">"We spend so much time trying to choose the right door, that we forget to pay attention to who we become while standing between them."</h3>
-        <span style="font-size:1rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block">Project in development</span>
+        <span style="font-size:var(--fs-7);letter-spacing:.22em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block">Project in development</span>
       </div>
     </div>
   </div>
@@ -681,7 +683,7 @@
       <div class="ct">Jakko AI</div>
       <div class="cs">In Jakko's words</div>
     </div>
-    <button id="chatCopyAll" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:.65rem;color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
+    <button id="chatCopyAll" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:var(--fs-1);color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
     <button class="cx" id="chatClose" aria-label="Close">×</button></div>
   <div class="chat-body" id="chatBody">
     <div class="chat-msg bot">Hi. Every floor has a story. Every space has something it wants to say. I'm here to help you find yours — or just to talk about wood, craft, ideas, and what makes something truly unforgettable. Got a project, an idea, or just a question? What brings you here?</div>
@@ -691,7 +693,7 @@
       <input type="text" id="chatInput" placeholder="Type your question…">
       <button id="chatSend" aria-label="Send">↑</button>
     </div>
-    <p style="font-size:.65rem;color:var(--walnut-soft);opacity:.6;text-align:center;padding:.5rem 1rem .8rem;line-height:1.5">Jakko AI can make mistakes. Always verify important information.</p>
+    <p style="font-size:var(--fs-1);color:var(--walnut-soft);opacity:.6;text-align:center;padding:.5rem 1rem .8rem;line-height:1.5">Jakko AI can make mistakes. Always verify important information.</p>
   </div>
 </div>
 
@@ -1050,16 +1052,16 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
     <h3>Get in touch</h3>
     <button class="contact-overlay-close" id="contactOverlayClose" aria-label="Close">×</button>
   </div>
-  <p style="font-size:.9rem;color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
+  <p style="font-size:var(--fs-5);color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
   <style>
 .contact-direct{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem}
-.cd-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;font-family:Inter,sans-serif;font-size:.9rem;letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:40px;transition:opacity .2s,background .2s,color .2s}
+.cd-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;font-family:Inter,sans-serif;font-size:var(--fs-5);letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:40px;transition:opacity .2s,background .2s,color .2s}
 .cd-btn svg{width:1.15em;height:1.15em;flex:none}
 .cd-wa{background:var(--walnut);color:var(--paper)}
 .cd-wa:hover{opacity:.9}
 .cd-call{background:transparent;color:var(--walnut);border:1px solid var(--line)}
 .cd-call:hover{background:var(--paper-deep)}
-.contact-or{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem;color:var(--walnut-soft);font-family:Inter,sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.contact-or{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem;color:var(--walnut-soft);font-family:Inter,sans-serif;font-size:var(--fs-2);letter-spacing:.18em;text-transform:uppercase}
 .contact-or::before,.contact-or::after{content:"";flex:1;height:1px;background:var(--line)}
 </style>
   <div class="contact-direct">
@@ -1097,7 +1099,7 @@ document.getElementById('chatCopyAll').addEventListener('click', function() {
     </div>
     <button type="submit">Send message</button>
   </form>
-  <p style="font-size:.65rem;color:var(--walnut-soft);opacity:.6;text-align:center;margin-top:1rem">Jakko AI can make mistakes. Always verify important information.</p>
+  <p style="font-size:var(--fs-1);color:var(--walnut-soft);opacity:.6;text-align:center;margin-top:1rem">Jakko AI can make mistakes. Always verify important information.</p>
 </div>
 
 <script>
@@ -1116,8 +1118,8 @@ document.getElementById('contactOverlayBg').addEventListener('click', closeConta
 </script>
 
 <footer>
-  <span class="tm"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"><span style="font-size:1.6rem;font-family:Inter,sans-serif;line-height:1;margin-top:43px;margin-left:-8px">&#174;</span></span></span>
-  <div style="display:flex;gap:1.5rem;align-items:center;margin-top:.5rem"><span>Schagen, The Netherlands</span><a href="/privacy" style="font-size:.72rem;color:var(--walnut-soft);opacity:.6;text-decoration:none">Privacy Policy</a></div>
+  <span class="tm"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-zwart.png" class="logo-img" alt="Dutch Wood Artist" style="height:160px;width:auto"><span style="font-size:var(--fs-11);font-family:Inter,sans-serif;line-height:1;margin-top:43px;margin-left:-8px">&#174;</span></span></span>
+  <div style="display:flex;gap:1.5rem;align-items:center;margin-top:.5rem"><span>Schagen, The Netherlands</span><a href="/privacy" style="font-size:var(--fs-2);color:var(--walnut-soft);opacity:.6;text-decoration:none">Privacy Policy</a></div>
 </footer>
 
 
