@@ -411,7 +411,25 @@ nav{display:none!important}
 html,body{overscroll-behavior-x:none}
 #chapters{padding-top:52px;overscroll-behavior-x:none}
 #chapters>section.crx{display:none}
+#chapters>section.crx.show{min-height:calc(100vh - 50px);box-sizing:border-box}
 #chapters>section.crx.show{display:block}
+
+/* arrows (desktop only) */
+.carrow{position:fixed;top:50%;transform:translateY(-50%);z-index:53;width:46px;height:46px;border-radius:50%;border:1px solid rgba(46,36,27,.2);background:rgba(242,237,228,.9);backdrop-filter:blur(6px);color:var(--walnut);font-size:24px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;transition:opacity .25s,background .2s}
+.carrow:hover{background:#fff}
+.carrow.prev{left:16px}.carrow.next{right:16px}
+.carrow[disabled]{opacity:.3;cursor:default}
+@media(hover:hover) and (pointer:fine){.carrow{display:flex}}
+/* progress dots */
+.cdots{position:fixed;bottom:16px;left:0;right:0;z-index:53;display:flex;justify-content:center;align-items:center;gap:7px;pointer-events:none}
+.cdots i{width:6px;height:6px;border-radius:50%;background:rgba(46,36,27,.25);transition:all .3s}
+.cdots i.on{background:var(--grain);width:18px;border-radius:3px}
+.cdots i.dark{background:rgba(242,237,228,.35)}
+.cdots i.dark.on{background:var(--grain-light)}
+/* soft fade between chapters */
+#chapters>section.crx.show{animation:chfade .45s ease}
+@keyframes chfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#chapters>section.crx.show{animation:none}}
 </style>
 </head>
 <body>
@@ -473,6 +491,9 @@ html,body{overscroll-behavior-x:none}
   .manifesto .m-close .m-line{color:#fff}
 </style>
 <div class="ctabs" id="ctabs"></div>
+<button class="carrow prev" id="cPrev" aria-label="Previous chapter">&#8249;</button>
+<button class="carrow next" id="cNext" aria-label="Next chapter">&#8250;</button>
+<div class="cdots" id="cdots"></div>
 <div id="chapters">
 <section class="manifesto crx" id="manifesto" data-tab="Manifesto">
 <header class="hero">
@@ -1244,6 +1265,20 @@ document.getElementById('shareFab').addEventListener('click', function() {
     b.addEventListener('click',function(){show(i);});
     tabsWrap.appendChild(b);tabs.push(b);
   });
+  // progress dots + desktop arrows
+  var dotsWrap=document.getElementById('cdots');
+  var dots=secs.map(function(){var d=document.createElement('i');dotsWrap.appendChild(d);return d;});
+  var prevBtn=document.getElementById('cPrev'), nextBtn=document.getElementById('cNext');
+  prevBtn.addEventListener('click',function(){show(cur-1);});
+  nextBtn.addEventListener('click',function(){show(cur+1);});
+  var showBase2=show;
+  show=function(i){
+    i=Math.max(0,Math.min(secs.length-1,i));
+    showBase2(i);
+    var dark = secs[i] && secs[i].id==='contact';
+    dots.forEach(function(d,j){ d.className=(j===i?'on':'')+(dark?' dark':''); });
+    prevBtn.disabled=(i===0); nextBtn.disabled=(i===secs.length-1);
+  };
   show(0);
 
   // ----- swipe between chapters (same effect as tapping a tab) -----
