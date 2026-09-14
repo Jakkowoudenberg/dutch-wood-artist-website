@@ -1256,7 +1256,7 @@ document.getElementById('shareFab').addEventListener('click', function() {
     if(x0===null) return;
     var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
     x0=null;
-    if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){
+    if(Math.abs(dx)>28 && Math.abs(dx)>Math.abs(dy)){
       if(dx<0) show(cur+1); else show(cur-1);
     }
   },{passive:true});
