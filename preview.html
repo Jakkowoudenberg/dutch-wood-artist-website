@@ -503,6 +503,27 @@ nav,#fullmenu,.share-fab,.chat-fab,.contact-sticky{display:none!important}
 .crx.why,.crx.why *,.crx.gemikigai,.crx.gemikigai *,#contact.crx,#contact.crx *{text-align:center!important}
 .crx.why .body,.crx.why p,.crx.why h2,.crx.gemikigai p,.crx.gemikigai h2,#contact.crx .wrap>*{margin-left:auto!important;margin-right:auto!important}
 #contact.crx .contact-actions{justify-content:center!important}
+
+/* ===== CORRECTIONS ROUND ===== */
+/* remaining 2-column grids -> single column */
+.crx .maker-grid,.crx .vs,.crx .work,.crx .commission-grid{grid-template-columns:1fr!important}
+/* photo above text in Works / INSSAEI */
+.crx .work-visual{order:0!important}
+/* left-align the content chapters (fixes the right-aligned text) */
+.crx.manifesto,.crx.manifesto *,.crx.oeuvre,.crx.oeuvre *,.crx.maker,.crx.maker *,.crx.commission,.crx.commission *{text-align:left!important}
+/* manifesto: breathing space between the hero photo and the text */
+.crx.manifesto header.hero{margin-bottom:clamp(2rem,6vh,4rem)!important}
+
+/* REVERT UWFL (movement) to its original dark, centered look */
+.crx.movement{background:var(--walnut)!important;color:var(--paper)!important;text-align:center!important}
+.crx.movement *{text-align:center!important}
+.crx.movement h2{color:var(--paper)!important;margin-left:auto!important;margin-right:auto!important}
+.crx.movement p{color:var(--paper)!important;opacity:.85!important;margin-left:auto!important;margin-right:auto!important}
+.crx.movement .eyebrow{color:var(--grain-light)!important}
+.crx.movement .more{color:var(--paper)!important;border-color:rgba(242,237,228,.4)!important}
+
+/* REVERT Between Doors to its original centered look */
+#between-doors.crx,#between-doors.crx *{text-align:center!important}
 </style>
 </head>
 <body>
@@ -613,7 +634,7 @@ nav,#fullmenu,.share-fab,.chat-fab,.contact-sticky{display:none!important}
 </section>
 
 <!-- OEUVRE / RINGEN -->
-<section class="oeuvre crx" id="work" data-tab="Work">
+<section class="oeuvre crx" id="work" data-tab="Works">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" style="font-size:var(--fs-13)">The Work</span>
