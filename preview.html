@@ -475,6 +475,29 @@ nav,#fullmenu,.share-fab,.chat-fab,.contact-sticky{display:none!important}
 #contact.crx p,#contact.crx span{color:var(--walnut-soft)!important}
 #contact.crx a[href^="mailto"]{color:var(--grain)!important}
 #contact.crx button[style*="transparent"]{color:var(--walnut)!important;border-color:rgba(46,36,27,.3)!important}
+
+/* ===== per-chapter fixes (desktop; mobile already stacks) ===== */
+/* Commissions: remove the black 'art floor' block -> light with subtle accent */
+.crx .vs-art{background:var(--paper-deep)!important;border:1px solid rgba(196,122,75,.4)!important}
+.crx .vs-art,.crx .vs-art h3,.crx .vs-art h4,.crx .vs-art p,.crx .vs-art span,.crx .vs-art div,.crx .vs-art li{color:var(--walnut)!important}
+
+/* Work & Commissions: single column (no 2 columns) */
+.crx .work{grid-template-columns:1fr!important}
+.crx .work-visual{order:0!important}
+.crx .commission-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
+
+/* Why -> centered */
+.crx.why{text-align:center!important}
+.crx.why h2,.crx.why p,.crx.why .body,.crx.why .eyebrow{margin-left:auto!important;margin-right:auto!important}
+
+/* Gemikigai -> centered */
+.crx.gemikigai{text-align:center!important}
+.crx.gemikigai h2,.crx.gemikigai p,.crx.gemikigai .in-dev,.crx.gemikigai .eyebrow{margin-left:auto!important;margin-right:auto!important}
+
+/* Contact -> centered */
+#contact.crx{text-align:center!important}
+#contact.crx .wrap>*{margin-left:auto!important;margin-right:auto!important}
+#contact.crx .contact-actions{justify-content:center!important}
 </style>
 </head>
 <body>
