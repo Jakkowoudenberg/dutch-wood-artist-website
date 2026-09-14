@@ -27,9 +27,11 @@
   .meta{font-family:Inter;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.4rem}
   a{color:var(--gold)}
 
-  .tabs{position:fixed;top:0;left:0;right:0;height:var(--tabh);z-index:50;display:flex;align-items:stretch;
+  .tabs{position:fixed;top:0;left:0;right:0;height:var(--tabh);z-index:50;display:flex;align-items:stretch;justify-content:center;
     background:rgba(243,238,229,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
     overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding:0 8px}
+  .tabs button:first-child{margin-left:auto}
+  .tabs button:last-child{margin-right:auto}
   .tabs::-webkit-scrollbar{display:none}
   .tabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;
     font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink3);padding:0 15px;position:relative;white-space:nowrap;transition:color .25s}
