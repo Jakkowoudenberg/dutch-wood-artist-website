@@ -402,9 +402,9 @@
 /* ===== TABBED CHAPTERS (step 1: toggle only) ===== */
 .ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.12);padding:14px 20px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .ctabs::-webkit-scrollbar{display:none}
-.ctabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--walnut-soft);padding:10px 15px 11px;position:relative;white-space:nowrap;transition:color .25s}
+.ctabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,system-ui,sans-serif!important;font-size:12px!important;font-weight:600!important;font-style:normal!important;letter-spacing:.05em!important;line-height:1.2!important;text-transform:none!important;text-decoration:none!important;color:var(--walnut-soft);padding:10px 15px 11px;position:relative;white-space:nowrap;transition:color .25s;-webkit-font-smoothing:antialiased}
 .ctabs button .u{position:absolute;left:15px;right:15px;bottom:0;height:2px;background:var(--grain);transform:scaleX(0);transition:transform .3s ease}
-.ctabs button.on{color:var(--walnut)}
+.ctabs button.on{color:var(--walnut);font-weight:600!important}
 .ctabs button.on .u{transform:scaleX(1)}
 html,body{overscroll-behavior-x:none}
 #chapters{padding-top:52px;overscroll-behavior-x:none}
