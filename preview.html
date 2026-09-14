@@ -399,31 +399,18 @@
 
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-/* ===== HORIZONTAL CHAPTERS (preview) ===== */
-html{scroll-behavior:auto}
-html,body{height:100%;margin:0}
-body{overflow:hidden}
-.crail{position:fixed;left:0;right:0;top:50px;bottom:0;width:100vw;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.crail::-webkit-scrollbar{display:none}
-.crail>section.crx{flex:0 0 100vw;width:100vw;height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.crail>section.crx::-webkit-scrollbar{display:none}
-.ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.1);padding:14px 56px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+/* ===== TABBED CHAPTERS (step 1: toggle only) ===== */
+nav{display:none!important}
+.share-fab,.contact-sticky,.chat-fab{display:none!important}
+.ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.12);padding:14px 20px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .ctabs::-webkit-scrollbar{display:none}
 .ctabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--walnut-soft);padding:10px 15px 11px;position:relative;white-space:nowrap;transition:color .25s}
 .ctabs button .u{position:absolute;left:15px;right:15px;bottom:0;height:2px;background:var(--grain);transform:scaleX(0);transition:transform .3s ease}
 .ctabs button.on{color:var(--walnut)}
 .ctabs button.on .u{transform:scaleX(1)}
-.crail>section.crx{scroll-margin-top:52px}
-.crail>section.crx>.wrap{padding-top:20px}
-.carrow{position:fixed;top:50%;transform:translateY(-50%);z-index:51;width:44px;height:44px;border-radius:50%;border:1px solid rgba(46,36,27,.2);background:rgba(242,237,228,.85);backdrop-filter:blur(6px);color:var(--walnut);font-size:24px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center}
-.carrow.prev{left:14px}.carrow.next{right:14px}
-@media(hover:hover) and (pointer:fine){.carrow{display:flex}}
-.cdots{position:fixed;bottom:18px;left:0;right:0;z-index:51;display:flex;justify-content:center;gap:8px;pointer-events:none}
-.cdots i{width:7px;height:7px;border-radius:50%;background:rgba(46,36,27,.28);transition:all .3s}
-.cdots i.on{background:var(--grain);width:20px;border-radius:4px}
-nav{z-index:53}
-nav{display:none!important}
-.share-fab,.contact-sticky,.chat-fab{display:none!important}
+#chapters{padding-top:52px}
+#chapters>section.crx{display:none}
+#chapters>section.crx.show{display:block}
 </style>
 </head>
 <body>
@@ -494,10 +481,7 @@ nav{display:none!important}
   .manifesto .m-close .m-line{color:#fff}
 </style>
 <div class="ctabs" id="ctabs"></div>
-<button class="carrow prev" id="cPrev" aria-label="Previous">&#8249;</button>
-<button class="carrow next" id="cNext" aria-label="Next">&#8250;</button>
-<div class="cdots" id="cdots"></div>
-<div class="crail" id="crail">
+<div id="chapters">
 <section class="manifesto crx" id="manifesto" data-tab="Manifesto">
   <div class="wrap">
     <div class="eyebrow reveal" style="font-size:var(--fs-13);color:var(--grain-light)">Manifesto</div>
@@ -698,7 +682,7 @@ nav{display:none!important}
     </div>
   </section>
   <section class="crx" id="contact" data-tab="Contact" style="background:var(--walnut);color:var(--paper)">
-    <div class="wrap" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:8vh;padding-bottom:8vh">
+    <div class="wrap" style="padding:14vh 0 12vh">
       <div class="eyebrow" style="color:var(--grain-light)">Get in touch</div>
       <h2 class="display" style="font-size:clamp(2rem,7vw,3.6rem);font-weight:300;margin:1rem 0 1.5rem;color:var(--paper)">Let's talk about your space.</h2>
       <p style="color:rgba(242,237,228,.75);max-width:40ch;line-height:1.6">Every commission begins with a conversation about what a space should hold, and what it should make people feel.</p>
@@ -708,7 +692,7 @@ nav{display:none!important}
       </div>
     </div>
   </section>
-</div><!-- /crail -->
+</div><!-- /chapters -->
 
 <!-- CHAT LIVE -->
 <div class="chat-overlay" id="chatOverlay"></div>
@@ -1239,44 +1223,24 @@ document.getElementById('shareFab').addEventListener('click', function() {
 
 <script>
 (function(){
-  var rail=document.getElementById('crail');
-  var secs=Array.prototype.slice.call(rail.querySelectorAll('section.crx'));
+  var secs=Array.prototype.slice.call(document.querySelectorAll('#chapters>section.crx'));
   var tabsWrap=document.getElementById('ctabs');
-  var dotsWrap=document.getElementById('cdots');
-  var navEl=document.querySelector('nav');
-  var tabs=[],dots=[];
+  var tabs=[];
+  function show(i){
+    secs.forEach(function(s,j){ s.classList.toggle('show', j===i); });
+    tabs.forEach(function(b,j){ b.className=(j===i?'on':''); });
+    var at=tabs[i]; if(at){var w=at.offsetLeft-(tabsWrap.clientWidth-at.offsetWidth)/2; tabsWrap.scrollTo({left:Math.max(0,w),behavior:'smooth'});}
+    window.scrollTo(0,0);
+    // reveal everything in the shown chapter (no scroll-in needed anymore)
+    if(secs[i]) secs[i].querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
   secs.forEach(function(s,i){
     var b=document.createElement('button');
     b.innerHTML=(s.getAttribute('data-tab')||('Ch '+(i+1)))+'<span class="u"></span>';
-    b.addEventListener('click',function(){go(i);});
+    b.addEventListener('click',function(){show(i);});
     tabsWrap.appendChild(b);tabs.push(b);
-    var d=document.createElement('i');dotsWrap.appendChild(d);dots.push(d);
   });
-  function go(i){ i=Math.max(0,Math.min(secs.length-1,i)); rail.scrollTo({left:i*window.innerWidth,behavior:'smooth'}); }
-  function active(){ return Math.round(rail.scrollLeft/window.innerWidth); }
-  function sync(){
-    var i=active();
-    tabs.forEach(function(b,j){b.className=(j===i?'on':'');});
-    dots.forEach(function(d,j){d.className=(j===i?'on':'');});
-    var at=tabs[i]; if(at){var w=at.offsetLeft-(tabsWrap.clientWidth-at.offsetWidth)/2; tabsWrap.scrollTo({left:Math.max(0,w),behavior:'smooth'});}
-    // nav colours dark on light chapters (all but the dark contact chapter)
-    var dark = secs[i] && secs[i].id==='contact';
-    navEl.classList.toggle('scrolled', i>0 && !dark);
-    navEl.classList.toggle('light', dark);
-  }
-  rail.addEventListener('scroll',function(){window.requestAnimationFrame(sync);},{passive:true});
-  document.getElementById('cPrev').addEventListener('click',function(){go(active()-1);});
-  document.getElementById('cNext').addEventListener('click',function(){go(active()+1);});
-  // make the hamburger fullmenu links jump horizontally instead of vertical anchor
-  document.querySelectorAll('#fullmenu a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      var id=a.getAttribute('href').slice(1);
-      var idx=secs.findIndex(function(s){return s.id===id;});
-      if(idx>=0){e.preventDefault(); go(idx);}
-    });
-  });
-  window.addEventListener('resize',function(){go(active());});
-  sync();
+  show(0);
 })();
 </script>
 </body>
