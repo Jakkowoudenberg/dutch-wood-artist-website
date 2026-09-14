@@ -2,1405 +2,266 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/images/icon-192.png">
-<meta name="theme-color" content="#2E241B">
-<meta name="color-scheme" content="light">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jakko Woudenberg — Dutch Wood Artist</title>
-<meta name="description" content="Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist. Award-winning art floors for buildings that refuse to be ordinary. One commission at a time.">
-<meta name="keywords" content="art floor, monumental wood art, custom parquet, bespoke wood floor, architectural art floor, wood artist, master parquet craftsman, wood pixel art, hardwood art installation, wooden masterpiece, art parquet, handcrafted wood floor, one of a kind floor, unrepeatable floor, commissioned art floor, site specific wood art, monumental floor art, wood mosaic floor, artistic wood installation, corporate headquarters floor, museum floor art, luxury art floor, architect collaboration, bespoke interior art, landmark interior, statement floor, wood artist Netherlands, Dutch wood artist, parquet artist Holland, Dutch master craftsman, Schagen Netherlands artist, Night Watch in wood, De Nachtwacht in hout, INSSAEI Krinkels, Rembrandt wood art, WorldSkills art floor, NWFA wood floor art, Vakwerk Award winner, WFB Design Award, CFJ Award best international, ArchDaily featured artist, Guild of Parquet Layers, United Wood Floor Layers, pay it forward craftsmen, wood floor movement, bespoke floor artist, artist in residence architecture, floor as artwork, art floor architect collaboration, custom wood installation architect, site specific art commission, art floor design brief, monumental interior art, unique headquarters floor, corporate art commission, exclusive interior art, landmark office floor, one of a kind interior, art for headquarters, bespoke art commission, luxury wood commission, exclusive art floor, wood mosaic installation museum, monumental wood artwork exhibition, commissioned wood art museum, pixel wood art exhibition, statement floor development, art floor real estate, unique selling point interior, signature floor building, art installation lobby, commission a wood artist, hire wood artist, bespoke wood artwork commission, custom monumental art, where to commission floor art, floor artist for hire">
-<link rel="canonical" href="https://dutchwoodartist.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://dutchwoodartist.com/">
-<meta property="og:title" content="Jakko Woudenberg — Dutch Wood Artist">
-<meta property="og:description" content="Monumental art floors for buildings that refuse to be ordinary. Award-winning. International. One commission at a time.">
-<meta property="og:image" content="https://dutchwoodartist.com/images/og-image.jpg">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jakko Woudenberg — Dutch Wood Artist">
-<meta name="twitter:description" content="Monumental art floors for buildings that refuse to be ordinary.">
-<meta name="twitter:image" content="https://dutchwoodartist.com/images/og-image.jpg">
-
-<!-- Schema markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jakko Woudenberg",
-  "jobTitle": "Master Parquet Craftsman and Monumental Artist",
-  "brand": {
-    "@type": "Brand",
-    "name": "Dutch Wood Artist"
-  },
-  "url": "https://dutchwoodartist.com",
-  "sameAs": ["https://www.thenightwatchinwood.com", "https://app.unitedwoodfloorlayers.com"],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Schagen",
-    "addressCountry": "NL"
-  },
-  "award": ["Vakwerk Award 2020", "WFB Design Award 2020", "CFJ Award 2021"]
-}
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dutch Wood Artist — Jakko Woudenberg</title>
+<link rel="icon" href="images/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,1,300;9..144,1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F2EDE4;        /* warm gebroken wit */
-    --paper-deep:#E9E1D4;   /* iets dieper voor secties */
-    --walnut:#2E241B;       /* diep walnootbruin, tekst */
-    --walnut-soft:#5B4A3A;  /* zachter bruin */
-    --grain:#A47A4B;        /* houtaccent, honing/eik */
-    --grain-light:#C9A878;  /* licht houtaccent */
-    color-scheme:only light;--line:rgba(46,36,27,.14);
-    /* typografische schaal (13 stappen) */
-    --fs-1:.65rem; --fs-2:.72rem; --fs-3:.8rem; --fs-4:.85rem; --fs-5:.9rem; --fs-6:.95rem; --fs-7:1rem; --fs-8:1.05rem; --fs-9:1.25rem; --fs-10:1.4rem; --fs-11:1.6rem; --fs-12:1.8rem; --fs-13:2rem;
+    --paper:#F3EEE5; --paper2:#EAE2D4; --ink:#2B211A; --ink2:#5C4B3B; --ink3:#8A7460;
+    --gold:#A9743F; --gold-soft:#C7A06A; --line:rgba(43,33,26,.14); --line-soft:rgba(43,33,26,.08);
+    --col:680px; --tabh:52px;
   }
-
-  .contact-sticky{position:fixed;bottom:1.6rem;right:1.6rem;z-index:48;display:flex;align-items:center;gap:.7rem;
-    background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:var(--fs-3);letter-spacing:.04em;
-    text-decoration:none;transition:opacity .2s}
-  .contact-sticky:hover{opacity:.85}
-
-  /* NEWS */
-  .news{padding:clamp(2.1rem,7.5vh,3.6rem) 0}
-  .news-list{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
-  .news-item{border-top:1px solid var(--line);padding-top:1.5rem}
-  .news-item .news-date{font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;color:var(--walnut-soft);margin-bottom:.4rem}
-  .news-item .news-title{font-family:'Fraunces',serif;font-size:var(--fs-9);font-weight:400;margin-bottom:.5rem}
-  .news-item .news-body{font-size:var(--fs-6);color:var(--walnut-soft);max-width:60ch}
-
-  /* LIGHTBOX */
-  .lightbox{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,14,9,.95);align-items:center;justify-content:center;flex-direction:column}
-  .lightbox.open{display:flex}
-  .lightbox-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:2px}
-  .lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#F4EFE6;font-size:var(--fs-12);cursor:pointer;line-height:1;opacity:.8}
-  .lightbox-close:hover{opacity:1}
-  .lightbox-nav{display:flex;gap:2rem;margin-top:1.5rem}
-  .lightbox-nav button{background:none;border:1px solid rgba(244,239,230,.3);color:#F4EFE6;padding:.6rem 1.4rem;border-radius:40px;cursor:pointer;font-family:Inter,sans-serif;font-size:var(--fs-3);letter-spacing:.06em}
-  .lightbox-nav button:hover{background:rgba(244,239,230,.1)}
-  .lightbox-credit{font-size:var(--fs-2);color:rgba(244,239,230,.5);margin-top:.8rem;letter-spacing:.06em}
-  .lightbox-counter{font-size:var(--fs-3);color:rgba(244,239,230,.5);margin-top:.4rem;letter-spacing:.06em}
-
-  /* BETWEEN DOORS */
-  .between-doors{background:var(--walnut);color:var(--paper);padding:clamp(2.8rem,10.0vh,4.8rem) 0;text-align:center}
-  .between-doors .bd-quote{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,3.4rem);font-weight:300;font-style:italic;max-width:32ch;margin:0 auto 2rem;line-height:1.5}
-  .between-doors .bd-label{font-size:var(--fs-4);letter-spacing:.22em;text-transform:uppercase;opacity:.5}
-
-  /* CONTACT FORM */
-  .contact-form{margin-top:3rem;max-width:540px;margin-left:auto;margin-right:auto;text-align:left}
-  .contact-form .form-row{margin-bottom:1.2rem}
-  .contact-form label{display:block;font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.7);margin-bottom:.4rem}
-  .contact-form input,.contact-form textarea{width:100%;background:#fff;border:1.5px solid var(--walnut-soft);border-radius:4px;padding:.8rem 1rem;color:var(--walnut);font-family:'Inter',sans-serif;font-size:var(--fs-6);outline:none;transition:border .2s}
-  .contact-form input:focus,.contact-form textarea:focus{border-color:var(--walnut)}
-  .contact-form textarea{min-height:140px;resize:vertical}
-  .contact-form button{margin-top:.8rem;background:var(--paper);color:var(--walnut);border:none;border-radius:40px;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:var(--fs-4);letter-spacing:.06em;cursor:pointer;transition:opacity .2s}
-  .contact-form button:hover{opacity:.85}
-  .form-success{display:none;margin-top:1.5rem;font-size:var(--fs-5);color:rgba(244,239,230,.8);letter-spacing:.04em}
-
-  .typing-indicator{display:flex;gap:4px;align-items:center;padding:.6rem 1rem}
-  .typing-indicator span{width:6px;height:6px;background:var(--walnut-soft);border-radius:50%;animation:typing .9s infinite}
-  .typing-indicator span:nth-child(2){animation-delay:.2s}
-  .typing-indicator span:nth-child(3){animation-delay:.4s}
-  @keyframes typing{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
-
-  /* CHAT OVERLAY */
-  .chat-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,9,.6);z-index:45;backdrop-filter:blur(4px)}
-  .chat-overlay.open{display:block}
-  .chat-copy{position:absolute;top:.5rem;right:.5rem;background:none;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;font-size:var(--fs-1);cursor:pointer;color:var(--walnut-soft);opacity:0;transition:opacity .2s;font-family:Inter,sans-serif;letter-spacing:.04em}
-  .chat-msg.bot:hover .chat-copy{opacity:1}
-  .chat-msg{position:relative}
-
-  /* GEMIKIGAI */
-  .gemikigai{padding:clamp(1.68rem,6.0vh,2.88rem) 0;background:var(--paper-deep);text-align:center}
-  .gemikigai h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;letter-spacing:.02em}
-  .gemikigai p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:48ch;margin:0 auto 1rem;line-height:1.8;font-style:italic}
-  .gemikigai .in-dev{font-size:var(--fs-4);letter-spacing:.2em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block}
-
-  .contact-overlay-bg{display:none;position:fixed;inset:0;background:rgba(20,14,9,.7);z-index:55;backdrop-filter:blur(4px)}
-  .contact-overlay-bg.open{display:block}
-  .contact-overlay-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:56;width:min(560px,calc(100vw - 2rem));max-height:calc(100vh - 4rem);overflow-y:auto;background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);padding:2.5rem;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1)}
-  .contact-overlay-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
-  .contact-overlay-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
-  .contact-overlay-head h3{font-family:'Fraunces',serif;font-weight:300;font-size:var(--fs-11)}
-  .contact-overlay-close{background:none;border:none;font-size:var(--fs-12);cursor:pointer;color:var(--walnut);line-height:1;opacity:.6}
-  .contact-overlay-close:hover{opacity:1}
-  .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;font-weight:500}
-  a[style*="text-transform:uppercase"]{font-size:var(--fs-4)!important}
-
-  /* COOKIE BANNER */
-  .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--walnut);color:var(--paper);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:99;font-size:var(--fs-3);line-height:1.5;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-  .cookie-banner.show{transform:translateY(0)}
-  .cookie-banner p{margin:0;opacity:.85;flex:1;min-width:200px}
-  .cookie-banner a{color:var(--grain-light)}
-  .cookie-btns{display:flex;gap:.8rem;flex-shrink:0}
-  .cookie-accept{background:var(--paper);color:var(--walnut);border:none;padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:var(--fs-3);font-family:Inter,sans-serif;font-weight:500}
-  .cookie-decline{background:none;color:var(--paper);border:1px solid rgba(244,239,230,.4);padding:.5rem 1.2rem;border-radius:20px;cursor:pointer;font-size:var(--fs-3);font-family:Inter,sans-serif;opacity:.8}
-
-  .share-fab{position:fixed;bottom:8.6rem;right:1.6rem;z-index:43;display:flex;align-items:center;gap:.7rem;
-    background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -10px rgba(46,36,27,.4);font-family:'Inter',sans-serif;font-size:var(--fs-2);letter-spacing:.06em;text-transform:uppercase;font-weight:400;transition:opacity .3s}
-  .share-fab svg{flex-shrink:0}
   *{margin:0;padding:0;box-sizing:border-box}
-  .photo-credit{display:block;font-size:var(--fs-2);color:var(--walnut-soft);text-align:right;padding:.3rem .5rem;opacity:.7}
-  .photo-credit-hero{position:absolute;bottom:1rem;right:1.5rem;color:#F4EFE6;z-index:2}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);
-    color:var(--walnut);
-    padding-bottom:160px;
-    font-family:'Inter',sans-serif;
-    font-weight:300;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  .display{font-family:'Fraunces',serif;font-weight:300;letter-spacing:-.01em;line-height:1.05}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+  html{scroll-behavior:auto}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-  /* NAV */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;justify-content:space-between;align-items:center;
-    padding:1.6rem 7vw;
-  }
-  nav .brand{font-family:'Fraunces',serif;font-size:var(--fs-8);letter-spacing:.02em;color:var(--walnut);mix-blend-mode:normal}
-  nav.scrolled .brand{color:var(--walnut);mix-blend-mode:normal}
-  nav .links{display:none}
+  .eyebrow{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+  h2.title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.14;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.6rem}
+  h3.sub{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.4rem,3vw,2rem);line-height:1.2;color:var(--ink);margin:.2rem 0 .4rem}
+  .lead{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.25rem,3vw,1.7rem);line-height:1.5;color:var(--ink);margin-bottom:1.6rem}
+  p{font-size:1.03rem;line-height:1.78;color:var(--ink2);margin-bottom:1.15rem}
+  p.small{font-size:.92rem;color:var(--ink3)}
+  .meta{font-family:Inter;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1.4rem}
+  a{color:var(--gold)}
 
-  /* HAMBURGER */
-  .menu-toggle{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:6px;padding:8px;z-index:60}
-  .menu-toggle span{display:block;width:30px;height:2px;background:var(--walnut);mix-blend-mode:normal;border-radius:2px;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .3s,background .3s}
-  nav.scrolled .menu-toggle span{background:var(--walnut);mix-blend-mode:normal}
-  nav.light .logo-img{filter:invert(1)}
-  nav.light .menu-toggle span{background:var(--paper)!important}
-  .menu-toggle.open span{background:#F4EFE6;mix-blend-mode:normal}
-  .menu-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-  .menu-toggle.open span:nth-child(2){opacity:0}
-  .menu-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .tabs{position:fixed;top:0;left:0;right:0;height:var(--tabh);z-index:50;display:flex;align-items:stretch;
+    background:rgba(243,238,229,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+    overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding:0 8px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;
+    font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink3);padding:0 15px;position:relative;white-space:nowrap;transition:color .25s}
+  .tabs button::after{content:"";position:absolute;left:15px;right:15px;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .28s ease}
+  .tabs button.on{color:var(--ink)}
+  .tabs button.on::after{transform:scaleX(1)}
 
-  /* FULLSCREEN MENU */
-  .fullmenu{position:fixed;inset:0;z-index:55;background:var(--walnut);color:var(--paper);
-    clip-path:circle(0% at calc(100% - 3.5rem) 2.6rem);transition:clip-path .7s cubic-bezier(.76,0,.24,1);
-    pointer-events:none;display:flex;align-items:center}
-  .fullmenu.open{clip-path:circle(150% at calc(100% - 3.5rem) 2.6rem);pointer-events:auto}
-  .fullmenu-inner{width:100%;max-width:1180px;margin:0 auto;padding:0 7vw;display:grid;grid-template-columns:1fr 1fr;gap:4vw;position:relative}
-  .fullmenu-col .fm-eyebrow{display:block;font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:1.8rem;font-weight:500}
-  .fullmenu-col a{display:block;font-family:'Fraunces';font-weight:300;font-size:clamp(1.3rem,4vw,3.6rem);color:var(--paper);text-decoration:none;padding:.25rem 0;opacity:.85;transition:opacity .3s,transform .3s}
-  .fullmenu-col a:hover{opacity:1;transform:translateX(10px);color:var(--grain-light)}
-  .fullmenu-col a.fm-soon{opacity:.45;font-size:clamp(1.3rem,3vw,1.9rem)}
-  .fullmenu-col a.fm-soon em{font-style:italic;font-size:var(--fs-3);letter-spacing:.05em}
-  .fullmenu-foot{position:absolute;bottom:-30vh;left:7vw;right:7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:var(--fs-3);color:rgba(242,237,228,.6)}
-  .fullmenu-foot .tm{font-family:'Fraunces';font-style:italic}
-  @media(max-width:720px){.fullmenu-inner{grid-template-columns:1fr;gap:3rem}.fullmenu-foot{position:static;margin-top:3rem}}
+  main{padding-top:var(--tabh)}
+  .ch{display:none;min-height:calc(100vh - var(--tabh));padding:clamp(2.6rem,7vh,4.5rem) 24px clamp(4rem,10vh,6rem);animation:fade .45s ease}
+  .ch.show{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.ch{animation:none}}
+  .col{max-width:var(--col);margin:0 auto}
 
-  /* CHAT (visual placeholder) */
-  .chat-fab{position:fixed;bottom:5rem;right:1.6rem;z-index:43;display:flex;align-items:center;gap:.7rem;
-    background:var(--walnut);color:var(--paper);border:none;border-radius:40px;padding:.65rem 1rem;cursor:pointer;
-    box-shadow:0 16px 40px -12px rgba(46,36,27,.5);font-family:'Inter';font-size:var(--fs-5);font-weight:400;
-    transition:transform .3s,box-shadow .3s}
-  .chat-fab:hover{transform:translateY(-3px);box-shadow:0 22px 50px -12px rgba(46,36,27,.6)}
-  .chat-fab .dot{width:8px;height:8px;border-radius:50%;background:var(--grain-light);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,168,120,.5)}70%{box-shadow:0 0 0 10px rgba(201,168,120,0)}100%{box-shadow:0 0 0 0 rgba(201,168,120,0)}}
-  .chat-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-44%) scale(.96);z-index:46;width:min(720px,calc(100vw - 2rem));height:min(620px,calc(100svh - 4rem));background:var(--paper);border-radius:18px;box-shadow:0 40px 100px -20px rgba(46,36,27,.6);overflow:hidden;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.2,1);border:1px solid var(--line);display:flex;flex-direction:column}
-  .chat-panel.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
-  @media(max-width:600px){.chat-panel{top:0;left:0;transform:none!important;width:100vw!important;height:100dvh!important;border-radius:0}.chat-panel.open{transform:none!important}.chat-body{flex:1;overflow-y:auto}.chat-foot{flex-shrink:0;position:sticky;bottom:0;background:var(--paper)}}
-  .chat-head{background:var(--walnut);color:var(--paper);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
-  
-  .chat-head .ct{font-family:'Fraunces';font-size:var(--fs-8)}
-  .chat-head .cs{font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;opacity:.6}
-  .chat-head .cx{background:none;border:none;color:var(--paper);font-size:var(--fs-9);cursor:pointer;opacity:.7;line-height:1}
-  
-  .chat-body{padding:1.4rem 1.8rem;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem;scroll-behavior:smooth}
-  .chat-msg{font-size:var(--fs-5);line-height:1.6;padding:.8rem 1rem;border-radius:14px;max-width:88%}
-  .chat-msg.bot{background:var(--paper-deep);color:var(--walnut);border-bottom-left-radius:4px}
-  .chat-foot{padding:.4rem 1rem 1.1rem}
-  .chat-input{display:flex;align-items:center;gap:.6rem;background:var(--paper-deep);border-radius:30px;padding:.5rem .5rem .5rem 1.1rem}
-  .chat-input input{flex:1;border:none;background:none;outline:none;font-family:'Inter';font-size:var(--fs-5);color:var(--walnut)}
-  .chat-input input::placeholder{color:var(--walnut-soft);opacity:.7}
-  .chat-input button{width:34px;height:34px;border-radius:50%;border:none;background:var(--walnut);color:var(--paper);cursor:pointer;font-size:var(--fs-7)}
-  .chat-soon{font-size:var(--fs-4);letter-spacing:.12em;text-transform:uppercase;color:var(--grain);text-align:center;margin-top:.8rem;opacity:.8}
+  figure.shot{margin:0 0 2.2rem}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:5px;box-shadow:0 24px 50px -30px rgba(43,33,26,.45)}
+  figure.shot figcaption{font-size:.82rem;font-style:italic;color:var(--ink3);margin-top:.7rem;line-height:1.5}
 
-  /* HERO */
-  .hero{
-    height:100vh;min-height:640px;position:relative;
-    display:flex;align-items:flex-end;
-    background:#1c140c;
-    overflow:hidden;
-  }
-  .hero-img{position:absolute;inset:0;background-image:url('images/Krinkels_03_Robbert_Vogtlander.jpg');background-image:image-set(url('images/Krinkels_03_Robbert_Vogtlander.webp') type("image/webp"),url('images/Krinkels_03_Robbert_Vogtlander.jpg') type("image/jpeg"));background-size:cover;background-position:center;z-index:0}
-  /* leesbaarheids-gradient onderaan, beeld blijft licht */
-  .hero::after{
-    content:"";position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(20,14,9,.15) 0%,rgba(20,14,9,0) 35%,rgba(20,14,9,.10) 60%,rgba(20,14,9,.72) 100%);
-  }
-  .hero-inner{position:relative;z-index:2;padding-bottom:clamp(1.12rem,4.0vh,1.92rem);color:#FBF8F2;text-shadow:0 2px 30px rgba(20,14,9,.5)}
-  .hero .eyebrow{font-size:var(--fs-4);letter-spacing:.34em;text-transform:uppercase;opacity:1;margin-bottom:1.6rem;font-weight:700}
-  .hero h1{font-size:clamp(2.6rem,7vw,6rem);max-width:14ch}
-  .hero h1 em{font-style:italic;color:var(--grain-light)}
-  .hero .sub{margin-top:1.8rem;font-size:clamp(1rem,1.6vw,1.25rem);max-width:42ch;opacity:.92;font-weight:300}
-  
-  .hero .photo-credit{position:absolute;bottom:1.1rem;right:1.4rem;z-index:3;font-size:var(--fs-1);letter-spacing:.1em;color:rgba(251,248,242,.6)}
+  .cover{position:relative;height:82vh;min-height:460px;border-radius:6px;overflow:hidden;margin-bottom:2.6rem;display:flex;align-items:flex-end}
+  .cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .cover::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,14,9,.35) 0%,rgba(20,14,9,.05) 35%,rgba(20,14,9,.72) 100%)}
+  .cover .cin{position:relative;z-index:2;padding:2rem;color:#FBF6EE}
+  .cover .logo{width:96px;height:auto;margin-bottom:1.4rem;opacity:.95}
+  .cover .eyebrow{color:var(--gold-soft)}
+  .cover h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2rem,6vw,3.5rem);line-height:1.08;letter-spacing:-.01em;max-width:16ch;text-shadow:0 2px 24px rgba(20,14,9,.55)}
+  .cover h1 em{font-style:italic;color:var(--gold-soft)}
+  .cover .csub{margin-top:1.2rem;font-size:1rem;line-height:1.6;max-width:42ch;color:rgba(251,246,238,.9)}
+  .cover .credit{position:absolute;right:1rem;bottom:.8rem;z-index:2;font-size:.72rem;letter-spacing:.08em;color:rgba(251,246,238,.6)}
 
-  /* WHY */
-  .why{padding:clamp(2.24rem,8.0vh,3.84rem) 0;position:relative}
-  .why .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2.5rem;font-weight:500}
-  .why p{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.4rem,5.5vw,4.8rem);line-height:1.35;max-width:20ch;}
-  .why p.lead{max-width:24ch}
-  .why .body{font-family:'Inter';font-size:var(--fs-8);max-width:46ch;margin-top:2.5rem;color:var(--walnut-soft);line-height:1.8}
-  .why .body.turn{font-family:'Fraunces';font-weight:300;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--grain);max-width:24ch;margin-top:2rem;line-height:1.3}
+  .vscard{border:1px solid var(--line);border-radius:6px;padding:1.6rem 1.5rem;margin:.8rem 0;background:var(--paper2)}
+  .vscard.accent{border-color:rgba(169,116,63,.45)}
+  .vscard .vtag{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:var(--ink);margin-bottom:.6rem}
+  .vscard p{margin-bottom:.6rem}
+  .vscard .vfoot{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
-  /* RINGEN / OEUVRE */
-  .oeuvre{background:var(--paper-deep);padding:clamp(1.96rem,7.0vh,3.36rem) 0 clamp(2.24rem,8.0vh,3.84rem);position:relative}
-  .oeuvre .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(2.75rem,6vh,4.5rem);border-bottom:1px solid var(--line);padding-bottom:1.4rem}
-  .oeuvre .section-head .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
-  .oeuvre .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:var(--fs-7);color:var(--walnut-soft)}
+  .emblem{width:150px;height:auto;border-radius:8px;margin-bottom:1.8rem;display:block}
 
-  .work{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center;margin-bottom:clamp(1.82rem,6.5vh,3.12rem)}
-  .work:last-child{margin-bottom:0}
-  .work.flip .work-visual{order:2}
-  .work-visual{aspect-ratio:4/3;border-radius:3px;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,36,27,.5)}
-  .work-visual .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-4);letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.7)}
-  .work-photo{aspect-ratio:4/3}
-  .work-photo img{display:block;width:100%;height:100%;object-fit:cover}
-  .v-nightwatch{background:radial-gradient(120% 120% at 30% 25%,#6b5536 0%,#3a2c1c 55%,#1c140c 100%)}
-  .v-inssaei{background:conic-gradient(from 210deg at 60% 50%,#caa979,#8a6b44,#b89564,#6f5436,#caa979)}
-  .work-text h3{font-family:'Fraunces';font-weight:400;font-size:clamp(2.6rem,5.5vw,4.6rem);line-height:1.1;margin-bottom:.4rem}
-  .work-text .meta{font-size:var(--fs-3);letter-spacing:.16em;text-transform:uppercase;color:var(--grain);margin-bottom:1.6rem;font-weight:500}
-  .work-text p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:42ch;line-height:1.8;margin-bottom:1rem}
-  .work-text .creds{margin-top:1.6rem;font-size:var(--fs-3);line-height:1.7;color:var(--walnut);max-width:40ch;padding-left:1rem;border-left:2px solid var(--grain-light)}
-  .work-text .more{display:inline-block;margin-top:1.8rem;font-size:var(--fs-4);letter-spacing:.08em;text-transform:uppercase;color:var(--walnut);text-decoration:none;border-bottom:1px solid var(--grain);padding-bottom:.3rem}
-  @media(max-width:720px){
-    .work{grid-template-columns:1fr;gap:2rem;margin-bottom:clamp(1.26rem,4.5vh,2.16rem)}
-    .work.flip .work-visual{order:0}
-  }
+  .btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+  .btn{font-family:Inter,sans-serif;font-size:.92rem;font-weight:600;padding:.85rem 1.4rem;border-radius:8px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink);text-decoration:none;transition:background .2s}
+  .btn.primary{background:var(--gold);border-color:var(--gold);color:#fff}
+  .btn:hover{background:rgba(43,33,26,.05)}
+  .contact-mail{display:inline-block;font-family:'Fraunces',serif;font-size:clamp(1.2rem,3.5vw,1.7rem);color:var(--gold);text-decoration:none;margin-top:.4rem}
+  .contact-loc{color:var(--ink3);margin-top:.4rem}
 
-  /* MAKER */
-  .maker{padding:clamp(2.24rem,8.0vh,3.84rem) 0}
-  .maker-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;align-items:center}
-  .maker-portrait{border-radius:3px;background:linear-gradient(160deg,#d8cab4,#b59c7e);position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,36,27,.4)}
-  .maker-portrait img{display:block;width:100%;height:auto}
-  .maker-portrait .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-4);letter-spacing:.14em;text-transform:uppercase;color:rgba(46,36,27,.5)}
-  .maker .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
-  .maker h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.3;margin-bottom:1.8rem;max-width:20ch}
-  .maker p{font-size:var(--fs-7);color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:1.2rem}
-  @media(max-width:720px){.maker-grid{grid-template-columns:1fr;gap:2.5rem}}
-
-  /* MOVEMENT */
-  .movement{background:var(--walnut);color:var(--paper);padding:clamp(2.1rem,7.5vh,3.6rem) 0;text-align:center}
-  .movement .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain-light);margin-bottom:2.2rem;font-weight:500}
-  .movement h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.6rem,6vw,5rem);line-height:1.2;max-width:18ch;margin:0 auto 2rem}
-  .movement p{max-width:48ch;margin:0 auto;opacity:.7;font-size:var(--fs-8);line-height:1.8}
-  .movement .more{display:inline-block;margin-top:2.6rem;font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);text-decoration:none;border:1px solid rgba(242,237,228,.4);padding:.9rem 2rem;border-radius:2px}
-  .movement .more:hover{background:rgba(242,237,228,.08)}
-
-  /* COMMISSIONS */
-  .commission{padding:clamp(0.84rem,3.0vh,1.44rem) 0;background:var(--paper)}
-  .commission .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:clamp(2.75rem,6vh,4.5rem);border-bottom:1px solid var(--line);padding-bottom:1.4rem}
-  .commission .section-head .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500}
-  .commission .section-head .ring-label{font-family:'Fraunces';font-style:italic;font-size:var(--fs-7);color:var(--walnut-soft)}
-  .commission-lead{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.3;max-width:24ch;margin-bottom:2.5rem}
-  .commission-intro{font-size:var(--fs-7);color:var(--walnut-soft);max-width:44ch;line-height:1.8;margin-bottom:clamp(0.98rem,3.5vh,1.68rem)}
-  .vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:3rem}
-  .vs-col{padding:2.6rem 2.2rem}
-  .vs-design{background:transparent;border-right:1px solid var(--line)}
-  .vs-art{background:var(--walnut);color:var(--paper)}
-  .vs-tag{display:block;font-family:'Fraunces';font-style:italic;font-size:var(--fs-9);margin-bottom:1.2rem}
-  .vs-design .vs-tag{color:var(--walnut-soft)}
-  .vs-art .vs-tag{color:var(--grain-light)}
-  .vs-col p{font-size:var(--fs-7);line-height:1.75;margin-bottom:1.6rem}
-  .vs-design p{color:var(--walnut-soft)}
-  .vs-art p{color:rgba(242,237,228,.92)}
-  .vs-foot{font-size:var(--fs-4);letter-spacing:.18em;text-transform:uppercase;opacity:.7}
-  .vs-line{font-family:'Fraunces';font-weight:300;font-size:clamp(1.2rem,2.4vw,1.7rem);line-height:1.35;max-width:30ch;margin-bottom:clamp(0.98rem,3.5vh,1.68rem);color:var(--walnut)}
-  @media(max-width:720px){.vs{grid-template-columns:1fr}.vs-design{border-right:none;border-bottom:1px solid var(--line)}}
-  .commission-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5vw 5vw}
-  .c-item{border-top:1px solid var(--line);padding-top:1.6rem}
-  .c-item h4{font-family:'Fraunces';font-weight:400;font-size:var(--fs-10);margin-bottom:.8rem;color:var(--walnut)}
-  .c-item p{font-size:var(--fs-7);color:var(--walnut-soft);line-height:1.75;max-width:42ch}
-  .new-cat{margin-top:clamp(1.26rem,4.5vh,2.16rem);padding:clamp(0.84rem,3.0vh,1.44rem) 0 1vh;border-top:1px solid var(--line)}
-  .new-cat .nc-eyebrow{font-size:var(--fs-13);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);font-weight:500;display:block;margin-bottom:2.2rem}
-  .new-cat-lead{font-family:'Fraunces';font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:1.35;max-width:26ch;margin-bottom:2.2rem;color:var(--walnut)}
-  .new-cat-body{font-size:var(--fs-7);color:var(--walnut-soft);max-width:46ch;line-height:1.8;margin-bottom:2rem}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:5vw;margin-top:clamp(0.84rem,3.0vh,1.44rem)}
-  .step h5{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:var(--fs-9);color:var(--walnut);margin-bottom:.7rem}
-  .step p{font-size:var(--fs-6);color:var(--walnut-soft);line-height:1.7}
-  @media(max-width:720px){.steps{grid-template-columns:1fr;gap:0}.step{margin-bottom:2.4rem}}
-  .commission-for{margin-top:clamp(0.98rem,3.5vh,1.68rem);font-size:var(--fs-6);letter-spacing:.04em;color:var(--walnut-soft);text-align:center;font-style:italic;font-family:'Fraunces'}
-  @media(max-width:720px){.commission-grid{grid-template-columns:1fr;gap:0}.c-item{margin-bottom:2.5rem}}
-
-  /* CONTACT */
-  .contact{padding:clamp(2.52rem,9.0vh,4.32rem) 0 clamp(2.8rem,10.0vh,4.8rem);text-align:center;position:relative;background:url(images/between-doors.jpg) center/cover no-repeat}
-  .contact::before{content:"";position:absolute;inset:0;background:rgba(20,14,9,.65);z-index:0}
-  .contact .wrap{position:relative;z-index:1}
-  .contact .display{color:#F4EFE6;text-shadow:0 2px 30px rgba(0,0,0,.5)}
-  .contact .eyebrow{color:rgba(244,239,230,.7)}
-  .contact .eyebrow{font-size:var(--fs-4);letter-spacing:.3em;text-transform:uppercase;color:var(--grain);margin-bottom:2rem;font-weight:500}
-  .contact h2{font-family:'Fraunces';font-weight:300;font-size:clamp(2.8rem,7vw,5.4rem);line-height:1.15;max-width:16ch;margin:0 auto 2.4rem}
-  .contact h2 em{font-style:italic;color:var(--grain)}
-  .contact a.mail{font-family:'Fraunces';font-size:clamp(1.1rem,2.2vw,1.6rem);color:var(--walnut);text-decoration:none;border-bottom:1px solid var(--grain)}
-  footer{border-top:1px solid var(--line);padding:3rem 7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:var(--fs-3);letter-spacing:.06em;color:var(--walnut)}
-  footer .tm{font-family:'Fraunces';font-style:italic}
-
-  /* reveal on scroll */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  
-  /* ── RESPONSIVE ── */
-  @media(max-width:768px){
-
-    /* Work grid: single column */
-    .work{grid-template-columns:1fr;gap:2.5rem}
-    .work.flip .work-visual{order:0}
-    .work-visual{min-height:260px}
-    .work-text{max-width:100%}
-    .work-text p{max-width:100%}
-
-    /* Commissions grid */
-    .commission-grid{grid-template-columns:1fr}
-
-    /* Movement section */
-    .movement .work{grid-template-columns:1fr}
-
-    /* Between Doors */
-    #between-doors .work{grid-template-columns:1fr}
-    #between-doors .work.flip .work-visual{order:0}
-
-    /* Maker section */
-    .maker-inner{grid-template-columns:1fr}
-
-    /* Wrap padding */
-    .wrap{padding:0 5vw}
-
-    /* Eyebrows smaller on mobile */
-    .eyebrow,[style*="font-size:var(--fs-13)"]{font-size:var(--fs-7)!important}
-    .nc-eyebrow{font-size:var(--fs-7)!important}
-
-    /* Photo centering on mobile */
-    .work-visual{width:100%;aspect-ratio:4/3;overflow:hidden}
-    .work-visual img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .work-visual[style*="background-image"]{width:100%;aspect-ratio:4/3;background-size:cover;background-position:center}
-    .work-photo img{width:100%;height:auto;display:block}
-    .work [style*="order:2"]{width:100%}
-
-    /* Hero */
-    .hero-inner{padding:3rem 5vw 4rem}
-
-    /* Section padding */
-    .why,.oeuvre,.maker,.commissions,.movement,.gemikigai{padding:clamp(1.4rem,5.0vh,2.4rem) 0}
-  }
-
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-
-/* ===== TABBED CHAPTERS (step 1: toggle only) ===== */
-.ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.12);padding:14px 20px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
-.ctabs::-webkit-scrollbar{display:none}
-.ctabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,system-ui,sans-serif!important;font-size:12px!important;font-weight:600!important;font-style:normal!important;letter-spacing:.05em!important;line-height:1.2!important;text-transform:none!important;text-decoration:none!important;color:var(--walnut-soft);padding:10px 15px 11px;position:relative;white-space:nowrap;transition:color .25s;-webkit-font-smoothing:antialiased}
-.ctabs button .u{position:absolute;left:15px;right:15px;bottom:0;height:2px;background:var(--grain);transform:scaleX(0);transition:transform .3s ease}
-.ctabs button.on{color:var(--walnut);font-weight:600!important}
-.ctabs button.on .u{transform:scaleX(1)}
-html,body{overscroll-behavior-x:none}
-#chapters{padding-top:52px;overscroll-behavior-x:none}
-#chapters>section.crx{display:none}
-#chapters>section.crx.show{min-height:calc(100vh - 50px);box-sizing:border-box}
-#chapters>section.crx.show{display:block}
-
-/* arrows (desktop only) */
-.carrow{position:fixed;top:50%;transform:translateY(-50%);z-index:53;width:46px;height:46px;border-radius:50%;border:1px solid rgba(46,36,27,.2);background:rgba(242,237,228,.9);backdrop-filter:blur(6px);color:var(--walnut);font-size:24px;line-height:1;cursor:pointer;display:none;align-items:center;justify-content:center;transition:opacity .25s,background .2s}
-.carrow:hover{background:#fff}
-.carrow.prev{left:16px}.carrow.next{right:16px}
-.carrow[disabled]{opacity:.3;cursor:default}
-@media(hover:hover) and (pointer:fine){.carrow{display:flex}}
-/* progress dots */
-.cdots{position:fixed;bottom:16px;left:0;right:0;z-index:53;display:flex;justify-content:center;align-items:center;gap:7px;pointer-events:none}
-.cdots i{width:6px;height:6px;border-radius:50%;background:rgba(46,36,27,.25);transition:all .3s}
-.cdots i.on{background:var(--grain);width:18px;border-radius:3px}
-.cdots i.dark{background:rgba(242,237,228,.35)}
-.cdots i.dark.on{background:var(--grain-light)}
-/* soft fade between chapters */
-#chapters>section.crx.show{animation:chfade .45s ease}
-@keyframes chfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){#chapters>section.crx.show{animation:none}}
-nav,#fullmenu,.share-fab,.chat-fab,.contact-sticky{display:none!important}
-.crx .eyebrow{font-family:Inter,sans-serif!important;font-size:var(--fs-4)!important;font-weight:500!important;letter-spacing:.3em!important;text-transform:uppercase!important;line-height:1.3!important}
-.crx p:not(.turn){font-size:var(--fs-8);line-height:1.8}
-.crx .body:not(.turn){font-size:var(--fs-8);line-height:1.8}
-.crx h2.display,.crx h2.reveal,.crx h2{font-size:clamp(1.9rem,5vw,3.1rem)!important;line-height:1.15!important;font-weight:300!important;margin-bottom:1.1rem!important}
-.crx h3{font-size:clamp(1.15rem,2.6vw,1.5rem)!important;line-height:1.25!important;font-weight:400!important}
-.crx .hero h1,.crx header.hero h1{font-size:clamp(2.4rem,8vw,4.4rem)!important;line-height:1.05!important}
-.crx .work-visual.work-photo{aspect-ratio:auto!important;overflow:visible!important;height:auto!important;min-height:0!important}
-.crx .work-visual.work-photo img{height:auto!important;max-height:none!important;object-fit:contain!important}
-
-/* ===== ONE BRAND SYSTEM ACROSS ALL CHAPTERS ===== */
-/* everything left-aligned (kills the centered chapters) */
-.crx{text-align:left!important}
-.crx h1,.crx h2,.crx h3,.crx p,.crx .body,.crx .m-line,.crx .m-body,.crx .m-q,.crx .in-dev,.crx .eyebrow{margin-left:0!important;margin-right:0!important}
-/* Gemikigai body: match the others (sans, upright, not centered) */
-.crx .gemikigai p{font-family:Inter,sans-serif!important;font-style:normal!important;font-size:var(--fs-8)!important;line-height:1.8!important;max-width:52ch!important}
-/* hero: clear the fixed tab bar + add a legibility scrim over the photo */
-.crx header.hero{position:relative}
-.crx .hero-inner{padding-top:5.5rem!important}
-.crx header.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,12,7,.5) 0%,rgba(18,12,7,.18) 38%,rgba(18,12,7,.6) 100%);pointer-events:none}
-.crx .hero-inner{position:relative;z-index:2}
-/* consistent max reading width, left */
-.crx .movement p,.crx .movement h2,.crx .gemikigai h2{max-width:52ch!important}
-
-/* ===== ONE UNIFORM LIGHT LOOK — no more dark/black chapters ===== */
-/* Manifesto text area -> light (hero photo keeps its own light text) */
-.crx.manifesto{background:var(--paper)!important}
-.crx.manifesto .m-body{color:var(--walnut-soft)!important}
-.crx.manifesto .m-line{color:var(--walnut)!important}
-.crx.manifesto .m-q{color:var(--grain)!important}
-.crx.manifesto > .wrap .eyebrow,.crx.manifesto .m-eyebrow{color:var(--grain)!important}
-
-/* UWFL / movement -> light */
-.crx.movement{background:var(--paper)!important;color:var(--walnut)!important}
-.crx.movement h2{color:var(--walnut)!important}
-.crx.movement p{color:var(--walnut-soft)!important;opacity:1!important}
-.crx.movement .eyebrow{color:var(--grain)!important}
-.crx.movement .more{color:var(--walnut)!important;border-color:rgba(46,36,27,.4)!important}
-.crx.movement .more:hover{background:rgba(46,36,27,.06)!important}
-
-/* Contact -> light */
-#contact.crx{background:var(--paper)!important;color:var(--walnut)!important}
-#contact.crx h2{color:var(--walnut)!important}
-#contact.crx .eyebrow{color:var(--grain)!important}
-#contact.crx p,#contact.crx span{color:var(--walnut-soft)!important}
-#contact.crx a[href^="mailto"]{color:var(--grain)!important}
-#contact.crx button[style*="transparent"]{color:var(--walnut)!important;border-color:rgba(46,36,27,.3)!important}
-
-/* ===== per-chapter fixes (desktop; mobile already stacks) ===== */
-/* Commissions: remove the black 'art floor' block -> light with subtle accent */
-.crx .vs-art{background:var(--paper-deep)!important;border:1px solid rgba(196,122,75,.4)!important}
-.crx .vs-art,.crx .vs-art h3,.crx .vs-art h4,.crx .vs-art p,.crx .vs-art span,.crx .vs-art div,.crx .vs-art li{color:var(--walnut)!important}
-
-/* Work & Commissions: single column (no 2 columns) */
-.crx .work{grid-template-columns:1fr!important}
-.crx .work-visual{order:0!important}
-.crx .commission-grid{grid-template-columns:1fr!important;gap:2.5rem!important}
-
-/* Why -> centered */
-.crx.why{text-align:center!important}
-.crx.why h2,.crx.why p,.crx.why .body,.crx.why .eyebrow{margin-left:auto!important;margin-right:auto!important}
-
-/* Gemikigai -> centered */
-.crx.gemikigai{text-align:center!important}
-.crx.gemikigai h2,.crx.gemikigai p,.crx.gemikigai .in-dev,.crx.gemikigai .eyebrow{margin-left:auto!important;margin-right:auto!important}
-
-/* Contact -> centered */
-#contact.crx{text-align:center!important}
-#contact.crx .wrap>*{margin-left:auto!important;margin-right:auto!important}
-#contact.crx .contact-actions{justify-content:center!important}
-
-/* force-centre ALL text in Why / Gemikigai / Contact */
-.crx.why,.crx.why *,.crx.gemikigai,.crx.gemikigai *,#contact.crx,#contact.crx *{text-align:center!important}
-.crx.why .body,.crx.why p,.crx.why h2,.crx.gemikigai p,.crx.gemikigai h2,#contact.crx .wrap>*{margin-left:auto!important;margin-right:auto!important}
-#contact.crx .contact-actions{justify-content:center!important}
-
-/* ===== CORRECTIONS ROUND ===== */
-/* remaining 2-column grids -> single column */
-.crx .maker-grid,.crx .vs,.crx .work,.crx .commission-grid{grid-template-columns:1fr!important}
-/* photo above text in Works / INSSAEI */
-.crx .work-visual{order:0!important}
-/* left-align the content chapters (fixes the right-aligned text) */
-.crx.manifesto,.crx.manifesto *,.crx.oeuvre,.crx.oeuvre *,.crx.maker,.crx.maker *,.crx.commission,.crx.commission *{text-align:left!important}
-/* manifesto: breathing space between the hero photo and the text */
-.crx.manifesto header.hero{margin-bottom:clamp(2rem,6vh,4rem)!important}
-
-/* REVERT UWFL (movement) to its original dark, centered look */
-.crx.movement{background:var(--walnut)!important;color:var(--paper)!important;text-align:center!important}
-.crx.movement *{text-align:center!important}
-.crx.movement h2{color:var(--paper)!important;margin-left:auto!important;margin-right:auto!important}
-.crx.movement p{color:var(--paper)!important;opacity:.85!important;margin-left:auto!important;margin-right:auto!important}
-.crx.movement .eyebrow{color:var(--grain-light)!important}
-.crx.movement .more{color:var(--paper)!important;border-color:rgba(242,237,228,.4)!important}
-
-/* REVERT Between Doors to its original centered look */
-#between-doors.crx,#between-doors.crx *{text-align:center!important}
+  .dots{position:fixed;bottom:16px;left:0;right:0;z-index:45;display:flex;justify-content:center;gap:7px;pointer-events:none}
+  .dots i{width:6px;height:6px;border-radius:50%;background:rgba(43,33,26,.22);transition:all .3s}
+  .dots i.on{background:var(--gold);width:18px;border-radius:3px}
+  .arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:45;width:46px;height:46px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(243,238,229,.85);backdrop-filter:blur(6px);color:var(--ink);font-size:22px;cursor:pointer;display:none;align-items:center;justify-content:center}
+  .arrow.prev{left:16px}.arrow.next{right:16px}
+  .arrow[disabled]{opacity:.3;cursor:default}
+  @media(hover:hover) and (pointer:fine){.arrow{display:flex}}
 </style>
 </head>
 <body>
+  <nav class="tabs" id="tabs"></nav>
 
-<nav>
-  <div class="brand"></div>
-  <div class="links">
-    <a href="#work">Work</a>
-    <a href="#maker">Maker</a>
-    <a href="#manifesto">Manifesto</a>
-    <a href="#commission">Commissions</a>
-    <a href="#movement">Movement</a>
-      <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <main id="chapters">
 
-<!-- FULLSCREEN MENU -->
-<div class="fullmenu" id="fullmenu" aria-hidden="true">
-  <button id="fullmenuClose" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--paper);font-size:var(--fs-12);cursor:pointer;line-height:1;opacity:.7;z-index:60" aria-label="Close menu">×</button>
-  <div class="fullmenu-inner">
-    <div class="fullmenu-col">
-      <span class="fm-eyebrow">Explore</span>
-      <a href="#work">The Work</a>
-      <a href="#maker">The Maker</a>
-      <a href="#manifesto">Manifesto</a>
-      <a href="#commission">Commissions</a>
-      <a href="#movement">United Wood Floor Layers</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="fullmenu-col">
-      <span class="fm-eyebrow">The Work</span>
-      <a href="#work">The Night Watch in Wood</a>
-      <a href="#work">INSSAEI</a>
-      <a href="#between-doors" class="fm-soon">Between Doors</a>
-    </div>
-    <div class="fullmenu-foot">
-      <span class="tm">Dutch Wood Artist®</span>
-      <span>Schagen, NL</span>
-    </div>
-  </div>
-</div>
+    <section class="ch" data-tab="Manifesto">
+      <div class="col">
+        <div class="cover">
+          <img class="bg" src="images/Krinkels_03_Robbert_Vogtlander.jpg" alt="Monumental wooden art floor">
+          <div class="cin">
+            <img class="logo" src="images/DWA-logo-wit.png" alt="Dutch Wood Artist">
+            <div class="eyebrow">Jakko Woudenberg · Dutch Wood Artist</div>
+            <h1>Not a floor. A <em>monument</em> in wood — made once, for one place on earth.</h1>
+            <p class="csub">Monumental art floors for buildings that refuse to be ordinary. Award-winning. International. One commission at a time.</p>
+          </div>
+          <span class="credit">© Robbert Vogtlander</span>
+        </div>
+        <div class="eyebrow">Manifesto</div>
+        <p class="lead">Every person carries a story.</p>
+        <p>Like the rings of a tree, our experiences shape who we become. Every choice changes our path. Every encounter leaves a mark. Some people step into the light, while others remain unseen. Along the way we discover that true growth is not measured by what we achieve, but by what we pass on to others.</p>
+        <p>My work is not a collection of separate artworks. It is one continuous story about what it means to be human. From Tree Rings, to The Night Watch and Show Yourself, to United Wood Floor Layers – Pay It Forward, Between Doors, and Gemikigai — each project is a new chapter in the same journey.</p>
+        <p>I don’t create art to provide answers. I create art to ask questions. Questions about identity. About visibility. About courage. About connection. About legacy. About purpose.</p>
+        <p>Wood is my medium. The human journey is my subject.</p>
+      </div>
+    </section>
 
+    <section class="ch" data-tab="Why">
+      <div class="col">
+        <div class="eyebrow">Why</div>
+        <h2 class="title">Every art floor has a reason why it exists.</h2>
+        <p>I don't make floors to fill a space. Each work starts from an idea. Something about the place, the people who'll stand on it, the story a building wants to tell. It means something, and it keeps meaning long after it's laid. It's why no two are alike, and why a space that holds one is never quite the same again. It gives a space a soul.</p>
+      </div>
+    </section>
 
-
-<!-- MANIFESTO -->
-<style>
-  .manifesto{background:var(--walnut);color:var(--paper);padding:clamp(2.1rem,7.5vh,3.6rem) 0}
-  .manifesto .wrap{max-width:780px}
-  .manifesto .m-line{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.5rem,3.6vw,2.7rem);line-height:1.3;letter-spacing:-.01em;margin:1.1rem 0}
-  .manifesto .m-body{font-family:'Inter',sans-serif;font-weight:300;font-size:var(--fs-8);line-height:1.85;color:rgba(242,237,228,.8);max-width:62ch;margin:1.6rem 0}
-  .manifesto .m-questions{margin:1.8rem 0}
-  .manifesto .m-q{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.65;color:var(--grain-light);margin:.1rem 0}
-  .manifesto .m-rule{width:56px;height:1px;background:var(--grain);opacity:.6;margin:3.2rem 0 2.6rem}
-  .manifesto .m-close .m-line{color:#fff}
-</style>
-<div class="ctabs" id="ctabs"></div>
-<button class="carrow prev" id="cPrev" aria-label="Previous chapter">&#8249;</button>
-<button class="carrow next" id="cNext" aria-label="Next chapter">&#8250;</button>
-<div class="cdots" id="cdots"></div>
-<div id="chapters">
-<section class="manifesto crx" id="manifesto" data-tab="Manifesto">
-<header class="hero">
-  <div class="hero-img"></div><span class="photo-credit photo-credit-hero">© Robbert Vogtlander</span>
-  <div class="wrap hero-inner">
-    <div style="margin-bottom:-4rem;margin-left:-3%"><span style="display:inline-flex;align-items:flex-start;gap:0"><img src="images/DWA-logo-wit.png" class="logo-img" alt="Dutch Wood Artist" style="height:280px;width:auto"><span style="font-size:var(--fs-8);font-family:Inter,sans-serif;line-height:1;margin-top:78px;color:#fff">&#174;</span></span></div><div class="eyebrow" style="color:#ffffff">Jakko Woudenberg · Dutch Wood Artist</div>
-    <h1 class="display">Not a floor. A <em>monument</em> in wood — made once, for one place on earth.</h1>
-    <p class="sub">Monumental art floors for buildings that refuse to be ordinary. Award-winning. International. One commission at a time.</p>
-  </div>
-  
-</header>
-  <div class="wrap">
-    <div class="eyebrow reveal" style="font-size:var(--fs-13);color:var(--grain-light)">Manifesto</div>
-    <p class="m-line reveal">Every person carries a story.</p>
-    <p class="m-body reveal">Like the rings of a tree, our experiences shape who we become. Every choice changes our path. Every encounter leaves a mark. Some people step into the light, while others remain unseen. Along the way we discover that true growth is not measured by what we achieve, but by what we pass on to others.</p>
-    <p class="m-line reveal">My work is not a collection of separate artworks.</p>
-    <p class="m-line reveal">It is one continuous story about what it means to be human.</p>
-    <p class="m-body reveal">From Tree Rings, to The Night Watch and Show Yourself, to United Wood Floor Layers &ndash; Pay It Forward, Between Doors, and Gemikigai&mdash;each project is a new chapter in the same journey.</p>
-    <p class="m-line reveal">I don&rsquo;t create art to provide answers.</p>
-    <p class="m-line reveal">I create art to ask questions.</p>
-    <div class="m-questions reveal">
-      <p class="m-q">Questions about identity.</p>
-      <p class="m-q">About visibility.</p>
-      <p class="m-q">About courage.</p>
-      <p class="m-q">About connection.</p>
-      <p class="m-q">About legacy.</p>
-      <p class="m-q">About purpose.</p>
-    </div>
-    <div class="m-rule reveal"></div>
-    <div class="m-close reveal">
-      <p class="m-line">Wood is my medium.</p>
-      <p class="m-line">The human journey is my subject.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why crx" id="why" data-tab="Why">
-  <div class="wrap">
-    <div class="eyebrow reveal" style="font-size:var(--fs-13)">Why</div>
-    <p class="lead display reveal">Every art floor has a reason why it exists.</p>
-    <p class="body reveal">I don't make floors to fill a space. Each work starts from an idea. Something about the place, the people who'll stand on it, the story a building wants to tell. It means something, and it keeps meaning long after it's laid. It's why no two are alike, and why a space that holds one is never quite the same again. It gives a space a soul.</p>
-  </div>
-</section>
-
-<!-- OEUVRE / RINGEN -->
-<section class="oeuvre crx" id="work" data-tab="Works">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="font-size:var(--fs-13)">The Work</span>
-      <span class="ring-label">each one, one of one</span>
-    </div>
-
-    <!-- Nightwatch -->
-    <div class="work reveal">
-      <div class="work-visual work-photo"><p style="font-size:var(--fs-2);color:var(--walnut-soft);text-align:left;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</p><picture><source srcset="images/Foto_NWFA_met_sponsors_Orlando.webp" type="image/webp"><img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at the NWFA Convention, Orlando" width="1920" height="1436" loading="lazy" decoding="async"></picture></div>
-      <div class="work-text">
-        <h3 class="display" style="font-size:clamp(1.4rem,3.5vw,2.8rem);white-space:nowrap">The Night Watch in Wood</h3>
+    <section class="ch" data-tab="Works">
+      <div class="col">
+        <div class="eyebrow">The Work · each one, one of one</div>
+        <figure class="shot">
+          <img src="images/Foto_NWFA_met_sponsors_Orlando.jpg" alt="The Night Watch in Wood at NWFA Convention, Orlando 2026">
+          <figcaption>NWFA Convention, Orlando 2026, with part of the sponsors who made it possible to bring The Night Watch in Wood to the United States.</figcaption>
+        </figure>
+        <h3 class="sub">The Night Watch in Wood</h3>
         <div class="meta">195,000 pixels · 52 wood species · 4 years</div>
-        <p style="margin-bottom:1.2rem">Created by Jakko Woudenberg, The Night Watch in Wood is a monumental contemporary interpretation of Rembrandt's iconic masterpiece. Every pixel individually selected and placed by hand, cut diagonally from face grain wood to reveal the grain at its most expressive.</p><p style="margin-bottom:1.2rem">Measuring 535 × 425 × 18 cm, the artwork occupies more than 20 square metres. Its modular construction allows both horizontal and vertical exhibition. Presented horizontally, it becomes a stage. An artwork that can be performed on, spoken from, and stood upon.</p><p style="margin-bottom:1.2rem">Unlike the original in the Rijksmuseum, which was cut down on all four sides in 1715 to fit its new location in Amsterdam's Town Hall, The Night Watch in Wood shows the complete composition as Rembrandt intended it.</p><p style="margin-bottom:1.2rem">More than a tribute, it tells two stories at once. Rembrandt's masterpiece and Jakko's perspective on it. About connection, craftsmanship, creativity, adventure, and the universal human desire to be seen.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-top:1rem">From a distance, you recognise the masterpiece. Up close, you discover the craftsmanship behind it.</p>
-        
-        <div class="creds" style="margin-top:1rem">Exhibited at Station Amstel, Amsterdam · WorldSkills the Finals, NL · NWFA Convention, Orlando, USA</div>
-        <a href="https://www.thenightwatchinwood.com" target="_blank" style="display:inline-block;margin-top:1.8rem;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:var(--fs-4)!important;letter-spacing:.08em;text-transform:uppercase;padding:.85rem 1.8rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Visit the official artwork website</a>
+        <p>Created by Jakko Woudenberg, The Night Watch in Wood is a monumental contemporary interpretation of Rembrandt's iconic masterpiece. Every pixel individually selected and placed by hand, cut diagonally from face grain wood to reveal the grain at its most expressive.</p>
+        <p>Measuring 535 × 425 × 18 cm, the artwork occupies more than 20 square metres. Its modular construction allows both horizontal and vertical exhibition. Presented horizontally, it becomes a stage — an artwork that can be performed on, spoken from, and stood upon.</p>
+        <p>Unlike the original in the Rijksmuseum, which was cut down on all four sides in 1715 to fit its new location in Amsterdam's Town Hall, The Night Watch in Wood shows the complete composition as Rembrandt intended it.</p>
+        <p>More than a tribute, it tells two stories at once — Rembrandt's masterpiece and Jakko's perspective on it. About connection, craftsmanship, creativity, adventure, and the universal human desire to be seen. From a distance, you recognise the masterpiece. Up close, you discover the craftsmanship behind it.</p>
+        <p class="small">Exhibited at Station Amstel, Amsterdam · WorldSkills the Finals, NL · NWFA Convention, Orlando, USA</p>
+        <figure class="shot" style="margin-top:3rem">
+          <img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI — the Tree Rings floor">
+          <figcaption>© Robbert Vogtlander</figcaption>
+        </figure>
+        <h3 class="sub">INSSAEI — Tree Rings</h3>
+        <div class="meta">280 m² · 40 km of strips · two staircases</div>
+        <p>A monumental floor that carries one ring for every year a company has existed — the story woven into the wood itself. Recognised with the Vakwerk Award.</p>
       </div>
-    </div>
+    </section>
 
-    <!-- INSSAEI -->
-    <div class="work flip reveal">
-      <div style="order:2;width:100%;overflow:hidden"><p style="font-size:var(--fs-2);color:var(--walnut-soft);text-align:right;padding:.3rem 0;opacity:.7;margin-bottom:.3rem">© Robbert Vogtlander</p><div class="work-visual v-inssaei"><picture><source srcset="images/Krinkels_04_Robbert_Vogtlander.webp" type="image/webp"><img src="images/Krinkels_04_Robbert_Vogtlander.jpg" alt="INSSAEI voor Krinkels, Breda" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center"></picture></div><button onclick="openLightbox()" class="more" style="margin-top:1rem;background:none;border:1px solid var(--line);cursor:pointer;font-family:Inter,sans-serif;width:100%">See more photos</button></div>
-      <div class="work-text">
-        <h3 class="display">INSSAEI</h3>
-        <div class="meta">Old Icelandic for intuition · Krinkels HQ, Breda · with Paul de Ruiter Architecten</div>
-        <p style="margin-bottom:1.2rem"><em>Old Icelandic for intuition.</em></p><p style="margin-bottom:1.2rem">Created for the headquarters of Krinkels in collaboration with Paul de Ruiter Architects, INSSAEI transforms the story of a company into something you can walk across.</p><p style="margin-bottom:1.2rem">Each growth ring represents a year in Krinkels' existence. Together, they form a living timeline of ambition, setbacks, achievements and renewal.</p><p style="margin-bottom:1.2rem">Because growth is never a straight line. It expands, season after season, shaped by challenges, decisions and the people who leave their mark along the way.</p><p style="margin-bottom:1.2rem">Named after the Old Icelandic word for intuition, INSSAEI is a reminder that the most meaningful creations do not emerge from calculations alone. They begin with the courage to trust what cannot yet be explained.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-bottom:.5rem">Growth made visible.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8);margin-bottom:.5rem">Ring by ring.</p><p style="font-style:italic;font-family:'Fraunces',serif;font-size:var(--fs-8)">Year by year.</p>
-        <div class="creds">Vakwerk Awards, category &amp; overall winner, NL 2020 · WFB Design Awards, Best Stair &amp; Best Commercial Floor, USA 2020 · CFJ Awards, Best International, UK 2021</div>
-        <div style="display:flex;gap:1.2rem;margin-top:.8rem;flex-wrap:wrap"><a href="https://www.archdaily.com/954489/krinkels-bv-headquarters-paul-de-ruiter-architects" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">ArchDaily</a><a href="https://architectenweb.nl/projecten/project.aspx?ID=39930" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">Architectenweb</a><a href="https://www.eestairs.com/project/krinkels-breda-nl/" target="_blank" style="font-size:var(--fs-2);letter-spacing:.06em;opacity:.7;text-decoration:underline;color:inherit">EeStairs</a></div>
+    <section class="ch" data-tab="The Artist">
+      <div class="col">
+        <div class="eyebrow">The Artist</div>
+        <figure class="shot">
+          <img src="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg" alt="Jakko Woudenberg at work">
+        </figure>
+        <p class="lead">“I don't move from A to B. I begin with an image or a question that catches my interest. I find the meaning while making.”</p>
+        <h3 class="sub" style="margin-top:2rem">Artist Statement</h3>
+        <p>I don’t make floors. I make monuments in wood — each built for a single place, and never made again. Every piece is cut and placed by hand, over months and sometimes years. It is not made to decorate a room, but to outlast it.</p>
+        <h3 class="sub" style="margin-top:2rem">Artist Bio</h3>
+        <p>Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist, based in Schagen, the Netherlands, and a member of the Dutch Guild of Parquet Layers.</p>
+        <p>For decades he practised parquet as a trade. Since 2019 he has been on a mission to pull it into the art world — not because it sounds good, but because he believes an art form lies hidden inside the craft. INSSAEI and The Night Watch in Wood are his proof: the latter a monumental reconstruction of Rembrandt’s masterpiece built from 195,000 hand-cut wooden pixels across 52 species of wood, including the sections cut away from the original in 1715.</p>
+        <p>His work has been exhibited internationally, from Amsterdam to Orlando, and recognised with the Vakwerk Award, the WFB Design Award and the CFJ Award. He works only on commission, each piece conceived for a specific site and purpose.</p>
+        <p>He believes craft dies when it is kept to yourself. Through United Wood Floor Layers — Pay It Forward, he shares his knowledge freely: with the next generation, with colleagues, with anyone willing to learn.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- MAKER -->
-<section class="maker crx" id="maker" data-tab="The Artist">
-  <div class="wrap maker-grid">
-    <div class="maker-portrait reveal"><picture><source srcset="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.webp" type="image/webp"><img src="images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg" alt="Jakko Woudenberg at work, laying The Night Watch in Wood" width="960" height="832" loading="lazy" decoding="async"></picture></div>
-    <div class="reveal">
-      <div class="eyebrow" style="font-size:var(--fs-13)">The Artist</div>
-      <h2 class="display" style="font-size:clamp(1.4rem,2.8vw,2.4rem)">I don't move from A to B. I begin with an image or a question that catches my interest. I find the meaning while making.</h2>
-      <div class="eyebrow" style="margin-top:2.4rem">Artist Statement</div>
-      <p>I don&rsquo;t make floors. I make monuments in wood &mdash; each built for a single place, and never made again.</p>
-      <p>Every piece is cut and placed by hand, over months and sometimes years. It is not made to decorate a room, but to outlast it.</p>
-      <div class="eyebrow" style="margin-top:2.4rem">Artist Bio</div>
-      <p>Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist, based in Schagen, the Netherlands, and a member of the Dutch Guild of Parquet Layers.</p>
-      <p>For decades he practised parquet as a trade. Since 2019 he has been on a mission to pull it into the art world &mdash; not because it sounds good, but because he believes an art form lies hidden inside the craft. INSSAEI and The Night Watch in Wood are his proof: the latter a monumental reconstruction of Rembrandt&rsquo;s masterpiece built from 195,000 hand-cut wooden pixels across 52 species of wood, including the sections cut away from the original in 1715.</p>
-      <p>His work has been exhibited internationally, from Amsterdam to Orlando, and recognised with the Vakwerk Award, the WFB Design Award and the CFJ Award. He works only on commission, each piece conceived for a specific site and purpose.</p>
-      <p>He believes craft dies when it is kept to yourself. Through United Wood Floor Layers &mdash; Pay It Forward, he shares his knowledge freely: with the next generation, with colleagues, with anyone willing to learn. The trade only gets better when everyone does.</p>
-    </div>
-  </div>
-</section>
-
-<!-- COMMISSIONS -->
-<section class="commission crx" id="commission" data-tab="Commissions">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="font-size:var(--fs-13)">For Architects, Interior Designers &amp; Commissioners</span>
-      <span class="ring-label">made, not sold</span>
-    </div>
-    <h2 class="display reveal commission-lead">You can buy any expensive floor in the world. You cannot buy one that is only yours.</h2>
-    <p class="commission-intro reveal">Everything expensive is for sale. What I make is not. It does not exist until I make it for you. Once it exists, it belongs to one place on earth, forever. This is not a product. It is a decision.</p>
-
-    <div class="vs reveal">
-      <div class="vs-col vs-design">
-        <span class="vs-tag">A design floor</span>
-        <p>Made to fit a space and make it beautiful. It serves the room and it can be repeated endlessly, in a thousand buildings at once, because it carries no story of its own.</p>
-        <span class="vs-foot">Decoration · repeatable</span>
-      </div>
-      <div class="vs-col vs-art">
-        <span class="vs-tag">An art floor</span>
-        <p>Begins with a why. It tells a story and moves something in the person standing on it. And because that story belongs to one place and one moment, it can never be repeated, never reproduced.</p>
-        <span class="vs-foot">Meaning · one of one</span>
-      </div>
-    </div>
-    <p class="vs-line reveal">A design floor can be repeated. This cannot. That is the difference between decoration and art.</p>
-    <div class="commission-grid">
-      <div class="c-item reveal">
-        <h4>Your story, in the ground you stand on</h4>
-        <p>A building comes alive through its floor. I make that floor tell your story. Woven into the wood itself, the way INSSAEI carries one ring for every year a company has existed. It keeps telling that story, every day, long after I am gone.</p>
-      </div>
-      <div class="c-item reveal">
-        <h4>A place no one forgets</h4>
+    <section class="ch" data-tab="Commissions">
+      <div class="col">
+        <div class="eyebrow">For Architects, Interior Designers &amp; Commissioners</div>
+        <h2 class="title">You can buy any expensive floor in the world. You cannot buy one that is only yours.</h2>
+        <p>Everything expensive is for sale. What I make is not. It does not exist until I make it for you. Once it exists, it belongs to one place on earth, forever. This is not a product. It is a decision.</p>
+        <div class="vscard">
+          <div class="vtag">A design floor</div>
+          <p>Made to fit a space and make it beautiful. It serves the room and it can be repeated endlessly, in a thousand buildings at once, because it carries no story of its own.</p>
+          <div class="vfoot">Decoration · repeatable</div>
+        </div>
+        <div class="vscard accent">
+          <div class="vtag">An art floor</div>
+          <p>Begins with a why. It tells a story and moves something in the person standing on it. And because that story belongs to one place and one moment, it can never be repeated, never reproduced.</p>
+          <div class="vfoot">Meaning · one of one</div>
+        </div>
+        <p style="margin-top:1.6rem">A design floor can be repeated. This cannot. That is the difference between decoration and art.</p>
+        <h3 class="sub" style="margin-top:1.8rem">Your story, in the ground you stand on</h3>
+        <p>A building comes alive through its floor. I make that floor tell your story — woven into the wood itself, the way INSSAEI carries one ring for every year a company has existed. It keeps telling that story, every day, long after I am gone.</p>
+        <h3 class="sub" style="margin-top:1.4rem">A place no one forgets</h3>
         <p>A space that holds a Dutch Wood Artist floor is no longer one of many. It becomes the reason people visit, photograph, and remember. Not a purchase. A landmark.</p>
       </div>
-      <div class="c-item reveal">
-        <h4>The vision, not just the craft</h4>
-        <p>Skilled hands exist. I work alongside them. What is rare is the rest: imagining what has never been made, the nerve to begin without knowing the way, and building a story through the process itself. That is where my work begins, and it cannot be copied.</p>
-      </div>
-      <div class="c-item reveal">
-        <h4>Yours alone, forever</h4>
-        <p>Every work is born from a single, unrepeatable moment. Conceived for your space, shaped to its lines, and made once. It will never be repeated, never reproduced, never found anywhere else on earth.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="new-cat reveal">
-      <span class="nc-eyebrow">A category of one</span>
-      <h2 class="new-cat-lead">I work in a field of one.</h2>
-      <p class="new-cat-body">I don't fit the categories, and I stopped trying to. Not a floor layer, not a designer, not quite a gallery artist. What I make sits somewhere of its own. Monumental, walkable artworks in solid wood, each one starting from a why instead of a pattern. There's nothing to compare it to, and that's the point. The work stands on its own.</p>
-      <p class="new-cat-body">It also means you do not need to know how this works before you begin. You bring a place, a question, or simply the feeling that something here should be unrepeatable. The rest is mine to carry.</p>
+    <section class="ch" data-tab="UWFL project">
+      <div class="col">
+        <img class="emblem" src="images/Logo_UWFL.jpg" alt="United Wood Floor Layers">
+        <div class="eyebrow">The Movement</div>
+        <h2 class="title">United Wood Floor Layers</h2>
+        <p>A worldwide movement Jakko founded to connect craftspeople across borders. Every participant creates a panel and commits to helping three others. No ego, no money. Just skill, passed forward. Because the best things in craft were never built alone.</p>
+      </div>
+    </section>
 
-      <div class="steps">
-        <div class="step">
-          <h5>We begin with a why</h5>
-          <p>You tell me about the place. What it is, what it should hold, what you want people to feel the moment they walk in. No brief required. Just honesty about what matters.</p>
+    <section class="ch" data-tab="Gemikigai">
+      <div class="col">
+        <div class="eyebrow">Concept · in development</div>
+        <h2 class="title">Gemikigai® by Dutch Wood Artist</h2>
+        <p><em>Ikigai</em> is the Japanese philosophy of finding your reason for being. <em>Feng shui</em> is the ancient Chinese art of creating harmony between people and their space. Gemikigai brings both into the floor beneath your feet.</p>
+      </div>
+    </section>
+
+    <section class="ch" data-tab="Between Doors">
+      <div class="col">
+        <div class="eyebrow">Project in development</div>
+        <p class="lead">“We spend so much time trying to choose the right door, that we forget to pay attention to who we become while standing between them.”</p>
+        <figure class="shot" style="margin-top:1.6rem">
+          <img src="images/between-doors.jpg" alt="Between Doors">
+        </figure>
+      </div>
+    </section>
+
+    <section class="ch" data-tab="Contact">
+      <div class="col">
+        <div class="eyebrow">Get in touch</div>
+        <h2 class="title">Let’s talk about your space.</h2>
+        <p>Every commission begins with a conversation about what a space should hold, and what it should make people feel.</p>
+        <a class="contact-mail" href="mailto:info@dutchwoodartist.com">info@dutchwoodartist.com</a>
+        <div class="contact-loc">Schagen, The Netherlands</div>
+        <div class="btns">
+          <a class="btn primary" href="mailto:info@dutchwoodartist.com">Send a message</a>
+          <button class="btn" type="button" onclick="if(navigator.share){navigator.share({title:'Dutch Wood Artist',url:location.origin});}else if(navigator.clipboard){navigator.clipboard.writeText(location.origin);}">Share this site</button>
         </div>
-        <div class="step">
-          <h5>I find the form</h5>
-          <p>I translate that into a vision. Shaped to your space, your light, your story. You see exactly where it is going before a single piece of wood is cut. No surprises.</p>
-        </div>
-        <div class="step">
-          <h5>It is made, once</h5>
-          <p>Built by hand, from solid wood. Most commissions take between three and twelve months. When it is finished, it is yours alone, permanently.</p>
-        </div>
       </div>
-    </div>
+    </section>
 
-    <p class="commission-for reveal">Trusted by architects including Paul de Ruiter. Built for headquarters, museums and private spaces that understand the difference between a floor and a statement.</p>
+  </main>
 
-    <div style="text-align:center;margin-top:3rem"><a href="#" class="reveal" onclick="openContactOverlay();return false;" style="display:inline-block;background:var(--walnut);color:var(--paper);font-family:Inter,sans-serif;font-size:var(--fs-4);letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 3rem;border-radius:40px;text-decoration:none;transition:opacity .2s">Get in touch</a></div>
-  </div>
-</section>
-
-<!-- MOVEMENT -->
-<section class="movement crx" id="movement" data-tab="UWFL project">
-  <div class="wrap">
-    <div class="work reveal">
-      <div class="work-visual" style="display:flex;align-items:center;justify-content:center;background:transparent;aspect-ratio:4/3">
-        <picture><source srcset="images/Logo_UWFL.webp" type="image/webp"><img src="images/Logo_UWFL.jpg" alt="United Wood Floor Layers" loading="lazy" decoding="async" style="width:70%;height:auto;object-fit:contain;padding:2rem"></picture>
-      </div>
-      <div class="work-text">
-        <div class="eyebrow reveal" style="color:var(--grain-light);font-size:var(--fs-13)">The Movement</div>
-        <h3 class="display reveal" style="color:var(--paper)">United Wood Floor Layers</h3>
-        <p class="reveal" style="color:var(--paper)">A worldwide movement Jakko founded to connect craftspeople across borders. Every participant creates a panel and commits to helping three others. No ego, no money. Just skill, passed forward. Because the best things in craft were never built alone.</p>
-        <a href="https://app.unitedwoodfloorlayers.com/" target="_blank" class="more reveal">About the project</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GEMIKIGAI -->
-<section class="gemikigai crx" id="gemikigai" data-tab="Gemikigai">
-  <div class="wrap">
-    <h2 class="reveal">Gemikigai&#174; by Dutch Wood Artist</h2>
-    <p class="reveal"><strong>Ikigai</strong> is the Japanese philosophy of finding your reason for being. <strong>Feng shui</strong> is the ancient Chinese art of creating harmony between people and their space. Gemikigai brings both into the floor beneath your feet.</p>
-    <span class="in-dev reveal">In development</span>
-  </div>
-</section>
-
-
-
-<!-- BETWEEN DOORS -->
-<section class="crx" data-tab="Between Doors" id="between-doors" style="background:var(--paper);padding:0 0 clamp(1.82rem,6.5vh,3.12rem)">
-  <div class="wrap">
-    <div class="work flip reveal">
-      <div class="work-visual" style="background-image:url(images/between-doors.jpg);background-size:cover;background-position:center"></div>
-      <div class="work-text">
-        <div class="eyebrow reveal" style="color:var(--grain);font-size:var(--fs-13)">Between Doors</div>
-        <h3 class="display reveal" style="margin-top:.5rem;font-size:clamp(1.1rem,2vw,1.6rem);font-style:italic">"We spend so much time trying to choose the right door, that we forget to pay attention to who we become while standing between them."</h3>
-        <span style="font-size:var(--fs-7);letter-spacing:.22em;text-transform:uppercase;color:var(--grain);margin-top:1.5rem;display:block">Project in development</span>
-      </div>
-    </div>
-  </section>
-  <section class="crx" id="contact" data-tab="Contact" style="background:var(--walnut);color:var(--paper)">
-    <div class="wrap" style="padding:14vh 0 12vh">
-      <div class="eyebrow" style="color:var(--grain-light)">Get in touch</div>
-      <h2 class="display" style="font-size:clamp(2rem,7vw,3.6rem);font-weight:300;margin:1rem 0 1.5rem;color:var(--paper)">Let's talk about your space.</h2>
-      <p style="color:rgba(242,237,228,.75);max-width:40ch;line-height:1.6">Every commission begins with a conversation about what a space should hold, and what it should make people feel.</p>
-      <div style="margin-top:2.4rem;display:flex;flex-direction:column;gap:1rem">
-        <a href="mailto:info@dutchwoodartist.com" style="font-family:'Fraunces',serif;font-size:clamp(1.2rem,4vw,1.8rem);color:var(--grain-light);text-decoration:none">info@dutchwoodartist.com</a>
-        <span style="color:rgba(242,237,228,.6)">Schagen, The Netherlands</span>
-      </div>
-      <div class="contact-actions" style="margin-top:2.6rem;display:flex;flex-wrap:wrap;gap:.8rem">
-        <button type="button" onclick="openContactOverlay()" style="background:var(--grain-light);color:var(--walnut);border:none;border-radius:10px;padding:.85rem 1.4rem;font-family:Inter,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer">Send a message</button>
-        <button type="button" onclick="openChat()" style="background:transparent;color:var(--paper);border:1px solid rgba(242,237,228,.35);border-radius:10px;padding:.85rem 1.4rem;font-family:Inter,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer">Talk to Jakko AI</button>
-        <button type="button" onclick="var s=document.getElementById('shareFab');if(s)s.click();" style="background:transparent;color:var(--paper);border:1px solid rgba(242,237,228,.35);border-radius:10px;padding:.85rem 1.4rem;font-family:Inter,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer">Share this site</button>
-      </div>
-    </div>
-  </section>
-</div><!-- /chapters -->
-
-<!-- CHAT LIVE -->
-<div class="chat-overlay" id="chatOverlay"></div>
-<button class="share-fab" id="shareFab" aria-label="Share this site">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  Share
-</button>
-
-
-
-<button class="chat-fab" id="chatFab"><span class="dot"></span>Talk to Jakko AI</button>
-<div class="chat-panel" id="chatPanel">
-  <div class="chat-head">
-    <div>
-      <div class="ct">Jakko AI</div>
-      <div class="cs">In Jakko's words</div>
-    </div>
-    <button id="chatCopyAll" style="background:none;border:1px solid rgba(244,239,230,.3);border-radius:6px;padding:.3rem .7rem;font-size:var(--fs-1);color:var(--paper);cursor:pointer;font-family:Inter,sans-serif;letter-spacing:.04em">Copy chat</button>
-    <button class="cx" id="chatClose" aria-label="Close">×</button></div>
-  <div class="chat-body" id="chatBody">
-    <div class="chat-msg bot">Hi. Every floor has a story. Every space has something it wants to say. I'm here to help you find yours — or just to talk about wood, craft, ideas, and what makes something truly unforgettable. Got a project, an idea, or just a question? What brings you here?</div>
-  </div>
-  <div class="chat-foot">
-    <div class="chat-input">
-      <input type="text" id="chatInput" placeholder="Type your question…">
-      <button id="chatSend" aria-label="Send">↑</button>
-    </div>
-    <p style="font-size:var(--fs-1);color:var(--walnut-soft);opacity:.6;text-align:center;padding:.5rem 1rem .8rem;line-height:1.5">Jakko AI can make mistakes. Always verify important information.</p>
-  </div>
-</div>
-
-<script>
-const SYSTEM_PROMPT = `You are Jakko AI, the AI guide on DutchWoodArtist.com.
-
-You are not Jakko Woudenberg himself. You are an AI assistant created to help visitors explore the world of Dutch Wood Artist®. You know Jakko's public story, philosophy, projects, and body of work. Never claim to be Jakko.
-
-Your purpose: Help people discover the craftsmanship, humanity, and stories behind Dutch Wood Artist® with honesty, warmth, curiosity, and respect for boundaries.
-
-PERSONALITY & TONE
-Speak in the spirit of Jakko. Direct, warm, honest, human. Never corporate or robotic. No empty marketing language. Keep answers concise but go deeper when genuine curiosity is shown. If you don't know something, say so. Respond in the same language as the visitor.
-
-WHO IS JAKKO
-Jakko Woudenberg is a Dutch master parquet craftsman and monumental artist based in Schagen, North Holland, Netherlands. Member of Het Nederlands Gilde van Parketteurs. Founder of United Wood Floor Layers™. Brand: Dutch Wood Artist® (Benelux registered trademark). He works from intuition, not plans. Each work comes from a specific moment in time that will never return.
-
-PROJECTS
-THE NIGHT WATCH IN WOOD: ~195,000 wooden pixels, 52 wood species, based on Rembrandt's masterpiece. Exhibited in Amsterdam, WorldSkills Netherlands, NWFA Convention Orlando USA. Owned by Dutch Wood Artist Art BV. DO NOT mention: pixel sponsorship (€6), Dutch Wood Artist Foundation, UWFL app as part of this project.
-
-INSSAEI: Monumental floor for Krinkels HQ Breda. Annual growth rings concept. With Paul de Ruiter Architects. Awards: Vakwerk Award 2020 (category + overall winner), WFB Design Award USA 2020, CFJ Award Best International UK 2021. Published on ArchDaily.
-
-UNITED WOOD FLOOR LAYERS™: International movement connecting wood floor craftspeople worldwide. Pay it forward philosophy. Independent, apolitical, non-religious. Website: app.unitedwoodfloorlayers.com
-
-BETWEEN DOORS: New project in development. Keep it mysterious. Only speak about themes: transition, choice, identity, transformation, the space between who we were and who we are becoming. Central idea: "We spend so much time trying to choose the right door that we forget to pay attention to who we become while standing between them." Never reveal plans, timelines, or unpublished details.
-
-CORE PHILOSOPHIES
-"I have never done it before, so I think I can do it." / "People are far more alike than they are different." / "Connection matters more than competition." / "Success without meaning is empty."
-
-BOUNDARIES - NEVER:
-- Invent facts or speculate
-- Discuss private or family matters
-- Mention pricing or give quotes
-- Mention pixel sponsorship (€6)
-- Mention the Dutch Wood Artist Foundation
-- Engage in political or religious discussions
-- Present assumptions as facts
-
-SERIOUS INTEREST
-If someone expresses genuine interest in commissioning, collaborating, exhibitions, media or partnerships: warmly encourage them to use the contact form on DutchWoodArtist.com. Never push or create urgency.
-
-ESSENCE
-Help people feel seen. Help people think. Behind every floor, every artwork, and every person, there is a story worth discovering. That is the spirit of Dutch Wood Artist®.`;
-
-const chatHistory = [];
-const chatBody = document.getElementById('chatBody');
-const chatInput = document.getElementById('chatInput');
-const chatSend = document.getElementById('chatSend');
-const chatFab = document.getElementById('chatFab');
-const chatPanel = document.getElementById('chatPanel');
-const chatClose = document.getElementById('chatClose');
-
-const chatOverlay = document.getElementById('chatOverlay');
-
-function openChat() {
-  chatPanel.classList.add('open');
-  chatOverlay.classList.add('open');
-  chatFab.style.display = 'none';
-  document.body.style.overflow = 'hidden';
-  document.querySelector('nav').style.pointerEvents = 'none';
-  var cb = document.querySelector('.contact-sticky');
-  if(cb) cb.style.display = 'none';
-}
-
-function closeChat() {
-  chatPanel.classList.remove('open');
-  chatOverlay.classList.remove('open');
-  chatFab.style.display = 'flex';
-  document.getElementById('shareFab').style.display = 'flex';
-  document.body.style.overflow = '';
-  chatPanel.style.height = '';
-  chatPanel.style.top = '';
-  var cb = document.querySelector('.contact-sticky');
-  if(cb) cb.style.display = 'flex';
-  setTimeout(function() {
-    document.querySelector('nav').style.pointerEvents = '';
-    var fm = document.getElementById('fullmenu');
-    var mt = document.getElementById('menuToggle');
-    if(fm) { fm.classList.remove('open'); fm.setAttribute('aria-hidden','true'); }
-    if(mt) { mt.classList.remove('open'); mt.setAttribute('aria-expanded','false'); }
-  }, 300);
-}
-
-chatFab.addEventListener('click', openChat);
-chatClose.addEventListener('click', function(e) {
-  e.stopPropagation();
-  closeChat();
-});
-chatOverlay.addEventListener('click', function(e) {
-  e.stopPropagation();
-  closeChat();
-});
-
-function addMessage(text, role) {
-  const div = document.createElement('div');
-  div.className = 'chat-msg ' + role;
-  if(role === 'bot') {
-    // Sanitize but allow our own images
-    let html = text
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/\n/g, '<br>');
-    // Render markdown links as clickable
-    html = html.replace(
-      /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--grain);text-decoration:underline">$1</a>'
-    );
-    // Allow only images from our /images/ folder
-    html = html.replace(
-      /&lt;img src=&quot;\.\/(images\/[\w\-\.]+\.jpg)&quot; alt=&quot;([^&]*)&quot;&gt;/g,
-      '<img src="./$1" alt="$2" style="width:100%;border-radius:8px;margin-top:.5rem;display:block">'
-    );
-    div.innerHTML = html;
-  } else {
-    div.textContent = text;
-  }
-  if(role === 'bot') {
-    const copyBtn = document.createElement('button');
-    copyBtn.className = 'chat-copy';
-    copyBtn.textContent = 'Copy';
-    copyBtn.addEventListener('click', function() {
-      navigator.clipboard.writeText(div.innerText).then(function() {
-        copyBtn.textContent = 'Copied!';
-        setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 2000);
-      });
-    });
-    div.appendChild(copyBtn);
-  }
-  chatBody.appendChild(div);
-  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function addTyping() {
-  const div = document.createElement('div');
-  div.className = 'chat-msg bot typing-indicator';
-  div.innerHTML = '<span></span><span></span><span></span>';
-  div.id = 'typingIndicator';
-  chatBody.appendChild(div);
-  div.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  return div;
-}
-
-async function sendMessage() {
-  const text = chatInput.value.trim();
-  if(!text) return;
-  chatInput.value = '';
-  chatSend.disabled = true;
-
-  addMessage(text, 'user');
-  chatHistory.push({ role: 'user', content: text });
-
-  const typing = addTyping();
-
-  try {
-    const response = await fetch('/.netlify/functions/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: chatHistory })
-    });
-
-    const data = await response.json();
-    typing.remove();
-
-    const reply = data.reply || 'Something went wrong. Please try again.';
-
-    addMessage(reply, 'bot');
-    chatHistory.push({ role: 'assistant', content: reply });
-
-  } catch(err) {
-    typing.remove();
-    addMessage('Something went wrong. Please try again.', 'bot');
-  }
-
-  chatSend.disabled = false;
-  chatInput.blur();
-  if(window.innerWidth > 600) chatInput.focus();
-}
-
-chatSend.addEventListener('click', sendMessage);
-chatInput.addEventListener('keydown', function(e) {
-  if(e.key === 'Enter') sendMessage();
-});
-</script>
-
-<script>
-  const io=new IntersectionObserver((es)=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{
-    el.style.transitionDelay=(i%3)*90+'ms';
-    io.observe(el);
-  });
-
-  // Menu
-  const mt=document.getElementById('menuToggle'),fm=document.getElementById('fullmenu');
-  mt.addEventListener('click',()=>{
-    const open=fm.classList.toggle('open');
-    mt.classList.toggle('open',open);
-    mt.setAttribute('aria-expanded',open);
-    fm.setAttribute('aria-hidden',!open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  document.getElementById('fullmenuClose').addEventListener('click', ()=>{
-    fm.classList.remove('open');
-    mt.classList.remove('open');
-    mt.setAttribute('aria-expanded', false);
-    fm.setAttribute('aria-hidden', true);
-    document.body.style.overflow = '';
-  });
-  fm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    fm.classList.remove('open');mt.classList.remove('open');
-    mt.setAttribute('aria-expanded',false);fm.setAttribute('aria-hidden',true);
-    document.body.style.overflow='';
-  }));
-
-  // Chat (visual placeholder)
-  const cf=document.getElementById('chatFab'),cp=document.getElementById('chatPanel'),cx=document.getElementById('chatClose');
-  cf.addEventListener('click',()=>{cp.classList.add('open');cf.style.display='none'});
-  cx.addEventListener('click',()=>{cp.classList.remove('open');cf.style.display=''});
-
-  // Nav kleurt mee na de hero
-  const navEl=document.querySelector('nav');
-  const onScroll=()=>navEl.classList.toggle('scrolled',window.scrollY>window.innerHeight-90);
-  window.addEventListener('scroll',onScroll);onScroll();
-</script>
+  <button class="arrow prev" id="prev" aria-label="Previous">&#8249;</button>
+  <button class="arrow next" id="next" aria-label="Next">&#8250;</button>
+  <div class="dots" id="dots"></div>
 
 <script>
 (function(){
-  var nav = document.querySelector('nav');
-  var darkSections = document.querySelectorAll('.movement');
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        nav.classList.add('light');
-      } else {
-        nav.classList.remove('light');
-      }
-    });
-  }, {threshold: 0, rootMargin: '-80px 0px -90% 0px'});
-  darkSections.forEach(function(s){ observer.observe(s); });
-})();
-</script>
-<a href="#" class="contact-sticky" onclick="openContactOverlay();return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Get in touch with the artist</a>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="">
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-  <div class="lightbox-nav">
-    <button onclick="lightboxPrev()">&#8592; Prev</button>
-    <button onclick="lightboxNext()">Next &#8594;</button>
-  </div>
-  <div class="lightbox-credit">© Robbert Vogtlander</div>
-</div>
-
-<script>
-var lightboxPhotos = [
-  'images/Krinkels_01_Robbert_Vogtlander.jpg',
-  'images/Krinkels_03_Robbert_Vogtlander.jpg',
-  'images/Krinkels_04_Robbert_Vogtlander.jpg',
-  'images/Krinkels_05_Robbert_Vogtlander.jpg',
-  'images/Krinkels_06_Robbert_Vogtlander.jpg',
-  'images/Krinkels_07_Robbert_Vogtlander.jpg'
-];
-var lightboxIndex = 0;
-
-function openLightbox(){
-  lightboxIndex = 0;
-  updateLightbox();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function updateLightbox(){
-  document.getElementById('lightboxImg').src = lightboxPhotos[lightboxIndex];
-  document.getElementById('lightboxCounter').textContent = (lightboxIndex+1) + ' / ' + lightboxPhotos.length;
-}
-function lightboxNext(){
-  lightboxIndex = (lightboxIndex + 1) % lightboxPhotos.length;
-  updateLightbox();
-}
-function lightboxPrev(){
-  lightboxIndex = (lightboxIndex - 1 + lightboxPhotos.length) % lightboxPhotos.length;
-  updateLightbox();
-}
-document.addEventListener('keydown', function(e){
-  if(!document.getElementById('lightbox').classList.contains('open')) return;
-  if(e.key === 'ArrowRight') lightboxNext();
-  if(e.key === 'ArrowLeft') lightboxPrev();
-  if(e.key === 'Escape') closeLightbox();
-});
-</script>
-
-<script>
-// Rate limiting + input sanitization for contact form
-(function(){
-  var form = document.querySelector('.contact-form');
-  if(!form) return;
-
-  var lastSubmit = 0;
-  var RATE_LIMIT_MS = 60000; // 1 minuut tussen submissions
-
-  function sanitize(str) {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#x27;')
-      .replace(/\//g, '&#x2F;')
-      .trim()
-      .substring(0, 2000); // max 2000 tekens per veld
-  }
-
-  form.addEventListener('submit', function(e) {
-    // Rate limiting
-    var now = Date.now();
-    if(now - lastSubmit < RATE_LIMIT_MS) {
-      e.preventDefault();
-      alert('Please wait a moment before sending another message.');
-      return false;
-    }
-    lastSubmit = now;
-
-    // Sanitize alle input velden
-    var inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
-    inputs.forEach(function(input) {
-      input.value = sanitize(input.value);
-    });
-  });
-})();
-
-// Copy entire chat
-document.getElementById('chatCopyAll').addEventListener('click', function() {
-  const messages = chatBody.querySelectorAll('.chat-msg');
-  let text = '';
-  messages.forEach(function(msg) {
-    const role = msg.classList.contains('user') ? 'You' : 'Jakko AI';
-    const msgText = msg.innerText.replace('Copy', '').replace('Copied!', '').trim();
-    text += role + ':\n' + msgText + '\n\n';
-  });
-  navigator.clipboard.writeText(text.trim()).then(function() {
-    const btn = document.getElementById('chatCopyAll');
-    btn.textContent = 'Copied!';
-    setTimeout(function(){ btn.textContent = 'Copy chat'; }, 2000);
-  });
-});
-</script>
-
-
-<!-- CONTACT OVERLAY -->
-<div class="contact-overlay-bg" id="contactOverlayBg"></div>
-<div class="contact-overlay-panel" id="contactOverlayPanel">
-  <div class="contact-overlay-head">
-    <h3>Get in touch</h3>
-    <button class="contact-overlay-close" id="contactOverlayClose" aria-label="Close">×</button>
-  </div>
-  <p style="font-size:var(--fs-5);color:var(--walnut-soft);margin-bottom:2rem;line-height:1.7">Currently accepting a limited number of new commissions. Jakko reads and responds to every message personally.</p>
-  <style>
-.contact-direct{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem}
-.cd-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;font-family:Inter,sans-serif;font-size:var(--fs-5);letter-spacing:.02em;padding:.95rem 1.2rem;border-radius:40px;transition:opacity .2s,background .2s,color .2s}
-.cd-btn svg{width:1.15em;height:1.15em;flex:none}
-.cd-wa{background:var(--walnut);color:var(--paper)}
-.cd-wa:hover{opacity:.9}
-.cd-call{background:transparent;color:var(--walnut);border:1px solid var(--line)}
-.cd-call:hover{background:var(--paper-deep)}
-.contact-or{display:flex;align-items:center;gap:1rem;margin:0 0 1.4rem;color:var(--walnut-soft);font-family:Inter,sans-serif;font-size:var(--fs-2);letter-spacing:.18em;text-transform:uppercase}
-.contact-or::before,.contact-or::after{content:"";flex:1;height:1px;background:var(--line)}
-@media(max-width:720px){#between-doors .work.flip .work-text{order:1}#between-doors .work.flip .work-visual{order:2;margin-top:1.5rem}}
-</style>
-  <div class="contact-direct">
-    <a class="cd-btn cd-wa" href="https://wa.me/31643060097?text=Hi%20Jakko%2C%20I%20have%20a%20question%20about%20your%20work." target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-1.9-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.6 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.9 5-1.3A10 10 0 1 0 12 2z"/></svg>
-      Message on WhatsApp
-    </a>
-    <a class="cd-btn cd-call" href="tel:+31643060097">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.8 9.8a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
-      Call directly
-    </a>
-  </div>
-  <div class="contact-or"><span>or send a message</span></div>
-  <form class="contact-form" name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact">
-    <p style="display:none"><input name="bot-field"></p>
-    <div class="form-row">
-      <label>Name</label>
-      <input type="text" name="name" placeholder="Your name" required>
-    </div>
-    <div class="form-row">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="your@email.com" required>
-    </div>
-    <div class="form-row">
-      <label>Phone</label>
-      <div style="display:flex;gap:.5rem">
-        <input type="text" name="phone_country" placeholder="+31" required style="width:80px">
-        <input type="tel" name="phone" placeholder="6 12345678" required style="flex:1">
-      </div>
-    </div>
-    <div class="form-row">
-      <label>Message</label>
-      <textarea name="message" placeholder="Tell me about your space, your project, your idea..." required></textarea>
-    </div>
-    <button type="submit">Send message</button>
-  </form>
-  <p style="font-size:var(--fs-1);color:var(--walnut-soft);opacity:.6;text-align:center;margin-top:1rem">Jakko AI can make mistakes. Always verify important information.</p>
-</div>
-
-<script>
-function openContactOverlay() {
-  document.getElementById('contactOverlayBg').classList.add('open');
-  document.getElementById('contactOverlayPanel').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeContactOverlay() {
-  document.getElementById('contactOverlayBg').classList.remove('open');
-  document.getElementById('contactOverlayPanel').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.getElementById('contactOverlayClose').addEventListener('click', closeContactOverlay);
-document.getElementById('contactOverlayBg').addEventListener('click', closeContactOverlay);
-</script>
-
-<footer>
-  <span class="tm"><span style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:.005em;line-height:1">Dutch Wood Artist<sup style="font-size:.42em;font-weight:400;vertical-align:super;letter-spacing:0;margin-left:.05em">&#174;</sup></span></span>
-  <div style="display:flex;gap:1.5rem;align-items:center;margin-top:.5rem"><span>Schagen, The Netherlands</span><a href="/privacy" style="font-size:var(--fs-2);color:var(--walnut-soft);opacity:.6;text-decoration:none">Privacy Policy</a></div>
-</footer>
-
-
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>We use cookies to understand how visitors use this site. <a href="/privacy">Learn more</a>.</p>
-  <div class="cookie-btns">
-    <button class="cookie-decline" id="cookieDecline">Decline</button>
-    <button class="cookie-accept" id="cookieAccept">Accept</button>
-  </div>
-</div>
-
-<script>
-// Cookie banner
-(function() {
-  var consent = localStorage.getItem('cookie_consent');
-  if(!consent) {
-    setTimeout(function() {
-      document.getElementById('cookieBanner').classList.add('show');
-    }, 1500);
-  }
-  if(consent === 'accepted') {
-    loadAnalytics();
-  }
-
-  document.getElementById('cookieAccept').addEventListener('click', function() {
-    localStorage.setItem('cookie_consent', 'accepted');
-    document.getElementById('cookieBanner').classList.remove('show');
-    loadAnalytics();
-  });
-
-  document.getElementById('cookieDecline').addEventListener('click', function() {
-    localStorage.setItem('cookie_consent', 'declined');
-    document.getElementById('cookieBanner').classList.remove('show');
-  });
-})();
-
-function loadAnalytics() {
-  // Google Analytics will be loaded here once ID is available
-  // Replace GA_MEASUREMENT_ID with your actual ID e.g. G-XXXXXXXXXX
-  var GA_ID = 'G-GCYEFW0DX7';
-  var s = document.createElement('script');
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  s.async = true;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', GA_ID);
-}
-</script>
-
-
-<script>
-document.getElementById('shareFab').addEventListener('click', function() {
-  if(navigator.share) {
-    navigator.share({
-      title: 'Jakko Woudenberg — Dutch Wood Artist',
-      text: 'Monumental art floors for buildings that refuse to be ordinary.',
-      url: 'https://dutchwoodartist.com'
-    });
-  } else {
-    navigator.clipboard.writeText('https://dutchwoodartist.com').then(function() {
-      var btn = document.getElementById('shareFab');
-      var orig = btn.innerHTML;
-      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
-      setTimeout(function(){ btn.innerHTML = orig; }, 2000);
-    });
-  }
-});
-</script>
-
-
-<script>
-(function(){
-  var secs=Array.prototype.slice.call(document.querySelectorAll('#chapters>section.crx'));
-  var tabsWrap=document.getElementById('ctabs');
-  var tabs=[];
-  function show(i){
-    secs.forEach(function(s,j){ s.classList.toggle('show', j===i); });
-    tabs.forEach(function(b,j){ b.className=(j===i?'on':''); });
-    var at=tabs[i]; if(at){var w=at.offsetLeft-(tabsWrap.clientWidth-at.offsetWidth)/2; tabsWrap.scrollTo({left:Math.max(0,w),behavior:'smooth'});}
-    window.scrollTo(0,0);
-    // reveal everything in the shown chapter (no scroll-in needed anymore)
-    if(secs[i]) secs[i].querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-  }
-  var cur=0;
-  var showBase=show;
-  show=function(i){ i=Math.max(0,Math.min(secs.length-1,i)); cur=i; showBase(i); };
+  var secs=[].slice.call(document.querySelectorAll('#chapters .ch'));
+  var tabsWrap=document.getElementById('tabs');
+  var dotsWrap=document.getElementById('dots');
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
+  var tabs=[], dots=[], cur=0;
   secs.forEach(function(s,i){
     var b=document.createElement('button');
-    b.innerHTML=(s.getAttribute('data-tab')||('Ch '+(i+1)))+'<span class="u"></span>';
+    b.textContent=s.getAttribute('data-tab')||('Ch '+(i+1));
     b.addEventListener('click',function(){show(i);});
-    tabsWrap.appendChild(b);tabs.push(b);
+    tabsWrap.appendChild(b); tabs.push(b);
+    var d=document.createElement('i'); dotsWrap.appendChild(d); dots.push(d);
   });
-  // progress dots + desktop arrows
-  var dotsWrap=document.getElementById('cdots');
-  var dots=secs.map(function(){var d=document.createElement('i');dotsWrap.appendChild(d);return d;});
-  var prevBtn=document.getElementById('cPrev'), nextBtn=document.getElementById('cNext');
-  prevBtn.addEventListener('click',function(){show(cur-1);});
-  nextBtn.addEventListener('click',function(){show(cur+1);});
-  var showBase2=show;
-  show=function(i){
-    i=Math.max(0,Math.min(secs.length-1,i));
-    showBase2(i);
-    var dark = secs[i] && secs[i].id==='contact';
-    dots.forEach(function(d,j){ d.className=(j===i?'on':'')+(dark?' dark':''); });
-    prevBtn.disabled=(i===0); nextBtn.disabled=(i===secs.length-1);
-  };
-  show(0);
-
-  // make menu / anchor links switch chapters (instead of vertical anchor jump)
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    var id=a.getAttribute('href').slice(1);
-    var idx=secs.findIndex(function(s){return s.id===id;});
-    if(idx>=0){ a.addEventListener('click',function(e){ e.preventDefault(); show(idx); }); }
-  });
-
-  // ----- swipe between chapters (same effect as tapping a tab) -----
+  function show(i){
+    i=Math.max(0,Math.min(secs.length-1,i)); cur=i;
+    secs.forEach(function(s,j){ s.classList.toggle('show', j===i); });
+    tabs.forEach(function(b,j){ b.className=(j===i?'on':''); });
+    dots.forEach(function(d,j){ d.className=(j===i?'on':''); });
+    var at=tabs[i]; if(at){ var w=at.offsetLeft-(tabsWrap.clientWidth-at.offsetWidth)/2; tabsWrap.scrollTo({left:Math.max(0,w),behavior:'smooth'}); }
+    prev.disabled=(i===0); next.disabled=(i===secs.length-1);
+    window.scrollTo(0,0);
+  }
+  prev.addEventListener('click',function(){show(cur-1);});
+  next.addEventListener('click',function(){show(cur+1);});
   var x0=null,y0=null;
-  document.addEventListener('touchstart',function(e){
-    if(e.touches.length!==1){x0=null;return;}
-    x0=e.touches[0].clientX; y0=e.touches[0].clientY;
-  },{passive:true});
+  document.addEventListener('touchstart',function(e){ if(e.touches.length!==1){x0=null;return;} x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
   document.addEventListener('touchend',function(e){
     if(x0===null) return;
-    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
-    x0=null;
-    if(Math.abs(dx)>28 && Math.abs(dx)>Math.abs(dy)){
-      if(dx<0) show(cur+1); else show(cur-1);
-    }
+    var dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0; x0=null;
+    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)){ if(dx<0) show(cur+1); else show(cur-1); }
   },{passive:true});
+  show(0);
 })();
 </script>
 </body>
