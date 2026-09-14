@@ -400,8 +400,6 @@
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ===== TABBED CHAPTERS (step 1: toggle only) ===== */
-nav{display:none!important}
-.share-fab,.contact-sticky,.chat-fab{display:none!important}
 .ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.12);padding:14px 20px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .ctabs::-webkit-scrollbar{display:none}
 .ctabs button{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--walnut-soft);padding:10px 15px 11px;position:relative;white-space:nowrap;transition:color .25s}
@@ -430,6 +428,11 @@ html,body{overscroll-behavior-x:none}
 #chapters>section.crx.show{animation:chfade .45s ease}
 @keyframes chfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#chapters>section.crx.show{animation:none}}
+
+/* nav + tabs coexistence */
+nav{padding:10px 14px!important;z-index:60}
+nav .menu-toggle span{background:var(--walnut)!important}
+.ctabs{padding-right:60px}
 </style>
 </head>
 <body>
@@ -1280,6 +1283,13 @@ document.getElementById('shareFab').addEventListener('click', function() {
     prevBtn.disabled=(i===0); nextBtn.disabled=(i===secs.length-1);
   };
   show(0);
+
+  // make menu / anchor links switch chapters (instead of vertical anchor jump)
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    var idx=secs.findIndex(function(s){return s.id===id;});
+    if(idx>=0){ a.addEventListener('click',function(e){ e.preventDefault(); show(idx); }); }
+  });
 
   // ----- swipe between chapters (same effect as tapping a tab) -----
   var x0=null,y0=null;
