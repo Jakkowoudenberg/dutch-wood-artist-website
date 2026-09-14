@@ -403,9 +403,9 @@
 html{scroll-behavior:auto}
 html,body{height:100%;margin:0}
 body{overflow:hidden}
-.crail{display:flex;width:100vw;height:100vh;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;touch-action:pan-x;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.crail{display:flex;width:100vw;height:100vh;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .crail::-webkit-scrollbar{display:none}
-.crail>section.crx{flex:0 0 100vw;width:100vw;height:100vh;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;touch-action:pan-y;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.crail>section.crx{flex:0 0 100vw;width:100vw;height:100vh;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .crail>section.crx::-webkit-scrollbar{display:none}
 .ctabs{position:fixed;top:0;left:0;right:0;z-index:52;display:flex;gap:2px;background:rgba(242,237,228,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,36,27,.1);padding:14px 56px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
 .ctabs::-webkit-scrollbar{display:none}
@@ -422,6 +422,7 @@ body{overflow:hidden}
 .cdots i{width:7px;height:7px;border-radius:50%;background:rgba(46,36,27,.28);transition:all .3s}
 .cdots i.on{background:var(--grain);width:20px;border-radius:4px}
 nav{z-index:53}
+nav{display:none!important}
 </style>
 </head>
 <body>
