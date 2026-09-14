@@ -437,6 +437,20 @@ nav,#fullmenu,.share-fab,.chat-fab,.contact-sticky{display:none!important}
 .crx .hero h1,.crx header.hero h1{font-size:clamp(2.4rem,8vw,4.4rem)!important;line-height:1.05!important}
 .crx .work-visual.work-photo{aspect-ratio:auto!important;overflow:visible!important;height:auto!important;min-height:0!important}
 .crx .work-visual.work-photo img{height:auto!important;max-height:none!important;object-fit:contain!important}
+
+/* ===== ONE BRAND SYSTEM ACROSS ALL CHAPTERS ===== */
+/* everything left-aligned (kills the centered chapters) */
+.crx{text-align:left!important}
+.crx h1,.crx h2,.crx h3,.crx p,.crx .body,.crx .m-line,.crx .m-body,.crx .m-q,.crx .in-dev,.crx .eyebrow{margin-left:0!important;margin-right:0!important}
+/* Gemikigai body: match the others (sans, upright, not centered) */
+.crx .gemikigai p{font-family:Inter,sans-serif!important;font-style:normal!important;font-size:var(--fs-8)!important;line-height:1.8!important;max-width:52ch!important}
+/* hero: clear the fixed tab bar + add a legibility scrim over the photo */
+.crx header.hero{position:relative}
+.crx .hero-inner{padding-top:5.5rem!important}
+.crx header.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,12,7,.5) 0%,rgba(18,12,7,.18) 38%,rgba(18,12,7,.6) 100%);pointer-events:none}
+.crx .hero-inner{position:relative;z-index:2}
+/* consistent max reading width, left */
+.crx .movement p,.crx .movement h2,.crx .gemikigai h2{max-width:52ch!important}
 </style>
 </head>
 <body>
