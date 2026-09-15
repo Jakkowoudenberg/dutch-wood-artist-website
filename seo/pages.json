@@ -1,0 +1,121 @@
+[
+  {
+    "key": "commissions",
+    "path": "/art-floors/",
+    "chapter": "commissions",
+    "label": "Art floor commissions",
+    "title": "Bespoke Art Floors & Design Floor Commissions | Dutch Wood Artist",
+    "description": "Bespoke art floors for high-end architecture and interiors. Commission a one-of-a-kind wooden artwork by Jakko Woudenberg, Dutch Wood Artist.",
+    "image": "/images/Krinkels_03_Robbert_Vogtlander.jpg",
+    "imageAlt": "INSSAEI, a commissioned wooden art floor at Krinkels in Breda",
+    "promote": "h2",
+    "type": "service"
+  },
+  {
+    "key": "inssaei",
+    "path": "/work/inssaei/",
+    "chapter": "inssaei",
+    "label": "INSSAEI",
+    "title": "INSSAEI — Award-Winning Art Floor in Breda | Dutch Wood Artist",
+    "description": "Discover INSSAEI, Jakko Woudenberg’s award-winning wooden art floor at Krinkels HQ in Breda, created with Paul de Ruiter Architecten. Story and photographs.",
+    "image": "/images/Krinkels_04_Robbert_Vogtlander.jpg",
+    "imageAlt": "INSSAEI art floor and wooden staircase at Krinkels HQ in Breda",
+    "promote": "h3",
+    "type": "artwork"
+  },
+  {
+    "key": "nightwatch",
+    "path": "/work/the-night-watch-in-wood/",
+    "chapter": "nightwatch",
+    "label": "The Night Watch in Wood",
+    "title": "The Night Watch in Wood — Jakko Woudenberg | Dutch Wood Artist",
+    "description": "A monumental interpretation of Rembrandt’s Night Watch by Jakko Woudenberg: 195,000 hand-cut wooden pixels, 52 wood species and four years of making.",
+    "image": "/images/Foto_NWFA_met_sponsors_Orlando.jpg",
+    "imageAlt": "The Night Watch in Wood with Jakko Woudenberg and supporters in Orlando",
+    "promote": "h3",
+    "type": "artwork"
+  },
+  {
+    "key": "artist",
+    "path": "/artist/",
+    "chapter": "artist",
+    "label": "Jakko Woudenberg",
+    "title": "Jakko Woudenberg — Artist & Master Parquet Craftsman",
+    "description": "Meet Jakko Woudenberg, Dutch Wood Artist: a master parquet craftsman and monumental artist in Schagen, creating one-of-a-kind art floors in solid wood.",
+    "image": "/images/Foto_Jakko_op_visgraat_met_nachtwacht_schilderij.jpg",
+    "imageAlt": "Jakko Woudenberg working with wood and The Night Watch",
+    "heading": "Jakko Woudenberg",
+    "type": "profile"
+  },
+  {
+    "key": "manifesto",
+    "path": "/manifesto/",
+    "chapter": "introduction",
+    "label": "Manifesto",
+    "title": "Manifesto — Wood Is My Medium | Dutch Wood Artist",
+    "description": "Read Jakko Woudenberg’s artist manifesto. Monumental art floors, human stories and works made once, for one place on earth. Wood is my medium.",
+    "image": "/images/og-image.jpg",
+    "imageAlt": "Dutch Wood Artist — monumental artworks in wood",
+    "type": "page"
+  },
+  {
+    "key": "uwfl",
+    "path": "/projects/united-wood-floor-layers/",
+    "chapter": "projects",
+    "label": "United Wood Floor Layers",
+    "title": "United Wood Floor Layers — Pay It Forward | Dutch Wood Artist",
+    "description": "United Wood Floor Layers is Jakko Woudenberg’s worldwide movement connecting craftspeople. Create a panel, help three others and pass the craft forward.",
+    "image": "/images/Logo_UWFL.jpg",
+    "imageAlt": "United Wood Floor Layers emblem",
+    "promote": "h2",
+    "type": "page"
+  },
+  {
+    "key": "between-doors",
+    "path": "/projects/between-doors/",
+    "chapter": "projects",
+    "label": "Between Doors",
+    "title": "Between Doors — A Project in Development | Dutch Wood Artist",
+    "description": "Between Doors is a project in development by Dutch Wood Artist, Jakko Woudenberg, reflecting on who we become while standing between choices.",
+    "image": "/images/between-doors.jpg",
+    "imageAlt": "Between Doors concept image",
+    "heading": "Between Doors",
+    "type": "page"
+  },
+  {
+    "key": "gemikigai",
+    "path": "/projects/gemikigai/",
+    "chapter": "projects",
+    "label": "Gemikigai®",
+    "title": "Gemikigai® — A Concept in Development | Dutch Wood Artist",
+    "description": "Gemikigai by Dutch Wood Artist is a concept in development bringing the ideas of ikigai and feng shui into the floor beneath your feet.",
+    "image": "/images/og-image.jpg",
+    "imageAlt": "Dutch Wood Artist — monumental artworks in wood",
+    "promote": "h2",
+    "type": "page"
+  },
+  {
+    "key": "book",
+    "path": "/news/a-book-in-the-making/",
+    "chapter": "news",
+    "label": "A book in the making",
+    "title": "A Book in the Making — News from Jakko Woudenberg",
+    "description": "Jakko Woudenberg is developing a book about The Night Watch in Wood, his journey from craftsman to artist, and the making of the work. A studio update.",
+    "image": "/images/Foto_NWFA_met_sponsors_Orlando.jpg",
+    "imageAlt": "The Night Watch in Wood on display at the NWFA Convention in Orlando",
+    "promote": "h3",
+    "type": "article"
+  },
+  {
+    "key": "contact",
+    "path": "/contact/",
+    "chapter": "contact",
+    "label": "Contact",
+    "title": "Contact Jakko Woudenberg — Art Floor Commissions",
+    "description": "Talk with Jakko Woudenberg about an art floor for your space. Contact Dutch Wood Artist in Schagen, the Netherlands, by phone, WhatsApp or email.",
+    "image": "/images/og-image.jpg",
+    "imageAlt": "Dutch Wood Artist — monumental artworks in wood",
+    "promote": "h2",
+    "type": "contact"
+  }
+]

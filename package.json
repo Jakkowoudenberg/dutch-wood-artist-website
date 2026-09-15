@@ -1,7 +1,18 @@
 {
   "name": "dutch-wood-artist-website",
   "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build-seo.mjs",
+    "check": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.0"
+  },
+  "devDependencies": {
+    "image-size": "2.0.4",
+    "parse5": "8.0.1"
   }
 }
