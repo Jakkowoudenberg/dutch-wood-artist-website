@@ -1,21 +1,9 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
+  X-XSS-Protection: 0
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.anthropic.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-/preview.html
-  Cache-Control: no-cache, no-store, must-revalidate
-  X-Robots-Tag: noindex, nofollow
-/preview
-  Cache-Control: no-cache, no-store, must-revalidate
-  X-Robots-Tag: noindex, nofollow
-/preview-gallery.html
-  Cache-Control: no-cache, no-store, must-revalidate
-  X-Robots-Tag: noindex, nofollow
-/preview-gallery
-  Cache-Control: no-cache, no-store, must-revalidate
-  X-Robots-Tag: noindex, nofollow

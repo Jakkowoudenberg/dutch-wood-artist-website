@@ -145,11 +145,11 @@ function structuredData(page) {
   }
   return { '@context': 'https://schema.org', '@graph': graph };
 }
-function metadata(page, preview = false) {
+function metadata(page) {
   const size = sizes.get(page.image);
   return `<title>${escape(page.title)}</title>
   <meta name="description" content="${escape(page.description)}">
-  <meta name="robots" content="${preview ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="${fullUrl(page.path)}">
   <meta property="og:type" content="${page.type === 'article' ? 'article' : 'website'}">
   <meta property="og:site_name" content="Dutch Wood Artist">
@@ -180,8 +180,11 @@ async function stylesheet(name, content) {
 }
 const siteCssPath = await stylesheet('site', css);
 const storyCssPath = await stylesheet('story', storyCss);
+const galleryJs = await readFile(resolve(root, 'assets/gallery.js'), 'utf8');
+const galleryJsPath = `/assets/gallery.${createHash('sha256').update(galleryJs).digest('hex').slice(0, 12)}.js`;
+await writeFile(resolve(out, '.' + galleryJsPath), galleryJs);
 
-function configureHead(doc, page, preview = false) {
+function configureHead(doc, page) {
   const head = find(doc, node => node.tagName === 'head');
   for (const node of [...head.childNodes]) {
     if (node.tagName === 'title' || node.tagName === 'style' ||
@@ -189,14 +192,14 @@ function configureHead(doc, page, preview = false) {
       (node.tagName === 'meta' && (['description', 'robots'].includes(attr(node, 'name')) || (attr(node, 'name') || '').startsWith('twitter:') || (attr(node, 'property') || '').startsWith('og:'))) ||
       (node.tagName === 'script' && attr(node, 'type') === 'application/ld+json')) remove(node);
   }
-  appendHtml(head, metadata(page, preview));
+  appendHtml(head, metadata(page));
   appendHtml(head, `<link rel="stylesheet" href="${siteCssPath}">`);
   const icon = find(head, node => attr(node, 'rel') === 'icon');
   setAttr(icon, 'href', '/images/icon-192.png');
 }
-for (const name of ['index.html', 'preview-gallery.html']) {
-  const doc = parse(await readFile(resolve(root, name), 'utf8'));
-  configureHead(doc, home, name !== 'index.html');
+{
+  const doc = parse(source);
+  configureHead(doc, home);
   normalizeImages(doc);
   walk(doc, node => {
     const key = attr(node, 'data-story');
@@ -209,11 +212,12 @@ for (const name of ['index.html', 'preview-gallery.html']) {
     if (hasClass(node, 'chapter')) removeAttr(node, 'inert');
   });
   const body = find(doc, node => node.tagName === 'body');
-  const appScript = body.childNodes.find(node => node.tagName === 'script' && !attr(node, 'type'));
+  const appScript = find(body, node => node.tagName === 'script' && attr(node, 'src') === '/assets/gallery.js');
+  setAttr(appScript, 'src', galleryJsPath);
   const routes = parseFragment(`<script type="application/json" id="story-paths">${json(storyPaths)}</script>`).childNodes[0];
   routes.parentNode = body;
   body.childNodes.splice(body.childNodes.indexOf(appScript), 0, routes);
-  await writeFile(resolve(out, name), serialize(doc));
+  await writeFile(resolve(out, 'index.html'), serialize(doc));
 }
 
 const headerDoc = parseFragment(serializeOuter(find(sourceDoc, node => node.tagName === 'header')));
@@ -228,7 +232,7 @@ walk(headerDoc, node => {
 });
 normalizeImages(headerDoc);
 const header = serialize(headerDoc);
-const footer = `<footer class="story-footer"><nav aria-label="Explore Dutch Wood Artist">${pages.map(page => `<a href="${page.path}">${escape(page.label)}</a>`).join('')}<a href="/">Explore the gallery</a></nav><p>Jakko Woudenberg · Dutch Wood Artist® · Schagen, The Netherlands</p></footer>`;
+const footer = `<footer class="story-footer"><nav aria-label="Explore Dutch Wood Artist">${pages.map(page => `<a href="${page.path}">${escape(page.label)}</a>`).join('')}<a href="/">Explore the gallery</a><a href="/privacy.html">Privacy</a></nav><p>Jakko Woudenberg · Dutch Wood Artist® · Schagen, The Netherlands</p></footer>`;
 
 for (const page of pages) {
   const content = parseFragment(stories[page.key]);
@@ -266,7 +270,7 @@ for (const page of pages) {
   await writeFile(file, html);
 }
 
-for (const name of ['images', 'preview.html', 'privacy.html', 'success.html', 'robots.txt', '_headers', 'manifest.json', 'googlef0d31f940bfa34d2.html']) await cp(resolve(root, name), resolve(out, name), { recursive: true });
+for (const name of ['images', 'privacy.html', 'robots.txt', '_headers', '_redirects', 'manifest.json', 'googlef0d31f940bfa34d2.html']) await cp(resolve(root, name), resolve(out, name), { recursive: true });
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[home, ...pages].map(page => `  <url><loc>${fullUrl(page.path)}</loc></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(resolve(out, 'sitemap.xml'), sitemap);
 const llms = `# Dutch Wood Artist® — Jakko Woudenberg\n\n> One-of-a-kind art floors and monumental wood art by Jakko Woudenberg, a master parquet craftsman and artist based in Schagen, the Netherlands. Wood is his medium; the human journey is his subject.\n\nThe site presents artworks, commissioned art floors, the artist’s own statements and projects in development. The linked pages contain the full public stories in HTML. Each commission is made for one specific place.\n\n## Work and commissions\n\n${pages.filter(page => ['commissions', 'inssaei', 'nightwatch'].includes(page.key)).map(page => `- [${page.label}](${fullUrl(page.path)}): ${page.description}`).join('\n')}\n\n## Artist and stories\n\n${pages.filter(page => ['artist', 'manifesto', 'book'].includes(page.key)).map(page => `- [${page.label}](${fullUrl(page.path)}): ${page.description}`).join('\n')}\n\n## Projects\n\n${pages.filter(page => ['uwfl', 'between-doors', 'gemikigai'].includes(page.key)).map(page => `- [${page.label}](${fullUrl(page.path)}): ${page.description}`).join('\n')}\n\n## Contact\n\n- [Contact](${origin}/contact/): Call, WhatsApp or send an email to discuss a commission.\n- [Gallery](${origin}/): The visual introduction to the work.\n- [Sitemap](${origin}/sitemap.xml)\n`;

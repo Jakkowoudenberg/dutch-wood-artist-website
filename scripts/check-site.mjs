@@ -42,7 +42,15 @@ for (const url of urls) {
   const schema = JSON.parse(text(one(node => node.tagName === 'script' && attr(node, 'type') === 'application/ld+json')));
   assert.equal(schema['@context'], 'https://schema.org');
   assert(schema['@graph'].some(node => node.url === url && /Page|WebSite/.test(node['@type'])));
-  for (const script of all(doc, node => node.tagName === 'script' && !attr(node, 'type'))) new Script(text(script));
+  for (const script of all(doc, node => node.tagName === 'script', true)) {
+    if (['application/ld+json', 'application/json'].includes(attr(script, 'type'))) continue;
+    const src = attr(script, 'src');
+    assert(src && /^\/assets\/gallery\.[a-f0-9]{12}\.js$/.test(src), 'Executable scripts must be local external files.');
+    assert(!text(script).trim(), 'Inline JavaScript is blocked by the security policy.');
+    new Script(await read(resolve(out, '.' + src)));
+  }
+  assert.equal(all(doc, node => node.attrs?.some(item => /^on/i.test(item.name) || /^javascript:/i.test(item.value)), true).length, 0, 'Inline event handlers and JavaScript URLs are not allowed.');
+  assert.equal(all(doc, node => node.tagName === 'form', true).length, 0, 'The site no longer accepts form submissions.');
   if (path !== '/') {
     assert.equal(all(doc, node => node.tagName === 'template').length, 0, 'Story text must be in the initial HTML.');
     assert(clean(text(one(node => node.tagName === 'article'))).length > 100);
@@ -61,7 +69,7 @@ for (const [path, doc] of documents) {
     assert(href, 'A link is missing its destination: ' + path);
     if (!href.startsWith('/') && !href.startsWith('#')) continue;
     const target = new URL(href, origin + path);
-    if (target.pathname.startsWith('/assets/')) { await access(resolve(out, '.' + target.pathname)); continue; }
+    if (target.pathname.startsWith('/assets/') || target.pathname === '/privacy.html') { await access(resolve(out, '.' + target.pathname)); continue; }
     const targetDoc = documents.get(target.pathname);
     assert(targetDoc, 'Unknown internal link: ' + href);
     if (target.hash) assert(all(targetDoc, node => attr(node, 'id') === decodeURIComponent(target.hash.slice(1))).length, 'Missing anchor: ' + href);
@@ -81,9 +89,16 @@ for (const paragraph of archiveText) assert(publicStories.some(story => story.in
 const contact = documents.get('/contact/');
 assert.deepEqual(all(contact, node => (attr(node, 'class') || '').split(' ').includes('contact-method')).map(node => [clean(text(node)), attr(node, 'href')]), [['Call', 'tel:+31643060097'], ['WhatsApp', 'https://wa.me/31643060097'], ['Send email', 'mailto:info@dutchwoodartist.com']]);
 assert(!text(all(contact, node => node.tagName === 'article')[0]).includes('info@'), 'The email address must not be visible.');
-const preview = parse(await read(resolve(out, 'preview-gallery.html')));
-assert.equal(attr(all(preview, node => attr(node, 'name') === 'robots')[0], 'content'), 'noindex,nofollow');
-assert((await read(resolve(out, '_headers'))).includes('X-Robots-Tag: noindex, nofollow'));
+const headers = await read(resolve(out, '_headers'));
+assert(headers.includes("script-src 'self';") && headers.includes("script-src-attr 'none';") && headers.includes("connect-src 'none';") && headers.includes("form-action 'none';"));
+assert(!headers.includes('api.anthropic.com'));
+assert(!(await read(resolve(root, 'package-lock.json'))).includes('@anthropic-ai/'));
+const redirects = await read(resolve(out, '_redirects'));
+for (const name of ['preview', 'preview-gallery', 'success']) {
+  await assert.rejects(access(resolve(out, name + '.html')), { code: 'ENOENT' });
+  for (const suffix of ['', '.html']) assert(redirects.split('\n').some(line => line.trim().split(/\s+/)[0] === '/' + name + suffix), 'Retired pages need redirects.');
+}
+await assert.rejects(access(resolve(root, 'netlify/functions/chat.js')), { code: 'ENOENT' });
 assert.equal(await read(resolve(out, 'googlef0d31f940bfa34d2.html')), await read(resolve(root, 'googlef0d31f940bfa34d2.html')));
 assert((await read(resolve(out, 'robots.txt'))).includes('Sitemap: ' + origin + '/sitemap.xml'));
-console.log(`Checked ${urls.length} crawlable pages, ${archiveText.length} preserved text blocks, internal links, image dimensions, schema, preview exclusion and contact actions.`);
+console.log(`Checked ${urls.length} crawlable pages, ${archiveText.length} preserved text blocks, internal links, image dimensions, schema, security policy, retired features and contact actions.`);
