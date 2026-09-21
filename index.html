@@ -144,6 +144,7 @@
     }
 
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+    .privacy-link{display:block;width:fit-content;font-size:10px;line-height:1.4;padding:4px 0;color:var(--muted);text-decoration:underline;text-underline-offset:3px}.privacy-link:hover{color:var(--ink)}
   </style>
 </head>
 <body>
@@ -192,7 +193,7 @@
         </div></div></div>
     </section>
   </main>
-  <footer class="gallery-footer"><div class="footer-label"><span class="count" id="chapter-count">01 / 08</span><div><span class="chapter-name" id="chapter-name">Introduction</span><span class="mobile-hint">Swipe to explore · Open a story to read</span></div></div><nav class="chapter-dots" id="chapter-dots" aria-label="Choose a chapter"></nav><div class="footer-controls"><span class="direction-hint">Explore at your own pace</span><button class="arrow" id="previous" aria-label="Previous chapter" disabled><svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M17 10H4M9 5l-5 5 5 5"/></svg></button><button class="arrow" id="next" aria-label="Next chapter"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M3 10h13M11 5l5 5-5 5"/></svg></button></div></footer>
+  <footer class="gallery-footer"><div class="footer-label"><span class="count" id="chapter-count">01 / 08</span><div><span class="chapter-name" id="chapter-name">Introduction</span><span class="mobile-hint">Swipe to explore · Open a story to read</span><a class="privacy-link" href="/privacy.html" lang="nl">Privacyverklaring</a></div></div><nav class="chapter-dots" id="chapter-dots" aria-label="Choose a chapter"></nav><div class="footer-controls"><span class="direction-hint">Explore at your own pace</span><button class="arrow" id="previous" aria-label="Previous chapter" disabled><svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M17 10H4M9 5l-5 5 5 5"/></svg></button><button class="arrow" id="next" aria-label="Next chapter"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M3 10h13M11 5l5 5-5 5"/></svg></button></div></footer>
   <div class="sr-only" role="status" aria-live="polite" id="chapter-status"></div>
   <dialog class="reader" id="reader" aria-labelledby="reader-title"><header class="reader-header"><div><p class="reader-kicker">Dutch Wood Artist · The story</p><h2 id="reader-title"></h2></div><button class="close-button" id="close-reader" aria-label="Close story and return to the gallery">Back to the work <svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="m5 5 10 10M15 5 5 15"/></svg></button></header><div class="reader-scroll" id="reader-scroll"><article class="reader-content" id="reader-content"></article></div></dialog>
   <dialog class="index-dialog" id="index-dialog" aria-labelledby="index-title"><header class="reader-header"><div><p class="reader-kicker">Dutch Wood Artist</p><h2 id="index-title">Choose your chapter</h2></div><button class="close-button" id="close-index" aria-label="Close index">Close <svg viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="m5 5 10 10M15 5 5 15"/></svg></button></header><nav class="index-list" id="index-list" aria-label="All chapters"></nav></dialog>
