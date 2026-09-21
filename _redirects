@@ -5,3 +5,9 @@
 /preview-gallery       /          301!
 /success.html          /contact/  301!
 /success               /contact/  301!
+
+# Consolidated business connection information.
+/jakko-os/privacy/* /privacy#business-tools 301!
+/jakko-os/terms/* /privacy#business-use 301!
+/jakko-os/* /privacy#business-tools 301!
+/jakko-os /privacy#business-tools 301!
